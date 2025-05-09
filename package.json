@@ -1,0 +1,37 @@
+{
+  "name": "b2b-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "api": "npx json-server json-server/db.json --port 3001"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.1",
+    "@heroicons/react": "^2.2.0",
+    "axios": "^1.8.4",
+    "clsx": "^2.1.1",
+    "jotai": "^2.12.2",
+    "js-cookie": "^3.0.5",
+    "next": "15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.1",
+    "react-image-file-resizer": "^0.4.8"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
