@@ -13,7 +13,7 @@ export const HeaderBtnsWeb: React.FC = () => {
     <div className="hidden sm:block">
       <SignedIn>
         <div className="flex items-end gap-6">
-          <CustomButton className="px-6 py-3 bg-forth text-white rounded-sm" onClick={unauthorize}>
+          <CustomButton className="px-6 py-3 bg-forth text-white rounded-sm text-sm" onClick={unauthorize}>
             登出
           </CustomButton>
         </div>

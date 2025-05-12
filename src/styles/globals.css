@@ -3,30 +3,43 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --btn-shadow: 0px 2px 16px 0px var(--btn-shadow-color);
+    --basis-gap-4: 100% - var(--spacing) * 4;
+    --1-2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
+    --1-3-basis-gap-4: calc(calc(var(--basis-gap-4) * 2) / 3);
+    --1-4-basis-gap-4: calc(calc(var(--basis-gap-4) * 3) / 4);
+    --basis-gap-overview: 100% - 61px;
+    --1-2-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 1) / 2);
+    --1-3-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 2) / 3);
+    --1-4-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 3) / 4);
+}
+
+:root:has([data-theme="green"]) {
     --primary: #184743;
     --secondary: #007956;
-    --tertiary: #9CFF8D;
+    --tertiary: #9cff8d;
     --forth: #038360;
-    --five: #DAFFE1;
-    --six: #91FD8B;
-    --circle-left: #6A8D89;
-    --circle-right: #487C57;
-    --profile-banner: url('/banner-green.png');
-    --btn-shadow-color: rgba(197, 233, 118, 0.60);
-    --btn-shadow: 0px 2px 16px 0px var(--btn-shadow-color);
+    --five: #daffe1;
+    --six: #91fd8b;
+    --seven: #0079564D;
+    --circle-left: #6a8d89;
+    --circle-right: #487c57;
+    --profile-banner: url("/banner-green.png");
+    --btn-shadow-color: rgba(197, 233, 118, 0.6);
 }
 
 :root:has([data-theme="blue"]) {
-    --primary: #3C2E7E;
-    --secondary: #25166A;
-    --tertiary: #E2E2F8FD;
-    --forth: #3F35BD;
-    --five: #457AE5;
-    --six: #FFFFFF;
-    --circle-left: #4755D0;
-    --circle-right: #3A75EA;
-    --profile-banner: url('/banner-blue.png');
-    --btn-shadow-color: rgba(145, 118, 233, 0.60);
+    --primary: #3c2e7e;
+    --secondary: #25166a;
+    --tertiary: #e2e2f8fd;
+    --forth: #3f35bd;
+    --five: #457ae5;
+    --six: #ffffff;
+    --seven: #0079564D;
+    --circle-left: #4755d0;
+    --circle-right: #3a75ea;
+    --profile-banner: url("/banner-blue.png");
+    --btn-shadow-color: rgba(145, 118, 233, 0.6);
 }
 
 @theme {
@@ -37,6 +50,8 @@
     --color-tertiary: var(--tertiary);
     --color-forth: var(--forth);
     --color-five: var(--five);
+    --color-six: var(--six);
+    --color-seven: var(--seven);
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
     --font-sans: var(--font-geist-sans);
@@ -44,7 +59,6 @@
     --shadow-btn: var(--btn-shadow);
     --profile-banner: var(--profile-banner);
 }
-
 
 body {
     font-family: Arial, Helvetica, sans-serif;

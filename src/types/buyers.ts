@@ -7,11 +7,13 @@ export interface BuyerData {
   company_description: string;
   company_location: string;
   company_established_year: number;
+  company_overview: string;
   business_annual_revenue: number;
   business_capital_amount: number;
   number_of_employees: number;
   company_website: string;
   business_attributes: string[];
+  business_nature: string[];
   industry_classification: string[];
   partnership_looking_for: string[];
   purchasing_requirement: string[];

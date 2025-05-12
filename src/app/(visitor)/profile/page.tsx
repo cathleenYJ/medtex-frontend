@@ -1,4 +1,4 @@
-import { ProfileBanner, ProfileContainer, ProfileOpportunities, ProfileQualfication } from "@dashboard/profile";
+import { ProfileBanner, ProfileContainer, ProfileOpportunities, ProfileQualfication, ProfileCompanyOverview, ProfileHighlights, ProfileContact } from "@dashboard/profile";
 import { serverFetch } from "@/data/server";
 
 export default async function ProfilePage() {
@@ -8,7 +8,10 @@ export default async function ProfilePage() {
       <ProfileBanner buyer={buyer} />
       <ProfileContainer>
         <ProfileOpportunities buyer={buyer} />
-        <ProfileQualfication />
+        <ProfileQualfication buyer={buyer} />
+        <ProfileCompanyOverview buyer={buyer} />
+        <ProfileHighlights buyer={buyer} />
+        <ProfileContact buyer={buyer} />
       </ProfileContainer>
     </div>
   );

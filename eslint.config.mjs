@@ -14,6 +14,7 @@ const eslintConfig = [
     extends: ["next/core-web-vitals", "next/typescript"],
     rules: {
       "@typescript-eslint/no-unused-expressions": "off",
+      "@next/next/no-img-element": "off",
       "react-hooks/exhaustive-deps": "off",
     },
   }),

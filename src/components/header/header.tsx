@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SiteLogo } from "@icons";
 import { Splitter } from "@ui/splitter";
-import { countries } from "@/data/countries";
 import { DropdownMenu, NestMenu } from "@ui/menus";
+import { countries } from "@/data/countries";
 import { useAuth } from "@/hooks/use-auth";
 import type { MenuItemType } from "@/types";
 import { HeaderBtnsWeb } from "./btn-group";
-import { usePathname } from "next/navigation";
 
 const menuItemsWeb: MenuItemType[] = [
   {
@@ -68,8 +68,8 @@ export const Header: React.FC = () => {
               <SiteLogo />
             </Link>
           </div>
-          <Splitter />
-          <div className="h-full flex items-end text-white">Business Matchmaking</div>
+          <Splitter className="mx-3" />
+          <div className="h-full flex items-end text-white font-bold text-lg">Business Matchmaking</div>
         </div>
         <NestMenu className="sm:hidden inline-block" items={[...menuItemsWeb, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
         <HeaderBtnsWeb />
