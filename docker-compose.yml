@@ -7,6 +7,7 @@ services:
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+      env_file: .env.develpment
     restart: always
     ports:
       - 3000:3000
