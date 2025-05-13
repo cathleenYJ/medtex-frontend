@@ -6,8 +6,7 @@ services:
       dockerfile: prod.Dockerfile
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
-        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
-      env_file: .env.develpment
+        NEXT_PUBLIC_ENV_VARIABLE: http://192.168.1.50:4001
     restart: always
     ports:
       - 3000:3000
