@@ -5,6 +5,6 @@ export const API_ENDPOINTS = {
   USERS_LOGIN: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT}/b2b/login`,
   USERS_LOGOUT: "/logout",
   USERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT}/b2b/auth/data`,
-  BUYERS_DATA: "http://localhost:3001/buyers",
-  SELLERS_DATA: "http://localhost:3001/sellers",
+  BUYERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/buyers`,
+  SELLERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/sellers`,
 };
