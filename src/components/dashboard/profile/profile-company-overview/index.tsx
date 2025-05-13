@@ -1,10 +1,6 @@
 import { Card } from "@ui/card";
-import { Tag } from "@ui/tag";
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
-import { MapPinIcon } from "@heroicons/react/24/outline";
 import { ProfileSection } from "@dashboard/profile/profile-section";
 import type { BuyerData } from "@/types";
-import React from "react";
 import { CompanyInfo } from "./company-info";
 import { BusinessAttributes } from "./business-attributes";
 
