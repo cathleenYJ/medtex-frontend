@@ -3,6 +3,13 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --primary: #184743;
+    --secondary: #007956;
+    --tertiary: #9cff8d;
+    --forth: #038360;
+    --five: #daffe1;
+    --six: #91fd8b;
+    --seven: #0079564D;
     --btn-shadow: 0px 2px 16px 0px var(--btn-shadow-color);
     --basis-gap-4: 100% - var(--spacing) * 4;
     --1-2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
