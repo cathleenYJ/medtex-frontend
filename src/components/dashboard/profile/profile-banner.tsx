@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { CustomButton } from "@ui/button";
-import { BuyerData } from "@/types";
+import type { BuyerData } from "@/types";
+import { headerSans } from "@/app/layout";
 
 export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
@@ -13,12 +14,12 @@ export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
               <div className="flex items-center w-max sm:w-fit">
                 <img className="w-28" src={buyer.company_logo} alt="" />
               </div>
-              <div className="flex items-center w-max sm:w-fit text-lg sm:text-2xl font-normal sm:font-semibold">{buyer.company_name}</div>
+              <div className="flex items-center w-max sm:w-fit text-lg sm:text-2xl font-semibold">{buyer.company_name}</div>
             </div>
-            <div className="w-full text-[1.75rem] sm:text-[2.625rem]">{buyer.promotion_text}</div>
+            <div className={clsx("w-full text-[1.75rem] sm:text-[2.625rem]", headerSans.variable)}>{buyer.promotion_text}</div>
             <div className="w-full text-base sm:text-lg text-five">{buyer.company_description}</div>
           </div>
-          <CustomButton component={Link} href="/" className="px-8 py-4 bg-white border border-solid border-white/20 shadow-btn rounded-[0.5rem] font-bold sm:text-lg text-base">
+          <CustomButton component={Link} href="/" className="px-8 py-4 bg-white border border-solid border-white/20 shadow-btn rounded-[0.5rem] font-medium sm:text-lg text-base text-primary">
             Get in touch →
           </CustomButton>
         </div>

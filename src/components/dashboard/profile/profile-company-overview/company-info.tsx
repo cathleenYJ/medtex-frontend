@@ -29,7 +29,7 @@ const CompanyLogo: React.FC<{ src: string; alt?: string }> = ({ src, alt }) => (
 
 const CompanyLocation: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
   <div className="flex flex-col gap-1 w-max justify-between">
-    <div className="text-2xl">{buyer.company_name}</div>
+    <div className="text-2xl font-semibold">{buyer.company_name}</div>
     <div className="flex gap-1 items-center">
       <MapPinIcon className="w-4 h-4" />
       {buyer.company_location}
@@ -49,7 +49,7 @@ const CompanyWebsite: React.FC<{ href: string }> = ({ href }) => (
 );
 
 const CompanyInfoSingle: React.FC<{ title: string; children?: React.ReactNode }> = ({ title, children }) => (
-  <div className="flex sm:flex-col justify-between gap-5 grow sm:w-min w-full">
+  <div className="flex sm:flex-col justify-between gap-5 grow sm:w-min w-full font-medium">
     <div>{title}</div>
     <div className="text-xl w-max">{children}</div>
   </div>

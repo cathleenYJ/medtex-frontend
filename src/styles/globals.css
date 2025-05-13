@@ -10,16 +10,38 @@
     --five: #daffe1;
     --six: #91fd8b;
     --seven: #0079564D;
+    --eight-rgb: 140 250 159;
+    --eight: rgb(var(--eight-rgb));
     --btn-shadow: 0px 2px 16px 0px var(--btn-shadow-color);
+    --bg-line:
+        0 0 1px rgb(0 0 0 / 0.2),
+        0 5px 5px rgb(var(--eight-rgb) / 0.8),
+        0 10px 5px rgb(var(--eight-rgb) / 0.6),
+        0 16px 5px rgb(var(--eight-rgb) / 0.3),
+        0 22px 5px rgb(var(--eight-rgb) / 0.2),
+        0 27px 5px rgb(var(--eight-rgb) / 0.1),
+        0 32px 5px rgb(var(--eight-rgb) / 0.1),
+        0 37px 5px rgb(var(--eight-rgb) / 0.1),
+        0 42px 5px rgb(var(--eight-rgb) / 0.1),
+        inset 0 0 1px rgb(0 0 0 / 0.2),
+        inset 0 -4px 5px rgb(var(--eight-rgb) / 0.6),
+        inset 0 -8px 5px rgb(var(--eight-rgb) / 0.4),
+        inset 0 -12px 5px rgb(var(--eight-rgb) / 0.2),
+        inset 0 -16px 5px rgb(var(--eight-rgb) / 0.1);
     --basis-gap-4: 100% - var(--spacing) * 4;
     --1-2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
     --1-3-basis-gap-4: calc(calc(var(--basis-gap-4) * 2) / 3);
     --1-4-basis-gap-4: calc(calc(var(--basis-gap-4) * 3) / 4);
+    --basis-gap-60px: 100% - 60px;
+    --1-2-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 1) / 2);
+    --1-3-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 2) / 3);
+    --1-4-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 3) / 4);
     --basis-gap-overview: 100% - 61px;
     --1-2-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 1) / 2);
     --1-3-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 2) / 3);
     --1-4-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 3) / 4);
 }
+
 
 :root:has([data-theme="green"]) {
     --primary: #184743;
@@ -29,8 +51,10 @@
     --five: #daffe1;
     --six: #91fd8b;
     --seven: #0079564D;
+    --eight: #8CFA9F;
     --circle-left: #6a8d89;
     --circle-right: #487c57;
+    --circle-middle: #336B4C;
     --profile-banner: url("/banner-green.png");
     --btn-shadow-color: rgba(197, 233, 118, 0.6);
 }
@@ -43,8 +67,10 @@
     --five: #457ae5;
     --six: #ffffff;
     --seven: #0079564D;
+    --eight: #8CFA9F;
     --circle-left: #4755d0;
     --circle-right: #3a75ea;
+    --circle-middle: #336B4C;
     --profile-banner: url("/banner-blue.png");
     --btn-shadow-color: rgba(145, 118, 233, 0.6);
 }
@@ -59,14 +85,12 @@
     --color-five: var(--five);
     --color-six: var(--six);
     --color-seven: var(--seven);
+    --color-eight: var(--eight);
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
+    --color-circle-middle: var(--circle-middle);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
     --shadow-btn: var(--btn-shadow);
     --profile-banner: var(--profile-banner);
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
 }

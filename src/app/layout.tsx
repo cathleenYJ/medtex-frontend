@@ -1,16 +1,22 @@
 import clsx from "clsx";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter, Poppins } from "next/font/google";
 import { Provider } from "jotai";
 import { ModalContainer } from "@/components/modals/view";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 
-const geistSans = Geist({
+export const geistSans = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+export const headerSans = Poppins({
+  weight: "400",
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+export const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });

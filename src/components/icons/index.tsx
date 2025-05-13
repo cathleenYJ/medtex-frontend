@@ -27,7 +27,7 @@ export const MoneyBag: React.FC<IconProps> = ({ color }) => (
 
 export const Target: React.FC<IconProps> = ({ color }) => (
   <svg width="100%" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_374_427)">
+    <g clipPath="url(#clip0_374_427)">
       <path d="M12.4216 29.0131C18.687 29.0131 23.766 23.934 23.766 17.6687C23.766 11.4033 18.687 6.32422 12.4216 6.32422C6.15623 6.32422 1.07715 11.4033 1.07715 17.6687C1.07715 23.934 6.15623 29.0131 12.4216 29.0131Z" stroke={color || "white"} strokeWidth="2.1544" strokeMiterlimit="10" />
       <path d="M12.4292 24.2446C16.065 24.2446 19.0124 21.2972 19.0124 17.6614C19.0124 14.0255 16.065 11.0781 12.4292 11.0781C8.79336 11.0781 5.84595 14.0255 5.84595 17.6614C5.84595 21.2972 8.79336 24.2446 12.4292 24.2446Z" stroke={color || "white"} strokeWidth="2.1544" strokeMiterlimit="10" />
       <path d="M12.1138 17.9769L27.3084 2.78223" stroke={color || "white"} strokeWidth="2.1544" strokeMiterlimit="10" strokeLinecap="round" />
@@ -54,5 +54,12 @@ export const Market: React.FC<IconProps> = ({ color }) => (
     <path d="M23.7148 12.9456C23.7148 18.8925 18.8927 23.7145 12.9459 23.7145C6.99904 23.7145 2.177 18.8925 2.177 12.9456C2.177 6.9988 6.99904 2.17676 12.9459 2.17676C15.4662 2.17676 17.7831 3.04264 19.6174 4.49194" stroke={color || "white"} strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="round" />
     <path d="M21.9829 18.8057L25.1656 21.9884C26.0433 22.8661 26.0433 24.2885 25.1656 25.1661C24.288 26.0438 22.8656 26.0438 21.9879 25.1661L18.8052 21.9834" stroke={color || "white"} strokeWidth="2.5" strokeMiterlimit="10" />
     <path d="M8 14L13.3297 8.35757L17.6066 12.8833L26 4" stroke={color || "white"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const Lock: React.FC<IconProps> = ({ color }) => (
+  <svg width="100%" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M26.5556 16H9.44444C8.09441 16 7 17.3838 7 19.0909V29.9091C7 31.6162 8.09441 33 9.44444 33H26.5556C27.9056 33 29 31.6162 29 29.9091V19.0909C29 17.3838 27.9056 16 26.5556 16Z" stroke={color || "white"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M11 15V9.66667C11 7.89856 11.7375 6.20286 13.0503 4.95262C14.363 3.70238 16.1435 3 18 3C19.8565 3 21.637 3.70238 22.9497 4.95262C24.2625 6.20286 25 7.89856 25 9.66667V15" stroke={color || "white"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );

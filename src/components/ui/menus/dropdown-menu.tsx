@@ -8,7 +8,7 @@ export const DropdownMenu: React.FC<MenuItemType & { className?: string; last: b
   return (
     <>
       <Menu as="div" className={className}>
-        <MenuButton className="inline-flex items-center gap-3 cursor-pointer text-white">
+        <MenuButton className="inline-flex items-center gap-3 cursor-pointer text-white font-medium">
           {label}
           <ChevronDownIcon className="size-4 fill-white/60" />
         </MenuButton>
