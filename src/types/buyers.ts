@@ -1,4 +1,4 @@
-export interface BuyerData {
+export type BuyerData = {
   id: number;
   user_name: string;
   promotion_text: string;
@@ -22,8 +22,12 @@ export interface BuyerData {
   company_strengths: string;
   estimated_procurement_amount: number;
   brands_in_distribution: string;
+};
+
+export type BuyerContact = {
   buyer_name: string;
   buyer_job_title: string;
   brief_introduction: string;
+  buyer_contact_location: string;
   buyer_photo: string;
-}
+};

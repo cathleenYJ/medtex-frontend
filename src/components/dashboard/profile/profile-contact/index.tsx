@@ -1,13 +1,16 @@
+"use client";
+
 import { Card } from "@ui/card";
 import { ProfileSection } from "@dashboard/profile/profile-section";
-import type { BuyerData } from "@/types";
+import { LockedInfo } from "./locked-info";
+import { DisplayInfo } from "./display-info";
 
-export const ProfileContact: React.FC<{ buyer: BuyerData }> = ({}) => {
+export const ProfileContact: React.FC = () => {
   return (
     <ProfileSection title="Contact Info">
-      <Card className="bg-secondary p-12 basis-full flex flex-wrap gap-[3.75rem]">
-        <div className="sm:basis-(--1-2-basis-gap-60px) basis-full"></div>
-        <div className="sm:basis-(--1-2-basis-gap-60px) basis-full"></div>
+      <Card className="bg-secondary py-[1.875rem] sm:py-10 md:py-12 px-5 sm:px-[1.875rem] md:px-12 basis-full flex flex-wrap sm:gap-[1.875rem] lg:gap-[3.75rem]">
+        <LockedInfo />
+        <DisplayInfo />
       </Card>
     </ProfileSection>
   );

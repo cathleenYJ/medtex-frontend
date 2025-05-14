@@ -6,5 +6,6 @@ export const API_ENDPOINTS = {
   USERS_LOGOUT: "/logout",
   USERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT}/b2b/auth/data`,
   BUYERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/buyers`,
+  BUYERS_CONTACT: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/buyers_contact`,
   SELLERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/sellers`,
 };

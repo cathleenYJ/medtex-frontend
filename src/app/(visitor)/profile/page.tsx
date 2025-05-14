@@ -11,7 +11,7 @@ export default async function ProfilePage() {
         <ProfileQualfication buyer={buyer} />
         <ProfileCompanyOverview buyer={buyer} />
         <ProfileHighlights buyer={buyer} />
-        <ProfileContact buyer={buyer} />
+        <ProfileContact />
       </ProfileContainer>
     </div>
   );

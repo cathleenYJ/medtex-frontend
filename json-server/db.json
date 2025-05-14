@@ -45,11 +45,17 @@
       "market_channel_overview": "全球OEM廠商",
       "company_strengths": "研發創新速度快",
       "estimated_procurement_amount": "200000.00",
-      "brands_in_distribution": "AlphaFiber",
-      "buyer_name": "王小明",
-      "buyer_job_title": "採購經理",
+      "brands_in_distribution": "AlphaFiber"
+    }
+  ],
+  "buyers_contact": [
+    {
+      "id": 1,
+      "buyer_name": "Eric Khor",
+      "buyer_job_title": "Vice President",
       "brief_introduction": "超過10年材料領域經驗",
-      "buyer_photo": "https://example.com/photo1.jpg"
+      "buyer_contact_location": "Malaysia, Singapore, Indonesia, Philippines",
+      "buyer_photo": "/buyer_photo.png"
     }
   ]
 }

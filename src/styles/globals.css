@@ -34,17 +34,16 @@
         inset 0 -12px 5px rgb(var(--eight-rgb) / 0.2),
         inset 0 -16px 5px rgb(var(--eight-rgb) / 0.1);
     --basis-gap-4: 100% - var(--spacing) * 4;
-    --1-2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
-    --1-3-basis-gap-4: calc(calc(var(--basis-gap-4) * 2) / 3);
-    --1-4-basis-gap-4: calc(calc(var(--basis-gap-4) * 3) / 4);
+    --1\/2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
+    --1\/3-basis-gap-4: calc(calc(var(--basis-gap-4) * 2) / 3);
+    --basis-gap-7: 100% - var(--spacing) * 7;
+    --1\/3-basis-gap-7: calc(calc(var(--basis-gap-7) * 2) / 3);
     --basis-gap-60px: 100% - 60px;
-    --1-2-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 1) / 2);
-    --1-3-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 2) / 3);
-    --1-4-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 3) / 4);
+    --1\/2-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 1) / 2);
+    --basis-gap-30px: 100% - 30px;
+    --1\/2-basis-gap-30px: calc(calc(var(--basis-gap-30px) * 1) / 2);
     --basis-gap-overview: 100% - 61px;
-    --1-2-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 1) / 2);
-    --1-3-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 2) / 3);
-    --1-4-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 3) / 4);
+    --1\/2-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 1) / 2);
 }
 
 :root:has([data-theme="green"]) {

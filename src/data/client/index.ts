@@ -2,7 +2,7 @@ import { AxiosInstance } from "axios";
 import { HttpMethod } from "../http-method";
 import { API_ENDPOINTS } from "../endpoints";
 import { AxiosClient } from "./axios-client";
-import type { AuthResponse, BuyerData, LoginUserInput, SellerData, User } from "@/types";
+import type { AuthResponse, BuyerContact, BuyerData, LoginUserInput, SellerData, User } from "@/types";
 
 class FetchData {
   private method: HttpMethod;
@@ -17,6 +17,7 @@ class FetchData {
   };
   buyers = {
     data: (id?: number) => this.method.get<BuyerData[]>(`${API_ENDPOINTS.BUYERS_DATA}${id ? `?id=${id}` : ""}`),
+    contact: (id?: number) => this.method.get<BuyerContact[]>(`${API_ENDPOINTS.BUYERS_CONTACT}${id ? `?id=${id}` : ""}`),
   };
   sellers = {
     data: (id?: number) => this.method.get<SellerData[]>(`${API_ENDPOINTS.SELLERS_DATA}${id ? `?id=${id}` : ""}`),
