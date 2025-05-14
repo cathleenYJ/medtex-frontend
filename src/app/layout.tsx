@@ -1,25 +1,9 @@
 import clsx from "clsx";
-import { Geist_Mono, Inter, Poppins } from "next/font/google";
 import { Provider } from "jotai";
 import { ModalContainer } from "@/components/modals/view";
+import { geistSans, geistMono } from "@/styles/font";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-
-export const geistSans = Inter({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-export const headerSans = Poppins({
-  weight: "400",
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-export const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
