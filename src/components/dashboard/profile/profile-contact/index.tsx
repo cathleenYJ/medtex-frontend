@@ -1,6 +1,6 @@
+import { Card } from "@ui/card";
 import { ProfileSection } from "@dashboard/profile/profile-section";
 import type { BuyerData } from "@/types";
-import { Card } from "@ui/card";
 
 export const ProfileContact: React.FC<{ buyer: BuyerData }> = ({}) => {
   return (

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={clsx(geistSans.variable, geistMono.variable, "antialiased bg-black overflow-x-hidden")}>
+      <body className={clsx(geistSans.variable, geistMono.variable, "relative antialiased bg-black min-h-screen overflow-x-hidden", "has-[[data-theme]]:bg-no-repeat has-[[data-theme]]:bg-(image:--bg-profile)")}>
         <Provider>{children}</Provider>
         <ModalContainer />
       </body>
