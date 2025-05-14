@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { CustomButton } from "@ui/button";
 import type { BuyerData } from "@/types";
-import { headerSans } from "@/app/layout";
+import { headerSans } from "@/styles/font";
 
 export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
