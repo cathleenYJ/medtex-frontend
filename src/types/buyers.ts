@@ -1,5 +1,6 @@
 export type BuyerData = {
   id: number;
+  profile_theme: "green" | "blue" | "red";
   user_name: string;
   promotion_text: string;
   company_name: string;

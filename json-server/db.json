@@ -24,6 +24,7 @@
   "buyers": [
     {
       "id": 1,
+      "profile_theme": "green",
       "user_name": "user001",
       "promotion_text": "Embracing the Entire ASEAN Region: The Most Extensive Medical Distribution Network",
       "company_name": "EP Plus Group",
