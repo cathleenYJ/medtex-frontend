@@ -1,10 +1,11 @@
 import { ProfileBanner, ProfileContainer, ProfileOpportunities, ProfileQualfication, ProfileCompanyOverview, ProfileHighlights, ProfileContact } from "@dashboard/profile";
 import { serverFetch } from "@/data/server";
 
-export default async function ProfilePage() {
-  const [buyer] = await serverFetch.buyers.data(1);
+export default async function ProfilePage({ params }: { params: Promise<{ buyer_id: string }> }) {
+  const { buyer_id } = await params;
+  const [buyer] = await serverFetch.buyers.data(Number(buyer_id));
   return (
-    <div className="-mt-32" data-theme="green">
+    <div className="-mt-32" data-theme={buyer.profile_theme}>
       <ProfileBanner buyer={buyer} />
       <ProfileContainer>
         <ProfileOpportunities buyer={buyer} />

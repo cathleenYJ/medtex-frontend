@@ -37,7 +37,7 @@ const menuItemsRest: MenuItemType[] = [
   {
     key: "Profile",
     label: "Profile",
-    href: "/profile",
+    href: "/profile/1",
   },
   {
     key: "test",
