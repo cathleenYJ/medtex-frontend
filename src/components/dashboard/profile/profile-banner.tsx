@@ -6,8 +6,8 @@ import { headerSans } from "@/styles/font";
 
 export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
-    <div className={clsx("pt-32 sm:pt-48 sm:pb-20 px-0 sm:px-2.5 2xl:px-24 w-full bg-(image:--profile-banner) bg-no-repeat bg-cover bg-center", "relative before:content-[''] before:block before:sm:hidden before:absolute before:inset-0 before:backdrop-blur-lg before:bg-black/30")}>
-      <div className="mx-auto w-full max-w-7xl">
+    <div className={clsx("pt-32 sm:pt-48 sm:pb-20 w-full bg-(image:--profile-banner) bg-no-repeat bg-cover bg-center", "relative before:content-[''] before:block before:sm:hidden before:absolute before:inset-0 before:backdrop-blur-lg before:bg-black/30")}>
+      <div className="mx-auto w-full max-w-7xl sm:px-10">
         <div className="flex flex-wrap gap-10 px-4 sm:px-10 py-14 w-full max-w-4xl sm:backdrop-blur-lg sm:bg-black/30 sm:rounded-2xl relative">
           <div className="flex flex-wrap gap-5 sm:gap-7 w-full text-white">
             <div className="w-full flex flex-wrap gap-2.5 sm:gap-5">
