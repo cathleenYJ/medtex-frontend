@@ -12,6 +12,7 @@
     { "id": 2, "userId": 2, "productId": 1, "quantity": 2 }
   ],
   "logout": {},
+  "sellers": [],
   "buyers": [
     {
       "id": 1,
@@ -64,6 +65,32 @@
       "company_strengths": "研發創新速度快",
       "estimated_procurement_amount": "200000.00",
       "brands_in_distribution": "AlphaFiber"
+    },
+    {
+      "id": 3,
+      "profile_theme": "red",
+      "user_name": "user003",
+      "promotion_text": "Embracing the Entire ASEAN Region: The Most Extensive Medical Distribution Network",
+      "company_name": "EP Plus Group",
+      "company_logo": "/example_logo.png",
+      "company_description": "EP Plus is a regional healthcare corporation based in Malaysia, with a robust foothold in Malaysia, Singapore, Indonesia, Philippines and expanding across Southeast Asia.\n\n\nSince our inception in 1997, we are driven by our mission to make innovative European medical possibilities – pharmaceuticals, medical devices and equipment accessible to patients throughout Southeast Asia.",
+      "company_location": "Taiwan",
+      "company_established_year": "2001",
+      "company_overview": "/company-overview.jpg",
+      "business_annual_revenue": "5000000.00",
+      "business_capital_amount": "1000000.00",
+      "number_of_employees": 120,
+      "company_website": "https://alphamaterials.com",
+      "business_attributes": ["Distributor / Agent"],
+      "business_nature": ["Pharmaceutical Distribution"],
+      "industry_classification": "先進材料",
+      "partnership_looking_for": ["OEM/ODM", "Product Distribution Franchise"],
+      "purchasing_requirement": ["Gastroenterology", "Neurology / CNS", "Respiratory", "Gynecology", "Endocrinology / Diabetes", "Reproductive Health", "Aesthetic / Dermatology"],
+      "required_certification": "ISO 9001",
+      "market_channel_overview": "全球OEM廠商",
+      "company_strengths": "研發創新速度快",
+      "estimated_procurement_amount": "200000.00",
+      "brands_in_distribution": "AlphaFiber"
     }
   ],
   "buyers_contact": [
@@ -77,6 +104,14 @@
     },
     {
       "id": 2,
+      "buyer_name": "Eric Khor",
+      "buyer_job_title": "Vice President",
+      "brief_introduction": "超過10年材料領域經驗",
+      "buyer_contact_location": "Malaysia, Singapore, Indonesia, Philippines",
+      "buyer_photo": "/buyer_photo.png"
+    },
+    {
+      "id": 3,
       "buyer_name": "Eric Khor",
       "buyer_job_title": "Vice President",
       "brief_introduction": "超過10年材料領域經驗",

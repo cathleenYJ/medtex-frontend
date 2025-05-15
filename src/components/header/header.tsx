@@ -37,6 +37,7 @@ const menuItemsRest: MenuItemType[] = [
     items: [
       { key: "Profile_green", label: "Profile green", href: "/profile/1" },
       { key: "Profile_blue", label: "Profile blue", href: "/profile/2" },
+      { key: "Profile_red", label: "Profile red", href: "/profile/3" },
     ],
   },
 ];
