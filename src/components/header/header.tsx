@@ -73,16 +73,16 @@ export const Header: React.FC = () => {
           <Splitter className="mx-3" />
           <div className="h-full flex items-end text-white font-bold text-[0.9375rem] sm:text-base md:text-lg">Business Matchmaking</div>
         </div>
-        <MobileMenu isAuthorized={isAuthorized} signedInItem={signedInItem} signedOutItem={signedOutItem} />
+        <MobileMenu items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
         <HeaderBtnsDesktop />
       </div>
       <div className="my-2 h-px bg-white/20 -mx-5 sm:-mx-10"></div>
-      <DesktopMenu />
+      <DesktopMenu items={[...menuItemsDesktop, ...menuItemsRest]} />
     </header>
   );
 };
 
-const MobileMenu: React.FC<{ isAuthorized: boolean; signedInItem: MenuItemType; signedOutItem: MenuItemType }> = ({ isAuthorized, signedInItem, signedOutItem }) => (
+const MobileMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => (
   <NestMenu
     className="sm:hidden inline-block"
     btn={
@@ -90,13 +90,13 @@ const MobileMenu: React.FC<{ isAuthorized: boolean; signedInItem: MenuItemType; 
         <Hamburger />
       </div>
     }
-    items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]}
+    items={items}
   />
 );
 
-const DesktopMenu: React.FC = () => (
-  <div className="hidden sm:flex">
-    {menuItemsDesktop.map((item, i) => (
+const DesktopMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => (
+  <div className="hidden sm:flex sm:flex-wrap">
+    {items.map((item, i) => (
       <Fragment key={item.key}>
         <NestMenu
           items={[item]}
@@ -107,7 +107,7 @@ const DesktopMenu: React.FC = () => (
             </>
           }
         />
-        {i !== menuItemsDesktop.length - 1 && <Splitter className="mx-12" />}
+        {i !== items.length - 1 && <Splitter className="mx-12" />}
       </Fragment>
     ))}
   </div>
