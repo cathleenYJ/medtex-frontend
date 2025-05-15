@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
     href: `/sign-in?redirect=${pathname}`,
   };
   return (
-    <header className="flex flex-col gap-1 py-5 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
+    <header className="flex flex-col gap-1 py-3 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
       <div className="flex justify-between relative">
         <div className="flex items-end">
           <div className="h-full flex items-end py-1 w-full max-w-4 sm:max-w-44">
