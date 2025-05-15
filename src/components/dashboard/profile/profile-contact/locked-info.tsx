@@ -4,18 +4,19 @@ import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { clientFetch } from "@/data/client";
 import type { BuyerContact } from "@/types";
+import { useAuth } from "@/hooks/use-auth";
 
 export const LockedInfo: React.FC = () => {
+  const { isAuthorized } = useAuth();
   const [lock, setLock] = useState<boolean>(true);
   const [contact, setContact] = useState<BuyerContact>({ buyer_photo: "/buyer_photo.png", buyer_name: "buyer name", buyer_job_title: "job title", brief_introduction: "introduction", buyer_contact_location: "contact info" });
   const unLock = async () => {
-    if (!lock) return;
+    if (!lock || !isAuthorized) return;
     const res = await clientFetch.buyers.contact(1);
     setLock(false);
     setContact(res[0]);
   };
   useEffect(() => {
-    // run unLock here in the future
     unLock();
   }, []);
   return (
