@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
         <MobileMenu isAuthorized={isAuthorized} signedInItem={signedInItem} signedOutItem={signedOutItem} />
         <HeaderBtnsDesktop />
       </div>
-      <div className="my-2 h-px bg-white/20"></div>
+      <div className="my-2 h-px bg-white/20 -mx-5 sm:-mx-10"></div>
       <DesktopMenu />
     </header>
   );
