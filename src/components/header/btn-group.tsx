@@ -7,7 +7,7 @@ import { useAuth } from "@/hooks/use-auth";
 const SignedIn = dynamic(() => import("@/components/auth/signed-in").then((mod) => mod.SignedIn), { ssr: false, loading: () => <Loading /> });
 const SignedOut = dynamic(() => import("@/components/auth/signed-out").then((mod) => mod.SignedOut), { ssr: false, loading: () => <Loading /> });
 
-export const HeaderBtnsWeb: React.FC = () => {
+export const HeaderBtnsDesktop: React.FC = () => {
   const { unauthorize } = useAuth();
   return (
     <div className="hidden sm:block">

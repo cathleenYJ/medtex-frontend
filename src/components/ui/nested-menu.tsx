@@ -5,21 +5,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-import { Hamburger } from "@icons";
 import { CustomButton } from "@ui/button";
 import type { MenuItemType } from "@/types";
 
-export const NestMenu: React.FC<{ items: MenuItemType[]; className?: string }> = ({ items, className }) => {
+export const NestMenu: React.FC<{ items: MenuItemType[]; btn: React.ReactNode; className?: string }> = ({ btn, items, className }) => {
   return (
     <Menu as="div" className={clsx("relative text-left", className || "inline-block")}>
       <div className="flex items-end">
-        <MenuButton className="inline-flex items-end gap-3 cursor-pointer text-white">
-          <div className="w-6 h-6 cursor-pointer">
-            <Hamburger />
-          </div>
-        </MenuButton>
+        <MenuButton className="inline-flex items-end gap-3 cursor-pointer text-white">{btn}</MenuButton>
       </div>
-      <MenuItems transition className={clsx("absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none", "origin-top transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0")}>
+      <MenuItems transition anchor="bottom start" className={clsx("absolute z-50 right-0 mt-2 w-max max-w-full min-w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none", "origin-top transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0")}>
         {items.map(({ key, items: subItems, ...props }) => (
           <NestItems key={key} items={subItems} {...props} />
         ))}

@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { Fragment } from "react";
 import { usePathname } from "next/navigation";
-import { SiteLogo } from "@icons";
+import { Hamburger, SiteLogo } from "@icons";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Splitter } from "@ui/splitter";
-import { DropdownMenu, NestMenu } from "@ui/menus";
+import { NestMenu } from "@ui/nested-menu";
 import { countries } from "@/data/countries";
 import { useAuth } from "@/hooks/use-auth";
 import type { MenuItemType } from "@/types";
-import { HeaderBtnsWeb } from "./btn-group";
+import { HeaderBtnsDesktop } from "./btn-group";
 
-const menuItemsWeb: MenuItemType[] = [
+const menuItemsDesktop: MenuItemType[] = [
   {
     key: "Country / Region",
     label: "Country / Region",
@@ -60,8 +62,8 @@ export const Header: React.FC = () => {
     href: `/sign-in?redirect=${pathname}`,
   };
   return (
-    <header className="flex flex-col gap-1 py-5 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
-      <div className="flex justify-between mx-5 sm:mx-24 relative">
+    <header className="flex flex-col gap-1 py-5 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
+      <div className="flex justify-between relative">
         <div className="flex items-end">
           <div className="h-full flex items-end py-1 w-full max-w-4 sm:max-w-44">
             <Link href="/">
@@ -71,15 +73,42 @@ export const Header: React.FC = () => {
           <Splitter className="mx-3" />
           <div className="h-full flex items-end text-white font-bold text-[0.9375rem] sm:text-base md:text-lg">Business Matchmaking</div>
         </div>
-        <NestMenu className="sm:hidden inline-block" items={[...menuItemsWeb, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
-        <HeaderBtnsWeb />
+        <MobileMenu isAuthorized={isAuthorized} signedInItem={signedInItem} signedOutItem={signedOutItem} />
+        <HeaderBtnsDesktop />
       </div>
-      <div className="hidden sm:block my-2 h-px bg-white/20"></div>
-      <div className="hidden sm:flex mx-24">
-        {menuItemsWeb.map(({ label, items }, i) => (
-          <DropdownMenu key={`web-${label}`} label={label} items={items} last={i === menuItemsWeb.length - 1} />
-        ))}
-      </div>
+      <div className="my-2 h-px bg-white/20"></div>
+      <DesktopMenu />
     </header>
   );
 };
+
+const MobileMenu: React.FC<{ isAuthorized: boolean; signedInItem: MenuItemType; signedOutItem: MenuItemType }> = ({ isAuthorized, signedInItem, signedOutItem }) => (
+  <NestMenu
+    className="sm:hidden inline-block"
+    btn={
+      <div className="w-6 h-6 cursor-pointer">
+        <Hamburger />
+      </div>
+    }
+    items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]}
+  />
+);
+
+const DesktopMenu: React.FC = () => (
+  <div className="hidden sm:flex">
+    {menuItemsDesktop.map((item, i) => (
+      <Fragment key={item.key}>
+        <NestMenu
+          items={[item]}
+          btn={
+            <>
+              {item.label}
+              <ChevronDownIcon className="size-4 fill-white/60" />
+            </>
+          }
+        />
+        {i !== menuItemsDesktop.length - 1 && <Splitter className="mx-12" />}
+      </Fragment>
+    ))}
+  </div>
+);
