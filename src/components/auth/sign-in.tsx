@@ -15,7 +15,7 @@ export const SignIn: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { authorize, checkAuth } = useAuth();
+  const { authorize } = useAuth();
   const { openModal } = useModal();
   const [loading, setLoading] = useState<boolean>(false);
   const [account, setAccount] = useState<{ email: string; password: string }>({ email: "", password: "" });
