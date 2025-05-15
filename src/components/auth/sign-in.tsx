@@ -34,9 +34,6 @@ export const SignIn: React.FC = () => {
     setLoading(false);
   };
   const handleKeydown = async (e: React.KeyboardEvent) => e.key === "Enter" && (await handleLogin());
-  useEffect(() => {
-    checkAuth(router, pathname, searchParams);
-  }, []);
   return (
     <>
       <div className="w-full max-w-md px-4 text-white">
