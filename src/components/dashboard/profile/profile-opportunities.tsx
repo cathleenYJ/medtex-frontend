@@ -23,8 +23,8 @@ export const ProfileOpportunities: React.FC<{ buyer: BuyerData }> = ({ buyer }) 
       </ProfileCard>
       <ProfileCard className="w-max grow bg-five" icon={<MoneyBag color="var(--secondary)" />} title={<span className="text-secondary">Estimated Budget</span>}>
         <div className="flex flex-col gap-2.5">
-          <div className="text-primary text-3xl font-bold">USD {buyer.estimated_procurement_amount}</div>
-          <div className="text-primary text-lg">Project‑based Negotiation</div>
+          <div className="text-primary text-2xl sm:text-[1.75rem] font-bold">USD {buyer.estimated_procurement_amount}</div>
+          <div className="text-primary text-sm sm:text-lg">Project‑based Negotiation</div>
         </div>
       </ProfileCard>
     </ProfileSection>

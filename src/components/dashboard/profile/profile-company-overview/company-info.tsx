@@ -11,7 +11,7 @@ export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
       <CompanyLocation buyer={buyer} />
       <CompanyWebsite href={buyer.company_website} />
     </div>
-    <div dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
+    <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
     <div className="basis-full flex flex-wrap gap-[1.875rem] font-bold">
       <CompanyInfoSingle title="Established Since">{buyer.company_established_year}</CompanyInfoSingle>
       <BlockSplitter />
@@ -30,7 +30,7 @@ const CompanyLogo: React.FC<{ src: string; alt?: string }> = ({ src, alt }) => (
 
 const CompanyLocation: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
   <div className="flex flex-col gap-1 w-max justify-between">
-    <div className="text-2xl font-semibold">{buyer.company_name}</div>
+    <div className="text-xl sm:text-2xl font-semibold">{buyer.company_name}</div>
     <div className="flex gap-1 items-center">
       <MapPinIcon className="w-4 h-4" />
       {buyer.company_location}
@@ -51,7 +51,7 @@ const CompanyWebsite: React.FC<{ href: string }> = ({ href }) => (
 
 const CompanyInfoSingle: React.FC<{ title: string; children?: React.ReactNode }> = ({ title, children }) => (
   <div className="flex sm:flex-col justify-between gap-5 grow sm:w-min w-full font-medium">
-    <div>{title}</div>
-    <div className="text-xl w-max">{children}</div>
+    <div className="text-sm sm:text-base">{title}</div>
+    <div className="text-base sm:text-xl w-max">{children}</div>
   </div>
 );

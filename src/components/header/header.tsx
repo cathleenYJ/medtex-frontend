@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
             </Link>
           </div>
           <Splitter className="mx-3" />
-          <div className="h-full flex items-end text-white font-bold text-lg">Business Matchmaking</div>
+          <div className="h-full flex items-end text-white font-bold text-[0.9375rem] sm:text-base md:text-lg">Business Matchmaking</div>
         </div>
         <NestMenu className="sm:hidden inline-block" items={[...menuItemsWeb, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
         <HeaderBtnsWeb />

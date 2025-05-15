@@ -8,8 +8,8 @@ export const HighlightCard: React.FC<{ title?: React.ReactNode; children?: React
       </div>
     </div>
     <div className="relative flex flex-col gap-4 sm:gap-2.5 lg:gap-[1.875rem]">
-      <div className="text-[1.875rem] font-bold">{title}</div>
-      <div>{children}</div>
+      <div className="text-[1.375rem] sm:text-2xl md:text-[1.75rem] font-bold">{title}</div>
+      <div className="text-sm sm:text-base">{children}</div>
     </div>
   </Card>
 );
