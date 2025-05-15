@@ -27,7 +27,7 @@ export const SignIn: React.FC = () => {
     if (access_token) {
       setAuthToken(access_token);
       authorize({ name, role });
-      router.push((redirect && redirect !== pathname && redirect) || "/");
+      router.push((redirect && redirect !== pathname && decodeURIComponent(redirect)) || "/");
     } else {
       openModal(modal_views.ERROR, message);
     }

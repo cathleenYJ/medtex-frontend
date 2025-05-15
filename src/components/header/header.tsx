@@ -1,47 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { Fragment } from "react";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 import { SiteLogo } from "@icons";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import { Splitter } from "@ui/splitter";
 import { NestMenu } from "@ui/nested-menu";
-import { countries } from "@/data/countries";
+import { Loading } from "@ui/loading";
 import { useAuth } from "@/hooks/use-auth";
 import type { MenuItemType } from "@/types";
-import { HeaderBtnsDesktop } from "./btn-group";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { menuItemsDesktop, menuItemsRest } from "./menu-items";
 
-const menuItemsDesktop: MenuItemType[] = [
-  {
-    key: "Country / Region",
-    label: "Country / Region",
-    items: countries.map(({ label, code }) => ({ key: label, label: label, href: `/result?company_location=${code}` })),
-  },
-  {
-    key: "Partnership Types",
-    label: "Partnership Types",
-    items: [{ key: "技術合作", label: "技術合作", href: "/result?partnership_looking_for=技術合作" }],
-  },
-  {
-    key: "Industry",
-    label: "Industry",
-    items: [{ key: "先進材料", label: "先進材料", href: "/result?industry_classification=先進材料" }],
-  },
-];
-
-const menuItemsRest: MenuItemType[] = [
-  {
-    key: "Pages",
-    label: "Pages",
-    items: [
-      { key: "Profile_green", label: "Profile green", href: "/profile/1" },
-      { key: "Profile_blue", label: "Profile blue", href: "/profile/2" },
-      { key: "Profile_red", label: "Profile red", href: "/profile/3" },
-    ],
-  },
-];
+const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.HeaderBtnsDesktop), { ssr: false, loading: () => <Loading /> });
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -69,7 +41,7 @@ export const Header: React.FC = () => {
           <div className="h-full flex items-end text-white font-bold text-[0.9375rem] sm:text-base md:text-lg">Business Matchmaking</div>
         </div>
         <MobileMenu items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
-        <HeaderBtnsDesktop />
+        <HeaderBtnsDesktop item={isAuthorized ? signedInItem : signedOutItem} />
       </div>
       <div className="my-2 h-px bg-white/20 -mx-5 sm:-mx-10"></div>
       <DesktopMenu items={[...menuItemsDesktop, ...menuItemsRest]} />
