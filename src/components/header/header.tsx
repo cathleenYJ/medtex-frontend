@@ -32,19 +32,12 @@ const menuItemsDesktop: MenuItemType[] = [
 
 const menuItemsRest: MenuItemType[] = [
   {
-    key: "Result",
-    label: "Result",
-    href: "/result",
-  },
-  {
-    key: "Profile",
-    label: "Profile",
-    href: "/profile/1",
-  },
-  {
-    key: "test",
-    label: "test",
-    items: [{ key: "test2", label: "test2", items: [{ key: "test3", label: "test3", href: "/" }] }],
+    key: "Pages",
+    label: "Pages",
+    items: [
+      { key: "Profile_green", label: "Profile green", href: "/profile/1" },
+      { key: "Profile_blue", label: "Profile blue", href: "/profile/2" },
+    ],
   },
 ];
 
@@ -107,7 +100,7 @@ const DesktopMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => (
             </>
           }
         />
-        {i !== items.length - 1 && <Splitter className="mx-12" />}
+        {i !== items.length - 1 && <Splitter className="mx-[1.875rem] md:mx-[3.125rem]" />}
       </Fragment>
     ))}
   </div>

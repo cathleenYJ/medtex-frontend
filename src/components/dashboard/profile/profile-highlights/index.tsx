@@ -37,7 +37,7 @@ export const ProfileHighlights: React.FC<{ buyer: BuyerData }> = ({}) => {
     },
   ];
   return (
-    <ProfileSection title="Company Highlights" className="before:absolute before:-z-10 before:content-[''] before:block before:w-[120vw] before:left-1/2 before:-translate-x-1/2 before:h-96 before:rounded-b-[100%] before:border-b-2 before:border-white before:shadow-(--bg-line) before:bg-gradient-to-t before:from-eight before:to-70% before:to-eight/0">
+    <ProfileSection title="Company Highlights" className="before:absolute before:-z-10 before:content-[''] before:block before:w-[120vw] before:left-1/2 before:-translate-x-1/2 before:h-96 before:rounded-b-[100%] before:border-b-2 before:border-white before:shadow-(--bg-line) before:bg-gradient-to-t before:from-seven before:to-70% before:to-seven/0">
       <Cards className="basis-full flex flex-wrap">
         {highlights1.map(({ title, description }, i) => (
           <HighlightCard key={title} title={title} number={i + 1}>

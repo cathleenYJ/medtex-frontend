@@ -3,14 +3,7 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
-    --primary: #184743;
-    --secondary: #007956;
-    --tertiary: #9cff8d;
-    --forth: #038360;
-    --five: #daffe1;
-    --six: #91fd8b;
-    --eight-rgb: 140 250 159;
-    --eight: rgb(var(--eight-rgb));
+    --seven: rgb(var(--seven-rgb));
     --btn-shadow: 0px 2px 16px 0px var(--btn-shadow-color);
     --bg-profile:
         radial-gradient(ellipse min(666px, 100vw) min(666px, 100vw) at 0 1600px, var(--circle-left), transparent),
@@ -19,19 +12,19 @@
         radial-gradient(ellipse 90% 500px at bottom, var(--circle-right), transparent);
     --bg-line:
         0 0 1px rgb(0 0 0 / 0.2),
-        0 5px 5px rgb(var(--eight-rgb) / 0.8),
-        0 10px 5px rgb(var(--eight-rgb) / 0.6),
-        0 16px 5px rgb(var(--eight-rgb) / 0.3),
-        0 22px 5px rgb(var(--eight-rgb) / 0.2),
-        0 27px 5px rgb(var(--eight-rgb) / 0.1),
-        0 32px 5px rgb(var(--eight-rgb) / 0.1),
-        0 37px 5px rgb(var(--eight-rgb) / 0.1),
-        0 42px 5px rgb(var(--eight-rgb) / 0.1),
+        0 5px 5px rgb(var(--seven-rgb) / 0.8),
+        0 10px 5px rgb(var(--seven-rgb) / 0.6),
+        0 16px 5px rgb(var(--seven-rgb) / 0.3),
+        0 22px 5px rgb(var(--seven-rgb) / 0.2),
+        0 27px 5px rgb(var(--seven-rgb) / 0.1),
+        0 32px 5px rgb(var(--seven-rgb) / 0.1),
+        0 37px 5px rgb(var(--seven-rgb) / 0.1),
+        0 42px 5px rgb(var(--seven-rgb) / 0.1),
         inset 0 0 1px rgb(0 0 0 / 0.2),
-        inset 0 -4px 5px rgb(var(--eight-rgb) / 0.6),
-        inset 0 -8px 5px rgb(var(--eight-rgb) / 0.4),
-        inset 0 -12px 5px rgb(var(--eight-rgb) / 0.2),
-        inset 0 -16px 5px rgb(var(--eight-rgb) / 0.1);
+        inset 0 -4px 5px rgb(var(--seven-rgb) / 0.6),
+        inset 0 -8px 5px rgb(var(--seven-rgb) / 0.4),
+        inset 0 -12px 5px rgb(var(--seven-rgb) / 0.2),
+        inset 0 -16px 5px rgb(var(--seven-rgb) / 0.1);
     --basis-gap-4: 100% - var(--spacing) * 4;
     --1\/2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
     --1\/3-basis-gap-4: calc(calc(var(--basis-gap-4) * 2) / 3);
@@ -52,8 +45,7 @@
     --forth: #038360;
     --five: #daffe1;
     --six: #91fd8b;
-    --eight-rgb: 140 250 159;
-    --eight: rgb(var(--eight-rgb));
+    --seven-rgb: 140 250 159;
     --circle-left: #6a8d89;
     --circle-right: #487c57;
     --circle-middle: #336B4C;
@@ -68,8 +60,7 @@
     --forth: #3f35bd;
     --five: #457ae5;
     --six: #ffffff;
-    --eight-rgb: 140 250 159;
-    --eight: rgb(var(--eight-rgb));
+    --seven-rgb: 84 65 255;
     --circle-left: #4755d0;
     --circle-right: #3a75ea;
     --circle-middle: #336B4C;
@@ -86,7 +77,7 @@
     --color-forth: var(--forth);
     --color-five: var(--five);
     --color-six: var(--six);
-    --color-eight: var(--eight);
+    --color-seven: var(--seven);
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
     --color-circle-middle: var(--circle-middle);
