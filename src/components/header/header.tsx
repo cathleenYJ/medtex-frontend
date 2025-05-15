@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { usePathname } from "next/navigation";
-import { Hamburger, SiteLogo } from "@icons";
+import { SiteLogo } from "@icons";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Splitter } from "@ui/splitter";
 import { NestMenu } from "@ui/nested-menu";
@@ -11,6 +11,7 @@ import { countries } from "@/data/countries";
 import { useAuth } from "@/hooks/use-auth";
 import type { MenuItemType } from "@/types";
 import { HeaderBtnsDesktop } from "./btn-group";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const menuItemsDesktop: MenuItemType[] = [
   {
@@ -80,8 +81,8 @@ const MobileMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => (
   <NestMenu
     className="sm:hidden inline-block"
     btn={
-      <div className="w-6 h-6 cursor-pointer">
-        <Hamburger />
+      <div className="w-6 h-6 cursor-pointer text-white">
+        <Bars3Icon />
       </div>
     }
     items={items}
@@ -96,8 +97,8 @@ const DesktopMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => (
           items={[item]}
           btn={
             <>
-              {item.label}
-              <ChevronDownIcon className="size-4 fill-white/60" />
+              <span className="text-white/80">{item.label}</span>
+              <ChevronDownIcon className="size-4 text-white/80" />
             </>
           }
         />
