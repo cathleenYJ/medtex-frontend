@@ -12,7 +12,7 @@ export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
       <CompanyWebsite href={buyer.company_website} />
     </div>
     <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
-    <div className="basis-full flex flex-wrap gap-[1.875rem] font-bold">
+    <div className="basis-full flex flex-wrap gap-4 sm:gap-[1.875rem] font-bold">
       <CompanyInfoSingle title="Established Since">{buyer.company_established_year}</CompanyInfoSingle>
       <BlockSplitter />
       <CompanyInfoSingle title="Annual revenue">{buyer.business_annual_revenue}</CompanyInfoSingle>
