@@ -45,9 +45,9 @@ export const ProfileHighlights: React.FC<{ buyer: BuyerData }> = ({}) => {
           </HighlightCard>
         ))}
       </Cards>
-      <Cards className="basis-full flex flex-row gap-5">
+      <Cards className="basis-full flex flex-row">
         {highlights2.map(({ icon, title, description }) => (
-          <Card key={title} className="bg-primary py-[1.875rem] sm:py-10 px-[1.875rem] sm:px-12 basis-full flex flex-wrap gap-y-[1.875rem]">
+          <Card key={title} className="bg-primary even:bg-linear-0 even:from-secondary/30 even:to-secondary/30 py-8 sm:py-[1.875rem] md:py-10 px-6 sm:px-[1.875rem] md:px-12 basis-full flex flex-wrap gap-y-4 sm:gap-y-[1.875rem]">
             <div className="sm:basis-1/2 basis-full flex gap-5">
               <div className="w-8 h-8">{icon}</div>
               <div className="text-tertiary text-xl font-medium">{title}</div>

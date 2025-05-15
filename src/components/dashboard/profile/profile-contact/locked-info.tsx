@@ -20,7 +20,7 @@ export const LockedInfo: React.FC = () => {
   }, []);
   return (
     <div className={clsx("basis-full sm:basis-(--1\\/2-basis-gap-30px) md:basis-(--1\\/2-basis-gap-60px) flex sm:flex-wrap lg:flex-nowrap gap-7 py-5 sm:py-[5.5625rem] ps-0 sm:ps-6 lg:ps-9 pe-0 sm:pe-6 relative", lock && "before:content-[''] before:absolute before:inset-0 before:backdrop-blur-md before:bg-five/10 before:rounded-xl")}>
-      <div className="w-20 sm:w-28 lg:w-36 mx-auto flex items-center">
+      <div className="w-20 sm:w-28 lg:w-36 mx-auto flex items-center shrink-0">
         <img className="w-full aspect-square object-cover rounded-lg" src={contact.buyer_photo} alt="" />
       </div>
       <div className="grow flex items-center sm:justify-center">

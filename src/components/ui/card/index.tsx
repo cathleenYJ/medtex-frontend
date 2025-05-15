@@ -5,5 +5,5 @@ export const Card: React.FC<{ className?: string; children?: React.ReactNode }> 
 };
 
 export const Cards: React.FC<{ grid?: boolean; className?: string; children?: React.ReactNode }> = ({ grid = false, className, children }) => {
-  return <div className={clsx("gap-4", grid ? "grid" : "flex flex-wrap", className)}>{children}</div>;
+  return <div className={clsx("sm:gap-4 gap-3", grid ? "grid" : "flex flex-wrap", className)}>{children}</div>;
 };

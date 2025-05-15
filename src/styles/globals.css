@@ -9,7 +9,6 @@
     --forth: #038360;
     --five: #daffe1;
     --six: #91fd8b;
-    --seven: #0079564D;
     --eight-rgb: 140 250 159;
     --eight: rgb(var(--eight-rgb));
     --btn-shadow: 0px 2px 16px 0px var(--btn-shadow-color);
@@ -53,8 +52,8 @@
     --forth: #038360;
     --five: #daffe1;
     --six: #91fd8b;
-    --seven: #0079564D;
-    --eight: #8CFA9F;
+    --eight-rgb: 140 250 159;
+    --eight: rgb(var(--eight-rgb));
     --circle-left: #6a8d89;
     --circle-right: #487c57;
     --circle-middle: #336B4C;
@@ -69,8 +68,8 @@
     --forth: #3f35bd;
     --five: #457ae5;
     --six: #ffffff;
-    --seven: #0079564D;
-    --eight: #8CFA9F;
+    --eight-rgb: 140 250 159;
+    --eight: rgb(var(--eight-rgb));
     --circle-left: #4755d0;
     --circle-right: #3a75ea;
     --circle-middle: #336B4C;
@@ -87,7 +86,6 @@
     --color-forth: var(--forth);
     --color-five: var(--five);
     --color-six: var(--six);
-    --color-seven: var(--seven);
     --color-eight: var(--eight);
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
