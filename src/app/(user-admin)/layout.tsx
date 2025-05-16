@@ -12,7 +12,7 @@ export default function UserAdminLayout({ children }: Readonly<{ children: React
     <SignedIn checkToken>
       <Header />
       <div>UserAdminLayout</div>
-      {children}
+      <div className="pt-32">{children}</div>
       <Footer />
     </SignedIn>
   );

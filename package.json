@@ -10,10 +10,18 @@
     "api": "npx json-server json-server/db.json --port 3001"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.17",
+    "@fullcalendar/daygrid": "^6.1.17",
+    "@fullcalendar/interaction": "^6.1.17",
+    "@fullcalendar/list": "^6.1.17",
+    "@fullcalendar/react": "^6.1.17",
+    "@fullcalendar/scrollgrid": "^6.1.17",
+    "@fullcalendar/timegrid": "^6.1.17",
     "@headlessui/react": "^2.2.1",
     "@heroicons/react": "^2.2.0",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "jotai": "^2.12.2",
     "js-cookie": "^3.0.5",
     "next": "15.3.0",

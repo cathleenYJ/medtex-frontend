@@ -13,7 +13,7 @@ export const UserAdmin: React.FC = () => {
     })();
   }, []);
   return userData ? (
-    <div>
+    <div className="text-white hidden">
       {userData.map((id) => (
         <div key={id}>User {id}</div>
       ))}
