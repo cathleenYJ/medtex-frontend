@@ -2,7 +2,7 @@
 
 import { clsx } from "clsx";
 import { Field, Input, Label } from "@headlessui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { clientFetch } from "@/data/client";
 import { setAuthToken } from "@/data/client/token.utils";
