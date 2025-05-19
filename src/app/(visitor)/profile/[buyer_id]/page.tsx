@@ -4,8 +4,8 @@ import { serverFetch } from "@/data/server";
 
 export default async function ProfilePage({ params }: { params: Promise<{ buyer_id: string }> }) {
   const { buyer_id } = await params;
-  const [buyer] = await serverFetch.buyers.data(Number(buyer_id));
-  if (!buyer) notFound();
+  const [buyer, ...rest] = await serverFetch.buyers.data(Number(buyer_id));
+  if (!buyer || rest.length > 0) notFound();
   return (
     <div className="-mt-32" data-theme={buyer.profile_theme}>
       <ProfileBanner buyer={buyer} />
