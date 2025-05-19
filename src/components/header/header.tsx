@@ -17,16 +17,18 @@ const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
+  const targetPage = pathname ? `?redirect=${encodeURIComponent(pathname)}` : "";
   const { unauthorize, isAuthorized } = useAuth();
   const signedInItem = {
     key: "sign-out",
     label: "登出",
     onClick: unauthorize,
   };
+
   const signedOutItem = {
     key: "sign-in",
     label: "登入 / 註冊",
-    href: `/sign-in?redirect=${pathname}`,
+    href: `/sign-in${targetPage}`,
   };
   return (
     <header className="flex flex-col gap-1 py-3 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
