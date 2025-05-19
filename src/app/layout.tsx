@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { Provider } from "jotai";
 import { ModalContainer } from "@/components/modals/view";
+import { Header } from "@/components/header/header";
 import { geistSans, geistMono } from "@/styles/font";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
@@ -14,7 +15,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={clsx(geistSans.variable, geistMono.variable, "relative antialiased bg-black min-h-screen overflow-x-hidden", "has-[[data-theme]]:bg-no-repeat has-[[data-theme]]:bg-(image:--bg-profile)")}>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Header />
+          <div className="pt-32">{children}</div>
+        </Provider>
         <ModalContainer />
       </body>
     </html>
