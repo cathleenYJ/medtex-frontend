@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { clientFetch } from "@/data/client";
-import { Loading } from "@ui/loading";
+import { LoadingBar } from "@ui/loading";
 
 export const UserAdmin: React.FC = () => {
   const [userData, setUserData] = useState<number[]>([]);
@@ -19,6 +19,6 @@ export const UserAdmin: React.FC = () => {
       ))}
     </div>
   ) : (
-    <Loading />
+    <LoadingBar />
   );
 };

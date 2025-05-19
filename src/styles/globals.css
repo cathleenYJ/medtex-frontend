@@ -55,4 +55,18 @@
     --breakpoint-lg: 80rem;
     /* 1440px */
     --breakpoint-xl: 90rem;
+    /* loading animation */
+    --animate-loading: loading 0.8s infinite linear;
+
+    @keyframes loading {
+
+        0%,
+        100% {
+            height: var(--h);
+        }
+
+        50% {
+            height: 0;
+        }
+    }
 }

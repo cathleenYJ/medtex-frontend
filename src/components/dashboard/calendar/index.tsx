@@ -4,24 +4,36 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
-import scrollgridPlugin from "@fullcalendar/scrollgrid";
 import interactionPlugin, { type DateClickArg } from "@fullcalendar/interaction";
 import { EventContent } from "./event-content";
+import { EventClickArg } from "@fullcalendar/core/index.js";
 
 export const B2bCalendar: React.FC = () => {
   const handleDateClick = (arg: DateClickArg) => {
-    console.log(arg);
+    const api = arg.view.calendar;
+    console.log(api);
+    api.addEvent({ start: arg.date, end: arg.date, allDay: true });
   };
+  const handleEventClick = (arg: EventClickArg) => {
+    const api = arg.view.calendar;
+    console.log(api);
+  };
+  const formatDate = (date: Date) => ({
+    year: date.getFullYear(),
+    month: date.getMonth() + 1,
+    day: date.getDate(),
+  });
+  console.log(formatDate(new Date()));
   return (
-    <div className="bg-white">
+    <div className="bg-white [&_.fc-license-message]:hidden max-w-7xl mx-auto">
       <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, listPlugin, scrollgridPlugin, interactionPlugin]}
+        plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         views={{
-          dayGridMonth: { buttonText: "month" },
-          timeGridWeek: { buttonText: "week" },
-          timeGridDay: { buttonText: "day" },
-          listWeek: { buttonText: "list" },
+          dayGridMonth: { buttonText: "month", eventClick: handleEventClick },
+          timeGridWeek: { buttonText: "week", eventClick: handleEventClick },
+          timeGridDay: { buttonText: "day", eventClick: handleEventClick },
+          listWeek: { buttonText: "list", eventClick: handleEventClick },
         }}
         headerToolbar={{
           left: "prev,next today",
@@ -29,8 +41,8 @@ export const B2bCalendar: React.FC = () => {
           right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
         }}
         events={[
-          { title: "event 1", date: "2025-05-01", editable: true },
-          { title: "event 2", date: "2025-05-02", editable: true },
+          { title: "event 1", start: "2025-05-16 14:41", end: "2025-05-16 15:41", editable: true },
+          { title: "event 2", start: "2025-05-16 14:41", end: "2025-05-16 15:41", editable: true },
         ]}
         eventContent={EventContent}
         dateClick={handleDateClick}

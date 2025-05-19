@@ -8,12 +8,12 @@ import { SiteLogo } from "@icons";
 import { ChevronDownIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import { Splitter } from "@ui/splitter";
 import { NestMenu } from "@ui/nested-menu";
-import { Loading } from "@ui/loading";
+import { Spinner } from "@ui/loading";
 import { useAuth } from "@/hooks/use-auth";
 import type { MenuItemType } from "@/types";
 import { menuItemsDesktop, menuItemsRest } from "./menu-items";
 
-const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.HeaderBtnsDesktop), { ssr: false, loading: () => <Loading /> });
+const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.HeaderBtnsDesktop), { ssr: false, loading: () => <Spinner /> });
 
 export const Header: React.FC = () => {
   const pathname = usePathname();

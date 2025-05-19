@@ -5,7 +5,7 @@ import { UserAdmin } from "@dashboard/user-admin";
 
 export default function AdminHome() {
   return (
-    <div className="home">
+    <div className="home px-5">
       <UserAdmin />
       <B2bCalendar />
     </div>

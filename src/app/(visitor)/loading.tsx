@@ -1,5 +1,5 @@
-import { Loading } from "@ui/loading";
+import { LoadingPage } from "@/pages/loading-page";
 
 export default function VisitorLoading() {
-  return <Loading />;
+  return <LoadingPage />;
 }

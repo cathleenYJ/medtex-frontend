@@ -1,7 +1,7 @@
 "use client";
 
-import { Loading } from "@ui/loading";
+import { LoadingPage } from "@/pages/loading-page";
 
 export default function UserAdminLoading() {
-  return <Loading />;
+  return <LoadingPage />;
 }
