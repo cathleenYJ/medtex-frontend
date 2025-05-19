@@ -1,7 +1,7 @@
 "use client";
 
-import { LoadingPage } from "@/pages/loading-page";
+import { LoadingBlock } from "@dashboard/loading-block";
 
 export default function UserAdminLoading() {
-  return <LoadingPage />;
+  return <LoadingBlock />;
 }

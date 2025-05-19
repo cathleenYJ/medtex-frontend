@@ -1,5 +1,5 @@
-import { LoadingPage } from "@/pages/loading-page";
+import { LoadingBlock } from "@dashboard/loading-block";
 
 export default function ResultLoading() {
-  return <LoadingPage />;
+  return <LoadingBlock />;
 }
