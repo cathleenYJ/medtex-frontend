@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./variables/flex-gap.css";
+@import "./variables/themes.css";
 
 
 :root {
@@ -26,62 +28,6 @@
         inset 0 -8px 5px rgb(var(--seven-rgb) / 0.4),
         inset 0 -12px 5px rgb(var(--seven-rgb) / 0.2),
         inset 0 -16px 5px rgb(var(--seven-rgb) / 0.1);
-    --basis-gap-4: 100% - var(--spacing) * 4;
-    --1\/2-basis-gap-4: calc(calc(var(--basis-gap-4) * 1) / 2);
-    --1\/3-basis-gap-4: calc(calc(var(--basis-gap-4) * 2) / 3);
-    --basis-gap-7: 100% - var(--spacing) * 7;
-    --1\/3-basis-gap-7: calc(calc(var(--basis-gap-7) * 2) / 3);
-    --basis-gap-60px: 100% - 60px;
-    --1\/2-basis-gap-60px: calc(calc(var(--basis-gap-60px) * 1) / 2);
-    --basis-gap-30px: 100% - 30px;
-    --1\/2-basis-gap-30px: calc(calc(var(--basis-gap-30px) * 1) / 2);
-    --basis-gap-overview: 100% - 61px;
-    --1\/2-basis-gap-overview: calc(calc(var(--basis-gap-overview) * 1) / 2);
-}
-
-:root:has([data-theme="green"]) {
-    --primary: #184743;
-    --secondary: #007956;
-    --tertiary: #9cff8d;
-    --forth: #038360;
-    --five: #daffe1;
-    --six: #91fd8b;
-    --seven-rgb: 140 250 159;
-    --circle-left: #6a8d89;
-    --circle-right: #487c57;
-    --circle-middle: #336B4C;
-    --profile-banner: url("/banner-green.png");
-    --btn-shadow-color: rgba(197, 233, 118, 0.6);
-}
-
-:root:has([data-theme="blue"]) {
-    --primary: #3c2e7e;
-    --secondary: #25166a;
-    --tertiary: #e2e2f8fd;
-    --forth: #3f35bd;
-    --five: #457ae5;
-    --six: #ffffff;
-    --seven-rgb: 84 65 255;
-    --circle-left: #4755d0;
-    --circle-right: #3a75ea;
-    --circle-middle: #336B4C;
-    --profile-banner: url("/banner-blue.png");
-    --btn-shadow-color: rgba(145, 118, 233, 0.6);
-}
-
-:root:has([data-theme="red"]) {
-    --primary: #184743;
-    --secondary: #007956;
-    --tertiary: #9cff8d;
-    --forth: #038360;
-    --five: #daffe1;
-    --six: #91fd8b;
-    --seven-rgb: 140 250 159;
-    --circle-left: #6a8d89;
-    --circle-right: #487c57;
-    --circle-middle: #336B4C;
-    --profile-banner: url("/banner-red.png");
-    --btn-shadow-color: rgba(197, 233, 118, 0.6);
 }
 
 @theme {
@@ -101,4 +47,12 @@
     --font-mono: var(--font-geist-mono);
     --shadow-btn: var(--btn-shadow);
     --profile-banner: var(--profile-banner);
+    /* 800px */
+    --breakpoint-sm: 50rem;
+    /* 1024px */
+    --breakpoint-md: 64rem;
+    /* 1280px */
+    --breakpoint-lg: 80rem;
+    /* 1440px */
+    --breakpoint-xl: 90rem;
 }
