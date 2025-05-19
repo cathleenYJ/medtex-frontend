@@ -25,7 +25,7 @@ export const NestMenu: React.FC<{ items: MenuItemType[]; btn: React.ReactNode; c
   );
 };
 
-const renderNestItems = (label: React.ReactNode, submenuVisible: boolean, subMenuToggle: (e: React.MouseEvent<HTMLButtonElement>) => void, close: () => void, href?: string, onClick?: () => void, items?: MenuItemType[]) => {
+const renderNestItems = (label: React.ReactNode, submenuVisible: boolean, subMenuToggle: (e: React.MouseEvent<HTMLButtonElement>) => void, close: () => void, href?: string | URL, onClick?: () => void, items?: MenuItemType[]) => {
   if (items) {
     return <ExpandBtn label={label} submenuVisible={submenuVisible} onClick={subMenuToggle} />;
   } else if (href) {
@@ -37,7 +37,7 @@ const renderNestItems = (label: React.ReactNode, submenuVisible: boolean, subMen
   }
 };
 
-type NestItemsProps = { label: React.ReactNode; href?: string; onClick?: () => void; items?: MenuItemType[] };
+type NestItemsProps = { label: React.ReactNode; href?: string | URL; onClick?: () => void; items?: MenuItemType[] };
 const NestItems: React.FC<NestItemsProps> = ({ label, href, onClick, items }) => {
   const [submenuVisible, setSubmenuVisible] = useState<boolean>(false);
   const subMenuToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -79,7 +79,7 @@ const ExpandBtn: React.FC<ExpandBtnProps> = ({ label, submenuVisible, onClick })
   );
 };
 
-type MenuLinkProps = { label: React.ReactNode; href: string; close: () => void };
+type MenuLinkProps = { label: React.ReactNode; href: string | URL; close: () => void };
 const MenuLink: React.FC<MenuLinkProps> = ({ label, href, close }) => (
   <Link href={href} onClick={close} className={clsx(...menuItemStyles)}>
     {label}
