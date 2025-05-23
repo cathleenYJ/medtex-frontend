@@ -7,7 +7,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ buyer_
   const [buyer, ...rest] = await serverFetch.buyers.data(Number(buyer_id));
   if (!buyer || rest.length > 0) notFound();
   return (
-    <div className="-mt-32" data-theme={buyer.profile_theme}>
+    <div className="sm:-mt-32" data-theme={buyer.profile_theme}>
       <ProfileBanner buyer={buyer} />
       <ProfileContainer>
         <ProfileOpportunities buyer={buyer} />

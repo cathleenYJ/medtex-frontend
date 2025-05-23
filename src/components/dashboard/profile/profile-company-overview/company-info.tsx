@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import { Tag } from "@ui/tag";
 import { BlockSplitter } from "@ui/splitter";
 import type { BuyerData } from "@/types";
+import Link from "next/link";
 
 export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
   <>
@@ -41,10 +42,10 @@ const CompanyLocation: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
 const CompanyWebsite: React.FC<{ href: string }> = ({ href }) => (
   <div className="w-full">
     <Tag className="sm:w-min w-full h-min text-center px-0 py-0">
-      <a className="flex gap-2.5 justify-between items-center w-full h-min px-5 py-3" href={href} target="_blank">
+      <Link className="flex gap-2.5 justify-between items-center w-full h-min px-5 py-3" href={href} target="_blank">
         {href.replace(/^http[s]?\:\/\//g, "")}
         <ArrowUpRightIcon className="w-4 h-4" />
-      </a>
+      </Link>
     </Tag>
   </div>
 );

@@ -10,6 +10,7 @@ import { Splitter } from "@ui/splitter";
 import { NestMenu } from "@ui/nested-menu";
 import { Spinner } from "@ui/loading";
 import { useAuth } from "@/hooks/use-auth";
+import { Routes } from "@/config/routes";
 import type { MenuItemType } from "@/types";
 import { menuItemsDesktop, menuItemsRest } from "./menu-items";
 
@@ -20,27 +21,28 @@ export const Header: React.FC = () => {
   const targetPage = pathname ? `?redirect=${encodeURIComponent(pathname)}` : "";
   const { unauthorize, isAuthorized } = useAuth();
   const signedInItem = {
-    key: "sign-out",
-    label: "登出",
+    key: "logout",
+    label: "Logout",
     onClick: unauthorize,
   };
-
   const signedOutItem = {
-    key: "sign-in",
-    label: "登入 / 註冊",
-    href: `/sign-in${targetPage}`,
+    key: Routes.auth.signIn,
+    label: "Login",
+    href: `${Routes.auth.signIn}${targetPage}`,
   };
   return (
     <header className="flex flex-col gap-1 py-3 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
       <div className="flex justify-between relative">
         <div className="flex items-end">
           <div className="h-full flex items-end py-1 w-full max-w-4 sm:max-w-44">
-            <Link href="/">
+            <Link href={Routes.public.home}>
               <SiteLogo />
             </Link>
           </div>
           <Splitter className="mx-3" />
-          <div className="h-full flex items-end text-white font-bold text-[0.9375rem] sm:text-base md:text-lg">Business Matchmaking</div>
+          <div className="h-full flex items-end text-white font-bold text-[0.9375rem] sm:text-base md:text-lg">
+            <Link href={Routes.public.home}>Business Matchmaking</Link>
+          </div>
         </div>
         <MobileMenu items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
         <HeaderBtnsDesktop item={isAuthorized ? signedInItem : signedOutItem} />

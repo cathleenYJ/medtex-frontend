@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
-  //   docker
+  /* config options here */
   output: "standalone",
 };
 

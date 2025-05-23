@@ -1,14 +1,18 @@
 "use client";
 
 import { atom, useAtom } from "jotai";
+import { useRouter } from "next/navigation";
 
-export type MODAL_VIEW = "SIGN_IN" | "ERROR";
-
-const modalAtom = atom({ open: false, view: "ADD_REVIEW_VIEW", message: "" });
+const modalAtom = atom({ open: false, message: "" });
 
 export const useModal = () => {
   const [modal, setModal] = useAtom(modalAtom);
-  const openModal = (view: MODAL_VIEW, message?: string) => setModal({ ...modal, view, message: message || "", open: true });
-  const closeModal = () => setModal({ ...modal, open: false });
+  const router = useRouter();
+  const openModal = (message: string = "") => setModal({ message, open: true });
+  const closeModal = async (back: boolean = false) => {
+    setModal({ ...modal, open: false });
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    back && router.back();
+  };
   return { ...modal, openModal, closeModal };
 };

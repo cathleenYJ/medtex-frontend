@@ -1,5 +1,5 @@
 import { LoadingBlock } from "@dashboard/loading-block";
 
-export default function VisitorLoading() {
+export default function Loading() {
   return <LoadingBlock />;
 }

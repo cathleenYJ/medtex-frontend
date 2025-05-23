@@ -28,6 +28,14 @@
         inset 0 -8px 5px rgb(var(--seven-rgb) / 0.4),
         inset 0 -12px 5px rgb(var(--seven-rgb) / 0.2),
         inset 0 -16px 5px rgb(var(--seven-rgb) / 0.1);
+    --forth: #fff;
+    --login-btn: #021212;
+    --circle-left: rgb(34 0 255 / 0.3);
+    --circle-right: rgb(0 208 184 / 0.5);
+    --bg-home:
+        radial-gradient(ellipse min(1024px, 100vw) min(1024px, 100vw) at 0 500px, var(--circle-left), transparent),
+        radial-gradient(ellipse min(600px, 100vw) min(600px, 100vw) at 100% 700px, var(--circle-right), transparent),
+        radial-gradient(ellipse 60% 600px at 35% 0, var(--circle-right), transparent);
 }
 
 @theme {
@@ -40,6 +48,7 @@
     --color-five: var(--five);
     --color-six: var(--six);
     --color-seven: var(--seven);
+    --color-login-btn: var(--login-btn);
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
     --color-circle-middle: var(--circle-middle);

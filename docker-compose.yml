@@ -3,7 +3,7 @@ services:
     container_name: next-app
     build:
       context: .
-      dockerfile: prod.Dockerfile
+      dockerfile: Dockerfile
       args:
         NEXT_PUBLIC_REST_API_ENDPOINT: http://192.168.1.50:4001
         NEXT_PUBLIC_REST_API_ENDPOINT_DATA: http://192.168.1.50:3001

@@ -12,17 +12,18 @@ export const LockedInfo: React.FC = () => {
   const { isAuthorized } = useAuth();
   const [lock, setLock] = useState<boolean>(true);
   const [contact, setContact] = useState<BuyerContact>(contactPlaceholder);
-  const unLock = async () => {
+  const unLockInfo = async () => {
     if (!lock || !isAuthorized) return;
     const res = await clientFetch.buyers.contact(1);
     setLock(false);
     setContact(res[0]);
   };
+  const lockInfo = () => {
+    setLock(true);
+    setContact(contactPlaceholder);
+  };
   useEffect(() => {
-    unLock();
-  }, []);
-  useEffect(() => {
-    !isAuthorized && setContact(contactPlaceholder);
+    isAuthorized ? unLockInfo() : lockInfo();
   }, [isAuthorized]);
   return (
     <div className={clsx("basis-full sm:basis-(--1\\/2-basis-gap-30px) md:basis-(--1\\/2-basis-gap-60px) flex sm:flex-wrap lg:flex-nowrap gap-7 py-5 sm:py-[5.5625rem] px-3 sm:px-6 lg:ps-9 relative", (lock || !isAuthorized) && "before:content-[''] before:absolute before:inset-0 before:backdrop-blur-md before:bg-five/10 before:rounded-xl")}>

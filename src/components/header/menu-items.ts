@@ -28,6 +28,7 @@ export const menuItemsRest: MenuItemType[] = [
       { key: "Profile_blue", label: "Profile blue", href: "/profile/2" },
       { key: "Profile_red", label: "Profile red", href: "/profile/3" },
       { key: "calendar", label: "calendar", href: "/admin" },
+      { key: "result", label: "result", href: "/result" },
     ],
   },
 ];

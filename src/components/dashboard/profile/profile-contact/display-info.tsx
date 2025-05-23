@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import { CustomButton } from "@ui/button";
 import { ContactBlock } from "./contact-block";
 import { headerSans } from "@/styles/font";
@@ -19,7 +20,9 @@ export const DisplayInfo: React.FC = () => {
         </div>
       </div>
       <div>
-        <CustomButton className="py-4 px-8 rounded-lg bg-five text-primary text-base md:text-2xl font-medium">Make Appointment →</CustomButton>
+        <CustomButton component={Link} href="/admin" className="py-4 px-8 rounded-lg bg-five text-primary text-base md:text-2xl font-medium">
+          Make Appointment →
+        </CustomButton>
       </div>
     </div>
   );

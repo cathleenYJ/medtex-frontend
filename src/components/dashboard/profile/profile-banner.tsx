@@ -3,12 +3,14 @@ import Link from "next/link";
 import { CustomButton } from "@ui/button";
 import type { BuyerData } from "@/types";
 import { headerSans } from "@/styles/font";
+import { Routes } from "@/config/routes";
+import { BannerContainer } from "@ui/banner-container";
 
 export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
-    <div className={clsx("pt-32 sm:pt-48 sm:pb-20 w-full bg-(image:--profile-banner) bg-no-repeat bg-cover bg-center", "relative before:content-[''] before:block before:sm:hidden before:absolute before:inset-0 before:backdrop-blur-lg before:bg-black/30")}>
-      <div className="mx-auto w-full max-w-7xl sm:px-10">
-        <div className="flex flex-wrap gap-10 px-4 sm:px-10 py-14 w-full max-w-4xl sm:backdrop-blur-lg sm:bg-black/30 sm:rounded-2xl relative">
+    <div className={clsx("sm:pt-32 sm:pb-20 w-full bg-(image:--profile-banner) bg-no-repeat bg-cover bg-center", "relative before:content-[''] before:block before:sm:hidden before:absolute before:inset-0 before:backdrop-blur-lg before:bg-black/30")}>
+      <BannerContainer>
+        <div className="flex flex-wrap gap-10 px-4 sm:px-10 pt-0 sm:pt-14 pb-14 w-full max-w-4xl sm:backdrop-blur-lg sm:bg-black/30 sm:rounded-2xl relative">
           <div className="flex flex-wrap gap-5 sm:gap-7 w-full text-white">
             <div className="w-full flex flex-wrap gap-2.5 sm:gap-5">
               <div className="flex items-center w-max sm:w-fit">
@@ -19,11 +21,11 @@ export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
             <div className={clsx("w-full text-[1.75rem] sm:text-[2rem] md:text-4xl", headerSans.variable)}>{buyer.promotion_text}</div>
             <div className="w-full text-base md:text-lg text-five">{buyer.company_description}</div>
           </div>
-          <CustomButton component={Link} href="/" className="px-8 py-4 bg-white border border-solid border-white/20 shadow-btn rounded-[0.5rem] font-medium sm:text-lg text-base text-primary">
+          <CustomButton component={Link} href={Routes.public.home} className="px-8 py-4 bg-white border border-solid border-white/20 shadow-btn rounded-[0.5rem] font-medium sm:text-lg text-base text-primary">
             Get in touch →
           </CustomButton>
         </div>
-      </div>
+      </BannerContainer>
     </div>
   );
 };

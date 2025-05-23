@@ -11,19 +11,16 @@ import { EventClickArg } from "@fullcalendar/core/index.js";
 export const B2bCalendar: React.FC = () => {
   const handleDateClick = (arg: DateClickArg) => {
     const api = arg.view.calendar;
-    console.log(api);
     api.addEvent({ start: arg.date, end: arg.date, allDay: true });
   };
   const handleEventClick = (arg: EventClickArg) => {
     const api = arg.view.calendar;
-    console.log(api);
   };
   const formatDate = (date: Date) => ({
     year: date.getFullYear(),
     month: date.getMonth() + 1,
     day: date.getDate(),
   });
-  console.log(formatDate(new Date()));
   return (
     <div className="bg-white [&_.fc-license-message]:hidden max-w-7xl mx-auto">
       <FullCalendar
