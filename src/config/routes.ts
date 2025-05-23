@@ -1,5 +1,3 @@
-import { profile } from "console";
-
 export const Routes = {
   auth: {
     signIn: "/sign-in",

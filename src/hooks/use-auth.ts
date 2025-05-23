@@ -38,21 +38,22 @@ export const useAuth = () => {
     removeAuthToken();
     pathname.startsWith(Routes.private.admin) && router.push(Routes.public.home);
   };
+  const checkAuth = async () => {
+    try {
+      authorize(await clientFetch.users.me());
+    } catch (error) {
+      if (isUnauthorized(error as AxiosError)) {
+        unauthorize();
+      } else {
+        throw error;
+      }
+    }
+  };
   return {
     isAuthorized,
     user,
     authorize,
     unauthorize,
-    checkAuth: async (router: AppRouterInstance, pathname: string | null, searchParams: ReadonlyURLSearchParams | null) => {
-      try {
-        authorize(await clientFetch.users.me());
-      } catch (error) {
-        if (isUnauthorized(error as AxiosError)) {
-          unauthorize();
-        } else {
-          throw error;
-        }
-      }
-    },
+    checkAuth,
   };
 };

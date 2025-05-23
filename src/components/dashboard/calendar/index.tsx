@@ -15,6 +15,7 @@ export const B2bCalendar: React.FC = () => {
   };
   const handleEventClick = (arg: EventClickArg) => {
     const api = arg.view.calendar;
+    formatDate(api.view.currentStart);
   };
   const formatDate = (date: Date) => ({
     year: date.getFullYear(),
