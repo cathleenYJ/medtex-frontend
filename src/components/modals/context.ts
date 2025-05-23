@@ -12,7 +12,7 @@ export const useModal = () => {
   const closeModal = async (back: boolean = false) => {
     setModal({ ...modal, open: false });
     await new Promise((resolve) => setTimeout(resolve, 300));
-    back && router.back();
+    modal.message.length === 0 && back && router.back();
   };
   return { ...modal, openModal, closeModal };
 };

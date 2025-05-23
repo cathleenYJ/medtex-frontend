@@ -17,7 +17,7 @@ export default function BuyerForm() {
     console.log(data, errors);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 p-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 p-4 bg-white">
       BuyerForm
       {fields.map(({ label, type, name, required, options }) => {
         switch (type) {

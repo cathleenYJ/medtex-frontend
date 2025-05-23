@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import { FieldError, Merge } from "react-hook-form";
 import Resizer from "react-image-file-resizer";
 import { useModal } from "@/components/modals/context";
-import { modal_views } from "@/components/modals/view";
 
 export type FileUploadProps = {
   label: string;
@@ -20,7 +19,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ label, type, formUpdate,
   const handleUploadedFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || !inputRef.current) return;
     const file = event.target.files[0];
-    if (!new RegExp(`${type}/`).test(file.type)) return openModal(modal_views.ERROR, "Invalid file type");
+    if (!new RegExp(`${type}/`).test(file.type)) return openModal("Invalid file type");
     const image = /svg$|webp$/g.test(file.name) ? file : await compress(file);
     setPreview(URL.createObjectURL(image));
     formUpdate(image);
