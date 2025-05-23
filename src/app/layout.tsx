@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { Suspense } from "react";
 import { Provider } from "jotai";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/header/header";
@@ -25,7 +26,9 @@ export default function RootLayout({ children, modal }: Readonly<{ children: Rea
     <html lang="en">
       <body className={clsx(geistSans.variable, geistMono.variable, "relative antialiased bg-black min-h-screen overflow-x-hidden bg-no-repeat has-[[data-home]]:bg-(image:--bg-home)", "has-[[data-theme]]:bg-(image:--bg-profile)")}>
         <Provider>
-          <Header />
+          <Suspense>
+            <Header />
+          </Suspense>
           <div className="sm:pt-32 pt-[4.375rem]">{children}</div>
           {modal}
         </Provider>

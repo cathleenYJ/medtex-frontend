@@ -3,16 +3,15 @@
 import { clsx } from "clsx";
 import { Field, Input, Label } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { clientFetch } from "@/data/client";
 import { setAuthToken } from "@/data/client/token.utils";
 import { useAuth } from "@/hooks/use-auth";
 import { CustomButton } from "@ui/button";
 
-export const SignIn: React.FC<{ onDismiss?: () => void }> = ({ onDismiss }) => {
-  const router = useRouter();
+type SignInProps = { onDismiss?: () => void };
+export const SignIn: React.FC<SignInProps> = ({ onDismiss }) => {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const { authorize, checkAuth } = useAuth();
   const [loading, setLoading] = useState<boolean>(false);
   const [account, setAccount] = useState<{ email: string; password: string }>({ email: "", password: "" });
