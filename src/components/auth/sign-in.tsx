@@ -29,7 +29,7 @@ export const SignIn: React.FC<{ onDismiss?: () => void }> = ({ onDismiss }) => {
   };
   const handleKeydown = async (e: React.KeyboardEvent) => e.key === "Enter" && (await handleLogin());
   useEffect(() => {
-    checkAuth(router, pathname, searchParams);
+    checkAuth();
   }, [pathname]);
   return (
     <div className="w-full max-w-md px-4 text-white">
