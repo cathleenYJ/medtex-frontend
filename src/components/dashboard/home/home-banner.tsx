@@ -14,7 +14,9 @@ export const HomeBanner: React.FC = () => {
         <div className="flex flex-col gap-10 content-between text-white grow">
           <div className="text-base sm:text-lg font-medium grow">We connect Taiwan’s biomedical innovators with trusted global buyers. Access pre-qualified leads and expand your global reach.</div>
           <div>
-            <ArrowDownCircle className="size-16" />
+            <a href="#">
+              <ArrowDownCircle className="size-16" />
+            </a>
           </div>
         </div>
       </div>
