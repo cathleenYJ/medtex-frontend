@@ -1,11 +1,10 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { Card } from "@ui/card";
 import { Hr } from "@ui/splitter";
-import { Spinner } from "@ui/loading";
-import { clientFetch } from "@/data/client";
-import { FilterOptionType } from "@/types";
+import type { FilterForm } from "@/types";
+import { CheckboxGroups } from "./filter-checkbox";
 
 export const FilterOptions: React.FC = () => {
   return (
@@ -14,40 +13,5 @@ export const FilterOptions: React.FC = () => {
       <Hr />
       <CheckboxGroups />
     </Card>
-  );
-};
-
-const CheckboxGroups: React.FC = () => {
-  const [filterOptions, setFilterOptions] = useState<FilterOptionType[]>([]);
-  useEffect(() => {
-    (async () => setFilterOptions(await clientFetch.basic.filterOptions()))();
-  }, []);
-  return filterOptions.length === 0 ? (
-    <Spinner />
-  ) : (
-    <>
-      {filterOptions.map(({ legend, options }, i) => (
-        <Fragment key={legend}>
-          <div className="flex flex-col gap-4">
-            <div className="text-white/80 font-medium">{legend}</div>
-            <div className="grid gap-5">
-              {["All", ...options].map((option) => (
-                <CheckOption key={option} option={option} />
-              ))}
-            </div>
-          </div>
-          {i !== filterOptions.length - 1 && <Hr />}
-        </Fragment>
-      ))}
-    </>
-  );
-};
-
-const CheckOption: React.FC<{ option: string }> = ({ option }) => {
-  return (
-    <label className="flex gap-1.5">
-      <input type="checkbox" />
-      <div className="text-white/70">{option}</div>
-    </label>
   );
 };
