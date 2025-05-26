@@ -1,7 +1,7 @@
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import { Tag } from "@ui/tag";
-import { BlockSplitter } from "@ui/splitter";
+import { Hr } from "@ui/splitter";
 import type { BuyerData } from "@/types";
 import Link from "next/link";
 
@@ -15,9 +15,9 @@ export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
     <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
     <div className="basis-full flex flex-wrap gap-4 sm:gap-[1.875rem] font-bold">
       <CompanyInfoSingle title="Established Since">{buyer.company_established_year}</CompanyInfoSingle>
-      <BlockSplitter />
+      <Hr className="sm:w-px sm:h-full" />
       <CompanyInfoSingle title="Annual revenue">{buyer.business_annual_revenue}</CompanyInfoSingle>
-      <BlockSplitter />
+      <Hr className="sm:w-px sm:h-full" />
       <CompanyInfoSingle title="Employees">{buyer.number_of_employees}</CompanyInfoSingle>
     </div>
   </>

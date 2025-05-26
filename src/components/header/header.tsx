@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 import { SiteLogo } from "@icons";
 import { ChevronDownIcon, Bars3Icon } from "@heroicons/react/24/solid";
-import { Splitter } from "@ui/splitter";
+import { Hr, Splitter } from "@ui/splitter";
 import { NestMenu } from "@ui/nested-menu";
 import { Spinner } from "@ui/loading";
 import { useAuth } from "@/hooks/use-auth";
@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
         <MobileMenu items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
         <HeaderBtnsDesktop item={isAuthorized ? signedInItem : signedOutItem} />
       </div>
-      <div className="my-2 h-px bg-white/20 -mx-5 sm:-mx-10"></div>
+      <Hr className="my-2 -mx-5 sm:-mx-10" />
       <DesktopMenu items={[...menuItemsDesktop, ...menuItemsRest]} />
     </header>
   );

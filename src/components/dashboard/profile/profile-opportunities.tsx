@@ -1,12 +1,12 @@
 import { Cooperation, MoneyBag, Discover } from "@icons";
 import { Tag } from "@ui/tag";
+import { Section } from "@ui/section";
 import type { BuyerData } from "@/types";
 import { ProfileCard } from "./profile-card";
-import { ProfileSection } from "./profile-section";
 
 export const ProfileOpportunities: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
-    <ProfileSection title="Opportunities">
+    <Section title="Opportunities">
       <ProfileCard className="w-max grow bg-secondary" icon={<Discover color="var(--six)" />} title={<span className="text-white/80">What we’re looking for?</span>}>
         <div className="flex flex-wrap gap-2.5">
           {buyer.purchasing_requirement.map((requirement) => (
@@ -27,6 +27,6 @@ export const ProfileOpportunities: React.FC<{ buyer: BuyerData }> = ({ buyer }) 
           <div className="text-primary text-sm sm:text-lg">Project‑based Negotiation</div>
         </div>
       </ProfileCard>
-    </ProfileSection>
+    </Section>
   );
 };

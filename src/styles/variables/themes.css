@@ -1,3 +1,31 @@
+:root {
+    --primary: #184743;
+    --forth: #fff;
+    --five: #8CD7BF;
+    --login-btn: #021212;
+    --circle-left: rgb(34 0 255 / 0.3);
+    --circle-right: rgb(0 208 184 / 0.5);
+    --filter-options: #252932;
+}
+
+[data-card-theme="a"] {
+    --card-text: #000;
+    --card-btn-bg: #006A5E;
+    --card-btn-text: #fff;
+}
+
+[data-card-theme="b"] {
+    --card-text: #fff;
+    --card-btn-bg: #fff;
+    --card-btn-text: #000;
+}
+
+[data-card-theme="c"] {
+    --card-text: #fff;
+    --card-btn-bg: #fff;
+    --card-btn-text: #00007F;
+}
+
 :root:has([data-theme="green"]) {
     --primary: #184743;
     --secondary: #007956;

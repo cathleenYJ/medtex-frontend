@@ -118,5 +118,19 @@
       "buyer_contact_location": "Malaysia, Singapore, Indonesia, Philippines",
       "buyer_photo": "/buyer_photo.png"
     }
+  ],
+  "filter_options": [
+    {
+      "legend": "Market Region",
+      "options": ["Middle East Region", "Asia Pacific", "Europe & Africa", "Americas"]
+    },
+    {
+      "legend": "Interested Area",
+      "options": ["Smart Hospital & IT Solutions", "Medical Displays", "Diagnostics & Laboratory", "Biopharmaceuticals", "Regenerative Medicine", "Medical Imaging", "Cosmetics & Health Supplements", "Medical Devices", "Health & Wellness", "Long Term Care & Rehab", "Medical Furniture", "Services"]
+    },
+    {
+      "legend": "Partnership Types",
+      "options": ["OEM/ODM", "Private Label Production", "Contract Manufacturing", "Product Development Partner", "Exclusive Distribution", "Product Distribution Franchise Brand Licensing", "Brand Licensing", "Sales Agent Partnership", "Regional Distributor", "Technology Transfer", "Joint R&D", "Regulatory Collaboration", "Market Expansion Partner", "Strategic Alliance"]
+    }
   ]
 }

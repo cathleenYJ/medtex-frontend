@@ -8,4 +8,5 @@ export const API_ENDPOINTS = {
   BUYERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/buyers`,
   BUYERS_CONTACT: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/buyers_contact`,
   SELLERS_DATA: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/sellers`,
+  FILTER_OPTIONS: `${ConfigValue.NEXT_PUBLIC_REST_API_ENDPOINT_DATA}/filter_options`,
 };

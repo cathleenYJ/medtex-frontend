@@ -1,12 +1,12 @@
 import { Card } from "@ui/card";
-import { ProfileSection } from "@dashboard/profile/profile-section";
+import { Section } from "@ui/section";
 import type { BuyerData } from "@/types";
 import { CompanyInfo } from "./company-info";
 import { BusinessAttributes } from "./business-attributes";
 
 export const ProfileCompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
-    <ProfileSection title="Company Overview">
+    <Section title="Company Overview">
       <Card className="bg-primary flex flex-wrap overflow-hidden">
         <div className="flex flex-wrap-reverse text-white">
           <div className="basis-full lg:basis-1/2 pt-8 sm:pt-[1.875rem] md:pt-[3.125rem] px-6 sm:px-[1.875rem] md:px-12 pb-9 flex flex-col gap-10">
@@ -18,6 +18,6 @@ export const ProfileCompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }
         </div>
         <BusinessAttributes buyer={buyer} />
       </Card>
-    </ProfileSection>
+    </Section>
   );
 };

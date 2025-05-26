@@ -1,9 +1,9 @@
+import { cookies } from "next/headers";
 import { AxiosInstance, AxiosRequestHeaders } from "axios";
 import { HttpMethod } from "../http-method";
 import { API_ENDPOINTS } from "../endpoints";
 import { AxiosServer } from "./axios-server";
-import type { AuthResponse, BuyerData, LoginUserInput, SellerData, User } from "@/types";
-import { cookies } from "next/headers";
+import type { AuthResponse, BuyerData, FilterOptionType, LoginUserInput, SellerData, User } from "@/types";
 
 class FetchData {
   private method: HttpMethod;
@@ -35,6 +35,9 @@ class FetchData {
   };
   sellers = {
     data: (id?: number) => this.method.get<SellerData[]>(`${API_ENDPOINTS.SELLERS_DATA}${id ? `?id=${id}` : ""}`),
+  };
+  basic = {
+    filterOptions: () => this.method.get<FilterOptionType[]>(API_ENDPOINTS.FILTER_OPTIONS),
   };
 }
 export const serverFetch = new FetchData(AxiosServer);

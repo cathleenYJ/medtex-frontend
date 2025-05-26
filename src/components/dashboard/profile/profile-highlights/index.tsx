@@ -1,5 +1,5 @@
-import { ProfileSection } from "@dashboard/profile/profile-section";
 import { Card, Cards } from "@ui/card";
+import { Section } from "@ui/section";
 import { Flag, Market, Target } from "@icons";
 import type { BuyerData } from "@/types";
 import { HighlightCard } from "./highlight-card";
@@ -38,15 +38,15 @@ const highlights2 = [
 
 export const ProfileHighlights: React.FC<{ buyer: BuyerData }> = ({}) => {
   return (
-    <ProfileSection title="Company Highlights" className="before:absolute before:-z-10 before:content-[''] before:block before:w-[120vw] before:left-1/2 before:-translate-x-1/2 before:h-96 before:rounded-b-[100%] before:border-b-2 before:border-white before:shadow-(--bg-line) before:bg-gradient-to-t before:from-seven before:to-70% before:to-seven/0">
-      <Cards className="basis-full flex flex-wrap">
+    <Section title="Company Highlights" className="before:absolute before:-z-10 before:content-[''] before:block before:w-[120vw] before:left-1/2 before:-translate-x-1/2 before:h-96 before:rounded-b-[100%] before:border-b-2 before:border-white before:shadow-(--bg-line) before:bg-gradient-to-t before:from-seven before:to-70% before:to-seven/0">
+      <Cards className="basis-full gap-3 sm:gap-4">
         {highlights1.map(({ title, description }, i) => (
           <HighlightCard key={title} title={title} number={i + 1}>
             {description}
           </HighlightCard>
         ))}
       </Cards>
-      <Cards className="basis-full flex flex-row">
+      <Cards className="basis-full gap-3 sm:gap-4 flex-row">
         {highlights2.map(({ icon, title, description }) => (
           <Card key={title} className="bg-primary even:bg-linear-0 even:from-secondary/30 even:to-secondary/30 py-8 sm:py-[1.875rem] md:py-10 px-6 sm:px-[1.875rem] md:px-12 basis-full flex flex-wrap gap-y-4 sm:gap-y-[1.875rem]">
             <div className="sm:basis-1/2 basis-full flex gap-5">
@@ -57,6 +57,6 @@ export const ProfileHighlights: React.FC<{ buyer: BuyerData }> = ({}) => {
           </Card>
         ))}
       </Cards>
-    </ProfileSection>
+    </Section>
   );
 };
