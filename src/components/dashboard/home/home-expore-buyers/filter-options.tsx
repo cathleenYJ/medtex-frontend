@@ -1,26 +1,30 @@
 "use client";
 
-import { Fragment, Suspense, use } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Card } from "@ui/card";
 import { Hr } from "@ui/splitter";
 import { Spinner } from "@ui/loading";
 import { clientFetch } from "@/data/client";
+import { FilterOptionType } from "@/types";
 
 export const FilterOptions: React.FC = () => {
   return (
     <Card className="basis-full sm:basis-(--1\/3-basis-gap-30px) bg-filter-options px-6 py-7 flex flex-col gap-6">
       <div className="text-white text-xl font-medium">Filter Option</div>
       <Hr />
-      <Suspense fallback={<Spinner />}>
-        <CheckboxGroups />
-      </Suspense>
+      <CheckboxGroups />
     </Card>
   );
 };
 
 const CheckboxGroups: React.FC = () => {
-  const filterOptions = use(clientFetch.basic.filterOptions());
-  return (
+  const [filterOptions, setFilterOptions] = useState<FilterOptionType[]>([]);
+  useEffect(() => {
+    (async () => setFilterOptions(await clientFetch.basic.filterOptions()))();
+  }, []);
+  return filterOptions.length === 0 ? (
+    <Spinner />
+  ) : (
     <>
       {filterOptions.map(({ legend, options }, i) => (
         <Fragment key={legend}>
