@@ -2,36 +2,11 @@ import clsx from "clsx";
 import { CustomButton } from "@ui/button";
 import { Card } from "@ui/card";
 import { Section } from "@ui/section";
+import { serverFetch } from "@/data/server";
+import type { RecommandedItem } from "@/types";
 
-type RecommandedItem = { position?: "top" | "bottom" | "center"; theme: "a" | "b" | "c"; image?: string; name: string; date?: string };
-const data: RecommandedItem[] = [
-  {
-    position: "top",
-    theme: "a",
-    image: "/product1.png",
-    name: "Microbiology Consumables",
-  },
-  {
-    position: "top",
-    theme: "b",
-    image: "/product2.png",
-    name: "Diagnostic Imaging Equipment",
-  },
-  {
-    position: "bottom",
-    theme: "a",
-    image: "/product3.png",
-    name: "Da Vinci Surgical Instruments",
-  },
-  {
-    position: "center",
-    theme: "c",
-    name: "2025\nIBMI Caner Medicines\nOnline Live Conference",
-    date: "Aug 19, 19:00-21:00",
-  },
-];
-
-export const HomeRecommended: React.FC = () => {
+export const HomeRecommended: React.FC = async () => {
+  const data = await serverFetch.basic.recommended();
   return (
     <Section title="Recommended">
       {data.map((props) => (
