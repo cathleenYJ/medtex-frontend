@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmitHandler, useForm } from "react-hook-form";
-import { CustomInput, CustomSelect, CustomCheckbox, FileUpload } from "@ui/form";
+import { Input, Select, Checkbox, FileUpload } from "@ui/form";
 import { fields } from "./buyer-fields";
 import type { BuyerForm } from "./buyer-fields";
 
@@ -24,11 +24,11 @@ export default function BuyerForm() {
           case "image":
             return <FileUpload key={name} label={label} type={type} formUpdate={(value: File) => setValue(name, value)} error={errors[name]} />;
           case "select":
-            return <CustomSelect key={name} label={label} formUpdate={register(name, { required })} error={errors[name]} options={options || []} />;
+            return <Select key={name} label={label} formUpdate={register(name, { required })} error={errors[name]} options={options || []} />;
           case "checkbox":
-            return <CustomCheckbox key={name} label={label} formUpdate={register(name, { required })} error={errors[name]} options={options || []} current={watch(name) as string[]} />;
+            return <Checkbox key={name} label={label} formUpdate={register(name, { required })} error={errors[name]} options={options || []} current={watch(name) as string[]} />;
           default:
-            return <CustomInput key={name} label={label} type={type} formUpdate={register(name, { required })} error={errors[name]} />;
+            return <Input key={name} label={label} type={type} formUpdate={register(name, { required })} error={errors[name]} />;
         }
       })}
       <input className="mt-2 mx-auto w-3xs block rounded-lg border-none bg-black/5 px-3 py-1.5 text-sm/6 text-black" type="submit" />

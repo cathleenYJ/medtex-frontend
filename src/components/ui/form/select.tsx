@@ -7,7 +7,7 @@ export type CustomSelectProps = {
   error: FieldError | Merge<FieldError, (FieldError | undefined)[]> | undefined;
   options: string[];
 };
-export const CustomSelect: React.FC<CustomSelectProps> = ({ label, formUpdate, error, options }) => {
+export const Select: React.FC<CustomSelectProps> = ({ label, formUpdate, error, options }) => {
   return (
     <fieldset>
       <legend>{label}</legend>

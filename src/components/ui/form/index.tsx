@@ -1,4 +1,4 @@
-export * from "./custom-checkbox";
-export * from "./custom-input";
-export * from "./custom-select";
+export * from "./checkbox";
+export * from "./input";
+export * from "./select";
 export * from "./file-upload";
