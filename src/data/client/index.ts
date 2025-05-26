@@ -2,7 +2,7 @@ import { AxiosInstance } from "axios";
 import { HttpMethod } from "../http-method";
 import { API_ENDPOINTS } from "../endpoints";
 import { AxiosClient } from "./axios-client";
-import type { AuthResponse, BuyerContact, BuyerData, FilterOptionType, LoginUserInput, SellerData, User } from "@/types";
+import type { AuthResponse, BuyerContact, BuyerData, FilterOptionType, LoginUserInput, RecommandedItem, SellerData, User } from "@/types";
 
 class FetchData {
   private method: HttpMethod;
@@ -24,6 +24,7 @@ class FetchData {
   };
   basic = {
     filterOptions: () => this.method.get<FilterOptionType[]>(API_ENDPOINTS.FILTER_OPTIONS),
+    recommended: () => this.method.get<RecommandedItem[]>(API_ENDPOINTS.RECOMMENDED),
   };
 }
 export const clientFetch = new FetchData(AxiosClient);

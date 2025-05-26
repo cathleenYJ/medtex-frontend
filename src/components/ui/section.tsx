@@ -2,10 +2,10 @@ import clsx from "clsx";
 import { Cards } from "@ui/card";
 import { SectionTitle } from "@ui/title";
 
-export const Section: React.FC<{ className?: string; title?: string; children?: React.ReactNode }> = ({ className, title, children }) => (
+export const Section: React.FC<{ className?: string; childrenClassName?: string; title?: string; children?: React.ReactNode }> = ({ className, childrenClassName, title, children }) => (
   <SectionBlock className={className}>
     <SectionTitle className="font-light px-2.5">{title}</SectionTitle>
-    <Cards className="gap-3 sm:gap-4">{children}</Cards>
+    <Cards className={childrenClassName || "gap-3 sm:gap-4"}>{children}</Cards>
   </SectionBlock>
 );
 

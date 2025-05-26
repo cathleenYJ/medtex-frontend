@@ -132,5 +132,31 @@
       "legend": "Partnership Types",
       "options": ["OEM/ODM", "Private Label Production", "Contract Manufacturing", "Product Development Partner", "Exclusive Distribution", "Product Distribution Franchise Brand Licensing", "Brand Licensing", "Sales Agent Partnership", "Regional Distributor", "Technology Transfer", "Joint R&D", "Regulatory Collaboration", "Market Expansion Partner", "Strategic Alliance"]
     }
+  ],
+  "recommended": [
+    {
+      "position": "top",
+      "theme": "a",
+      "image": "/product1.png",
+      "name": "Microbiology Consumables"
+    },
+    {
+      "position": "top",
+      "theme": "b",
+      "image": "/product2.png",
+      "name": "Diagnostic Imaging Equipment"
+    },
+    {
+      "position": "bottom",
+      "theme": "a",
+      "image": "/product3.png",
+      "name": "Da Vinci Surgical Instruments"
+    },
+    {
+      "position": "center",
+      "theme": "c",
+      "name": "2025\nIBMI Caner Medicines\nOnline Live Conference",
+      "date": "Aug 19, 19:00-21:00"
+    }
   ]
 }
