@@ -1,4 +1,4 @@
-import { Card, Cards } from "@ui/card";
+import { Cards } from "@ui/card";
 import { Section } from "@ui/section";
 import { FilterOptions } from "./filter-options";
 
