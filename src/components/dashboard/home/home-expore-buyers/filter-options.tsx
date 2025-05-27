@@ -1,9 +1,7 @@
 "use client";
 
-import { useForm } from "react-hook-form";
 import { Card } from "@ui/card";
 import { Hr } from "@ui/splitter";
-import type { FilterForm } from "@/types";
 import { CheckboxGroups } from "./filter-checkbox";
 
 export const FilterOptions: React.FC = () => {
