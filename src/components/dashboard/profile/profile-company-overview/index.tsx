@@ -1,8 +1,8 @@
 import { Card } from "@ui/card";
 import { Section } from "@ui/section";
+import { BusinessAttributes } from "@dashboard/business-attributes";
 import type { BuyerData } from "@/types";
 import { CompanyInfo } from "./company-info";
-import { BusinessAttributes } from "./business-attributes";
 
 export const ProfileCompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
@@ -16,7 +16,7 @@ export const ProfileCompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }
             <img className="w-full h-full object-cover" src={buyer.company_overview} alt="" />
           </div>
         </div>
-        <BusinessAttributes buyer={buyer} />
+        <BusinessAttributes business_attributes={buyer.business_attributes} business_nature={buyer.business_nature} />
       </Card>
     </Section>
   );

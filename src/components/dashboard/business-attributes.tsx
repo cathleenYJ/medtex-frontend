@@ -1,12 +1,11 @@
 import { Tag } from "@ui/tag";
 import { Hr } from "@ui/splitter";
-import type { BuyerData } from "@/types";
 
-export const BusinessAttributes: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
+export const BusinessAttributes: React.FC<{ business_attributes: string[]; business_nature: string[] }> = ({ business_attributes, business_nature }) => (
   <div className="basis-full flex flex-wrap gap-[1.875rem] px-6 sm:px-[1.875rem] md:px-12 pt-8 sm:pt-[1.875rem] pb-8 sm:pb-[1.875rem] md:pb-10 bg-secondary/30">
-    <BusinessAttributesSingle title="Business Attribute" attrs={buyer.business_attributes} />
+    <BusinessAttributesSingle title="Business Attribute" attrs={business_attributes} />
     <Hr className="sm:w-px sm:h-full" />
-    <BusinessAttributesSingle title="Business Nature" attrs={buyer.business_nature} />
+    <BusinessAttributesSingle title="Business Nature" attrs={business_nature} />
   </div>
 );
 

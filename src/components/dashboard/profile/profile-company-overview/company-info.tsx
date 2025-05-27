@@ -1,15 +1,16 @@
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import { Tag } from "@ui/tag";
 import { Hr } from "@ui/splitter";
+import { CompanyLogo } from "@dashboard/company-logo";
+import { CompanyLocation } from "@dashboard/company-location";
 import type { BuyerData } from "@/types";
-import Link from "next/link";
 
 export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
   <>
     <div className="flex flex-wrap gap-5">
       <CompanyLogo src={buyer.company_logo} alt="logo" />
-      <CompanyLocation buyer={buyer} />
+      <CompanyLocation company_name={buyer.company_name} company_location={buyer.company_location} />
       <CompanyWebsite href={buyer.company_website} />
     </div>
     <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
@@ -21,22 +22,6 @@ export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
       <CompanyInfoSingle title="Employees">{buyer.number_of_employees}</CompanyInfoSingle>
     </div>
   </>
-);
-
-const CompanyLogo: React.FC<{ src: string; alt?: string }> = ({ src, alt }) => (
-  <div className="flex items-center max-w-36">
-    <img src={src} alt={alt} />
-  </div>
-);
-
-const CompanyLocation: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
-  <div className="flex flex-col gap-1 w-max justify-between">
-    <div className="text-xl sm:text-2xl font-semibold">{buyer.company_name}</div>
-    <div className="flex gap-1 items-center">
-      <MapPinIcon className="w-4 h-4" />
-      {buyer.company_location}
-    </div>
-  </div>
 );
 
 const CompanyWebsite: React.FC<{ href: string }> = ({ href }) => (
