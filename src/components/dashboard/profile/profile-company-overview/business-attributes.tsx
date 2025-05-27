@@ -11,7 +11,7 @@ export const BusinessAttributes: React.FC<{ buyer: BuyerData }> = ({ buyer }) =>
 );
 
 const BusinessAttributesSingle: React.FC<{ title: string; attrs: string[] }> = ({ title, attrs }) => (
-  <div className="basis-full sm:basis-(--1\/2-basis-gap-overview) flex flex-col gap-5">
+  <div className="basis-full sm:basis-(--1-2-basis-gap-overview) flex flex-col gap-5">
     <div className="text-white/80 font-medium text-sm sm:text-base">{title}</div>
     <div>
       {attrs.map((attr) => (

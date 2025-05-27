@@ -26,7 +26,7 @@ export const LockedInfo: React.FC = () => {
     isAuthorized ? unLockInfo() : lockInfo();
   }, [isAuthorized]);
   return (
-    <div className={clsx("basis-full sm:basis-(--1\\/2-basis-gap-30px) md:basis-(--1\\/2-basis-gap-60px) flex sm:flex-wrap lg:flex-nowrap gap-7 py-5 sm:py-[5.5625rem] px-3 sm:px-6 lg:ps-9 relative", (lock || !isAuthorized) && "before:content-[''] before:absolute before:inset-0 before:backdrop-blur-md before:bg-five/10 before:rounded-xl")}>
+    <div className={clsx("basis-full sm:basis-(--1-2-basis-gap-30px) md:basis-(--1-2-basis-gap-60px) flex sm:flex-wrap lg:flex-nowrap gap-7 py-5 sm:py-[5.5625rem] px-3 sm:px-6 lg:ps-9 relative", (lock || !isAuthorized) && "before:content-[''] before:absolute before:inset-0 before:backdrop-blur-md before:bg-five/10 before:rounded-xl")}>
       <div className="w-20 sm:w-28 lg:w-36 mx-auto flex items-center shrink-0">
         <img className="w-full aspect-square object-cover rounded-lg" src={contact.buyer_photo} alt="buyer photo" />
       </div>
