@@ -9,8 +9,8 @@ import type { FilterForm, FilterOptionType } from "@/types";
 
 export const CheckboxGroups: React.FC = () => {
   const { register, watch, setValue, subscribe } = useForm<FilterForm>();
-  const onChange = async ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(name, watch(name));
+  const onChange = async ({ target: { name } }: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(name, watch(name), setValue, subscribe);
   };
   const [filterOptions, setFilterOptions] = useState<FilterOptionType[]>([]);
   useEffect(() => {
@@ -60,7 +60,7 @@ type CheckOptionProps = CheckboxGroupProps<FilterForm> & { option: string };
 const CheckOption: React.FC<CheckOptionProps> = ({ legend, option, register, onChange }) => {
   return (
     <label className="flex gap-1.5 select-none">
-      <input type="checkbox" value={option} {...register(legend, { onChange })} />
+      <input className="bg-white block" type="checkbox" value={option} {...register(legend, { onChange })} />
       <div className="text-white/70">{option}</div>
     </label>
   );
