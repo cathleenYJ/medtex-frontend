@@ -21,7 +21,7 @@ export const HomeBanner: React.FC = () => {
         </div>
       </div>
       <div className="basis-full sm:basis-(--1-2-basis-gap-30px)">
-        <img className="w-full h-full object-cover rounded-[1.25rem]" src="/home-banner-event.png" alt="" />
+        <img className="size-full object-cover rounded-[1.25rem]" src="/home-banner-event.png" alt="" />
       </div>
     </BannerContainer>
   );

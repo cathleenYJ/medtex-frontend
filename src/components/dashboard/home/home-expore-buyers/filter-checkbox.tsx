@@ -1,18 +1,25 @@
 import clsx from "clsx";
 import { Fragment, useEffect, useState } from "react";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { Hr } from "@ui/splitter";
 import { Spinner } from "@ui/loading";
 import { clientFetch } from "@/data/client";
 import type { FilterForm, FilterOptionType } from "@/types";
+import { Checkbox } from "@ui/form";
 
 export const CheckboxGroups: React.FC = () => {
-  const { register, watch, setValue, subscribe } = useForm<FilterForm>();
-  const onChange = async ({ target: { name } }: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(name, watch(name), setValue, subscribe);
-  };
   const [filterOptions, setFilterOptions] = useState<FilterOptionType[]>([]);
+  const { register, watch, setValue } = useForm<FilterForm>();
+  const onChange = async ({ target: { name, value, checked } }: React.ChangeEvent<HTMLInputElement>) => {
+    const allOptions = filterOptions.find(({ legend }) => legend === name)?.options || [];
+    const selected = watch(name);
+    const allSelected = allOptions.every((option) => selected.includes(option));
+    // 當 All 選擇時,將所有選項都加入，反之將所有選項都移除
+    // 當 所有其他選項都被選擇時，將 All 選項加入
+    // 當 任一其他選項不被選擇時，將 All 選項移除
+    setValue(name, allSelected || value === "All" ? (checked ? ["All", ...allOptions] : []) : selected.filter((option) => option !== "All"));
+  };
   useEffect(() => {
     (async () => setFilterOptions(await clientFetch.basic.filterOptions()))();
   }, []);
@@ -48,20 +55,10 @@ const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: string
       <div className={clsx("grid transition-[grid-template-rows] duration-400", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
         <div className="overflow-hidden flex flex-col gap-5">
           {["All", ...options].map((option) => (
-            <CheckOption key={option} option={option} legend={legend} register={register} onChange={onChange} />
+            <Checkbox key={option} option={option} legend={legend} register={register} onChange={onChange} />
           ))}
         </div>
       </div>
     </div>
-  );
-};
-
-type CheckOptionProps = CheckboxGroupProps<FilterForm> & { option: string };
-const CheckOption: React.FC<CheckOptionProps> = ({ legend, option, register, onChange }) => {
-  return (
-    <label className="flex gap-1.5 select-none">
-      <input className="bg-white block" type="checkbox" value={option} {...register(legend, { onChange })} />
-      <div className="text-white/70">{option}</div>
-    </label>
   );
 };

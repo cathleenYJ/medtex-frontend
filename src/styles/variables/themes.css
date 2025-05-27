@@ -6,6 +6,8 @@
     --circle-left: rgb(34 0 255 / 0.3);
     --circle-right: rgb(0 208 184 / 0.5);
     --filter-options: #252932;
+    --checkbox-border: #C1C5C6;
+    --checkbox-bg: #3E424B;
 }
 
 [data-card-theme="a"] {

@@ -1,7 +1,7 @@
 "use client";
 
-import { SubmitHandler, useForm } from "react-hook-form";
-import { Input, Select, Checkbox, FileUpload } from "@ui/form";
+import { Path, SubmitHandler, useForm } from "react-hook-form";
+import { Input, Select, Checkboxes, FileUpload } from "@ui/form";
 import { fields } from "./buyer-fields";
 import type { BuyerForm } from "./buyer-fields";
 
@@ -26,7 +26,7 @@ export default function BuyerForm() {
           case "select":
             return <Select key={name} label={label} formUpdate={register(name, { required })} error={errors[name]} options={options || []} />;
           case "checkbox":
-            return <Checkbox key={name} label={label} formUpdate={register(name, { required })} error={errors[name]} options={options || []} current={watch(name) as string[]} />;
+            return <Checkboxes key={name} legend={label as Path<BuyerForm>} register={register} error={errors[name]} options={options || []} current={watch(name) as string[]} />;
           default:
             return <Input key={name} label={label} type={type} formUpdate={register(name, { required })} error={errors[name]} />;
         }

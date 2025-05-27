@@ -135,24 +135,28 @@
   ],
   "recommended": [
     {
+      "id": 0,
       "position": "top",
       "theme": "a",
       "image": "/product1.png",
       "name": "Microbiology Consumables"
     },
     {
+      "id": 1,
       "position": "top",
       "theme": "b",
       "image": "/product2.png",
       "name": "Diagnostic Imaging Equipment"
     },
     {
+      "id": 2,
       "position": "bottom",
       "theme": "a",
       "image": "/product3.png",
       "name": "Da Vinci Surgical Instruments"
     },
     {
+      "id": 3,
       "position": "center",
       "theme": "c",
       "name": "2025\nIBMI Caner Medicines\nOnline Live Conference",

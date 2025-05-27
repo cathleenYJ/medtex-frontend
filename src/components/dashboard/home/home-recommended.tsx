@@ -10,7 +10,7 @@ export const HomeRecommended: React.FC = async () => {
   return (
     <Section title="Recommended">
       {data.map((props) => (
-        <RecommendedCard key={props.name} {...props} />
+        <RecommendedCard key={`recommended-${props.id}`} {...props} />
       ))}
     </Section>
   );
