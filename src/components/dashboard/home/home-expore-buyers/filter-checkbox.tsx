@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Fragment, useEffect, useState } from "react";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
-import { ChevronDownIcon, CheckIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Hr } from "@ui/splitter";
 import { Spinner } from "@ui/loading";
 import { clientFetch } from "@/data/client";
@@ -10,7 +10,7 @@ import { Checkbox } from "@ui/form";
 
 export const CheckboxGroups: React.FC = () => {
   const [filterOptions, setFilterOptions] = useState<FilterOptionType[]>([]);
-  const { register, watch, setValue } = useForm<FilterForm>();
+  const { register, watch, setValue } = useForm<FilterForm>({});
   const onChange = async ({ target: { name, value, checked } }: React.ChangeEvent<HTMLInputElement>) => {
     const allOptions = filterOptions.find(({ legend }) => legend === name)?.options || [];
     const selected = watch(name);
@@ -45,8 +45,8 @@ type CheckboxGroupProps<T extends FieldValues> = {
 const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: string[] }> = ({ legend, options, register, onChange }) => {
   const [open, setOpen] = useState<boolean>(true);
   return (
-    <div className="flex flex-col gap-4 bg-inherit">
-      <div className="sticky top-[calc(var(--text-xl)_*1.75_+_var(--spacing)_*_4.5)] bg-inherit">
+    <div className="bg-inherit">
+      <div className="sticky top-[calc(var(--text-xl)_*1.75_+_var(--spacing)_*_4.5)] bg-gradient-to-b from-filter-options via-filter-options via-60% to-transparent pb-5">
         <div className="text-white/80 font-medium flex justify-between items-center cursor-pointer" onClick={() => setOpen((prev) => !prev)}>
           {legend}
           <div className="size-5 bg-white/6 rounded-sm">
@@ -55,7 +55,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: string
         </div>
       </div>
       <div className={clsx("grid transition-[grid-template-rows] duration-400", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-        <div className="overflow-hidden flex flex-col gap-5">
+        <div className="overflow-hidden flex md:flex-col gap-5 flex-wrap md:flex-nowrap">
           {["All", ...options].map((option) => (
             <Checkbox key={`${legend}-${option}`} option={option} legend={legend} register={register} onChange={onChange} />
           ))}

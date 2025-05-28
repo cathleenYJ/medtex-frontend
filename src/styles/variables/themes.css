@@ -1,8 +1,12 @@
 :root {
-    --primary: #184743;
-    --forth: #fff;
-    --five: #8CD7BF;
-    --login-btn: #021212;
+    --b2b-bg: #021212;
+    --b2b-lv1: #DAFFE1;
+    --b2b-lv2: #91FD8B;
+    --b2b-lv3: #50AC6A;
+    --b2b-lv4: #007956;
+    --b2b-lv5: #0D564B;
+    --b2b-lv6: #184743;
+    --appointment-btn: #FFE500;
     --circle-left: rgb(34 0 255 / 0.3);
     --circle-right: rgb(0 208 184 / 0.5);
     --filter-options: #252932;
@@ -45,49 +49,46 @@
 }
 
 :root:has([data-theme="green"]) {
-    --primary: #184743;
-    --secondary: #007956;
-    --tertiary: #9cff8d;
-    --forth: #038360;
-    --five: #daffe1;
-    --six: #91fd8b;
-    --seven-rgb: 140 250 159;
-    --login-btn: #DAFFE1;
+    --b2b-lv1: #DAFFE1;
+    --b2b-lv2: #91FD8B;
+    --b2b-lv3: #50AC6A;
+    --b2b-lv4: #007956;
+    --b2b-lv5: #0D564B;
+    --b2b-lv6: #184743;
+    --highlight-start: 140 250 159;
+    --highlight-end: 140 250 159;
     --circle-left: #6a8d89;
     --circle-right: #487c57;
-    --circle-middle: #336B4C;
     --profile-banner: url("/banner-green.png");
     --btn-shadow-color: rgba(197, 233, 118, 0.6);
 }
 
 :root:has([data-theme="blue"]) {
-    --primary: #3c2e7e;
-    --secondary: #25166a;
-    --tertiary: #e2e2f8fd;
-    --forth: #3f35bd;
-    --five: #457ae5;
-    --six: #ffffff;
-    --seven-rgb: 84 65 255;
-    --login-btn: #E9EAF5;
+    --b2b-lv1: #E9EAF5;
+    --b2b-lv2: #fff;
+    --b2b-lv3: #3F35BD;
+    --b2b-lv4: #3F35BD;
+    --b2b-lv5: #302885;
+    --b2b-lv6: #2C266F;
+    --highlight-start: 84 65 255;
+    --highlight-end: 50 59 193;
     --circle-left: #4755d0;
     --circle-right: #3a75ea;
-    --circle-middle: #336B4C;
     --profile-banner: url("/banner-blue.png");
     --btn-shadow-color: rgba(145, 118, 233, 0.6);
 }
 
 :root:has([data-theme="red"]) {
-    --primary: #184743;
-    --secondary: #007956;
-    --tertiary: #9cff8d;
-    --forth: #038360;
-    --five: #daffe1;
-    --six: #91fd8b;
-    --seven-rgb: 140 250 159;
-    --login-btn: #DAFFE1;
-    --circle-left: #6a8d89;
-    --circle-right: #487c57;
-    --circle-middle: #336B4C;
+    --b2b-lv1: #fff0fa;
+    --b2b-lv2: #fff;
+    --b2b-lv3: #ee3fb4;
+    --b2b-lv4: #aa267e;
+    --b2b-lv5: #701b54;
+    --b2b-lv6: #350D28;
+    --highlight-start: 102 43 82;
+    --highlight-end: 103 149 201;
+    --circle-left: #405684;
+    --circle-right: #405684;
     --profile-banner: url("/banner-red.png");
-    --btn-shadow-color: rgba(197, 233, 118, 0.6);
+    --btn-shadow-color: rgba(145, 118, 233, 0.6);
 }

@@ -9,7 +9,7 @@ export const HeaderBtnsDesktop: React.FC<{ item: MenuItemType }> = ({ item: { la
   return (
     <div className="hidden sm:block" key={key}>
       <div className="flex items-end gap-6">
-        <CustomButton className="px-6 py-3 bg-forth text-login-btn rounded-sm text-sm" component={props.href ? Link : Button} {...props}>
+        <CustomButton className="px-6 py-3 bg-b2b-lv4 text-b2b-lv1 rounded-sm text-sm" component={props.href ? Link : Button} {...props}>
           {label}
         </CustomButton>
       </div>

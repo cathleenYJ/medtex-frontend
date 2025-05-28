@@ -8,7 +8,7 @@ export const HomeBanner: React.FC = () => {
     <BannerContainer className="flex flex-wrap gap-[1.875rem] pb-[3.125rem]">
       <div className="basis-full sm:basis-(--1-2-basis-gap-30px) flex flex-col gap-2.5">
         <div className="flex flex-col gap-3.5">
-          <div className="text-2xl sm:text-[1.75rem] text-five">Buyer–Supplier Matching Hub</div>
+          <div className="text-2xl sm:text-[1.75rem] text-b2b-lv1">Buyer–Supplier Matching Hub</div>
           <div className={clsx("text-3xl sm:text-4xl md:text-[2.75rem] text-white font-semibold", headerSans.variable)}>Partner with Verified Buyers. Scale Without Borders.</div>
         </div>
         <div className="flex flex-col gap-10 content-between text-white grow">

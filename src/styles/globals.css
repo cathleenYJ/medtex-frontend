@@ -10,19 +10,20 @@
 }
 
 @theme {
+    --color-b2b-bg: var(--b2b-bg);
+    --color-b2b-lv1: var(--b2b-lv1);
+    --color-b2b-lv2: var(--b2b-lv2);
+    --color-b2b-lv3: var(--b2b-lv3);
+    --color-b2b-lv4: var(--b2b-lv4);
+    --color-b2b-lv5: var(--b2b-lv5);
+    --color-b2b-lv6: var(--b2b-lv6);
+    --color-appointment-btn: var(--appointment-btn);
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --color-primary: var(--primary);
-    --color-secondary: var(--secondary);
-    --color-tertiary: var(--tertiary);
-    --color-forth: var(--forth);
-    --color-five: var(--five);
-    --color-six: var(--six);
-    --color-seven: var(--seven);
-    --color-login-btn: var(--login-btn);
+    --color-highlight-start: rgb(var(--highlight-start));
+    --color-highlight-end: rgb(var(--highlight-end));
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
-    --color-circle-middle: var(--circle-middle);
     --color-filter-options: var(--filter-options);
     --color-checkbox-border: var(--checkbox-border);
     --color-checkbox-bg: var(--checkbox-bg);
