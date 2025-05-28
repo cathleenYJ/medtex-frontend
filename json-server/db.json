@@ -122,20 +122,27 @@
       "buyer_photo": "/buyer_photo.png"
     }
   ],
-  "filter_options": [
-    {
-      "legend": "Market Region",
-      "options": ["Middle East Region", "Asia Pacific", "Europe & Africa", "Americas"]
+  "filter_options": {
+    "purchasing_requirement": {
+      "703": "Smart Hospital & IT Solutions",
+      "705": "Diagnostics & Laboratory",
+      "706": "Digital Health",
+      "707": "Biopharmaceuticals",
+      "721": "Medical Devices",
+      "722": "Health & Wellness",
+      "725": "Long Term Care & Rehab"
     },
-    {
-      "legend": "Interested Area",
-      "options": ["Smart Hospital & IT Solutions", "Medical Displays", "Diagnostics & Laboratory", "Biopharmaceuticals", "Regenerative Medicine", "Medical Imaging", "Cosmetics & Health Supplements", "Medical Devices", "Health & Wellness", "Long Term Care & Rehab", "Medical Furniture", "Services"]
+    "partnership_looking_for": {
+      "710": "CDMO / CMO",
+      "711": "OEM / ODM",
+      "712": "Co-Development",
+      "713": "Technology Licensing"
     },
-    {
-      "legend": "Partnership Types",
-      "options": ["OEM/ODM", "Private Label Production", "Contract Manufacturing", "Product Development Partner", "Exclusive Distribution", "Product Distribution Franchise Brand Licensing", "Brand Licensing", "Sales Agent Partnership", "Regional Distributor", "Technology Transfer", "Joint R&D", "Regulatory Collaboration", "Market Expansion Partner", "Strategic Alliance"]
+    "region_covered": {
+      "732": "Singapore",
+      "733": "Indonesia"
     }
-  ],
+  },
   "recommended": [
     {
       "id": 0,

@@ -23,7 +23,7 @@ class FetchData {
     data: (id?: number) => this.method.get<SellerData[]>(`${API_ENDPOINTS.SELLERS_DATA}${id ? `?id=${id}` : ""}`),
   };
   basic = {
-    filterOptions: () => this.method.get<FilterOptionType[]>(API_ENDPOINTS.FILTER_OPTIONS),
+    filterOptions: () => this.method.get<FilterOptionType>(API_ENDPOINTS.FILTER_OPTIONS),
     recommended: () => this.method.get<RecommandedItem[]>(API_ENDPOINTS.RECOMMENDED),
   };
 }
