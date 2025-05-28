@@ -8,6 +8,7 @@
     --filter-options: #252932;
     --checkbox-border: #C1C5C6;
     --checkbox-bg: #3E424B;
+    --gradient-start: #191D26;
 }
 
 [data-card-theme="a"] {
@@ -26,6 +27,21 @@
     --card-text: #fff;
     --card-btn-bg: #fff;
     --card-btn-text: #00007F;
+}
+
+[data-card-theme="green"] {
+    --gradient-end: #0D464A;
+    --attribute-block: #21464F;
+}
+
+[data-card-theme="blue"] {
+    --gradient-end: #2C266F;
+    --attribute-block: #2A2965;
+}
+
+[data-card-theme="red"] {
+    --gradient-end: #36193A;
+    --attribute-block: #3E2849;
 }
 
 :root:has([data-theme="green"]) {

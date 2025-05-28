@@ -45,17 +45,19 @@ type CheckboxGroupProps<T extends FieldValues> = {
 const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: string[] }> = ({ legend, options, register, onChange }) => {
   const [open, setOpen] = useState<boolean>(true);
   return (
-    <div className="flex flex-col gap-4">
-      <div className="text-white/80 font-medium flex justify-between items-center cursor-pointer" onClick={() => setOpen((prev) => !prev)}>
-        {legend}
-        <div className="size-5 bg-white/6 rounded-sm">
-          <ChevronDownIcon />
+    <div className="flex flex-col gap-4 bg-inherit">
+      <div className="sticky top-[calc(var(--text-xl)_*1.75_+_var(--spacing)_*_4.5)] bg-inherit">
+        <div className="text-white/80 font-medium flex justify-between items-center cursor-pointer" onClick={() => setOpen((prev) => !prev)}>
+          {legend}
+          <div className="size-5 bg-white/6 rounded-sm">
+            <ChevronDownIcon />
+          </div>
         </div>
       </div>
       <div className={clsx("grid transition-[grid-template-rows] duration-400", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
         <div className="overflow-hidden flex flex-col gap-5">
           {["All", ...options].map((option) => (
-            <Checkbox key={option} option={option} legend={legend} register={register} onChange={onChange} />
+            <Checkbox key={`${legend}-${option}`} option={option} legend={legend} register={register} onChange={onChange} />
           ))}
         </div>
       </div>

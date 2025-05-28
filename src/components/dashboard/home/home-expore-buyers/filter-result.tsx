@@ -1,30 +1,34 @@
 "use client";
 
-import { clientFetch } from "@/data/client";
-import { BuyerData } from "@/types";
+import { useEffect, useState } from "react";
+import { Card, Cards } from "@ui/card";
+import { Spinner } from "@ui/loading";
 import { BusinessAttributes } from "@dashboard/business-attributes";
 import { CompanyLocation } from "@dashboard/company-location";
 import { CompanyLogo } from "@dashboard/company-logo";
-import { Card, Cards } from "@ui/card";
-import { useEffect, useState } from "react";
+import { clientFetch } from "@/data/client";
+import type { BuyerData } from "@/types";
 
 export const FilterResult: React.FC = () => {
   const [buyers, setBuyers] = useState<BuyerData[]>([]);
   useEffect(() => {
     (async () => setBuyers(await clientFetch.buyers.data()))();
   }, []);
-  console.log(buyers);
   return (
-    <Cards className="grow flex flex-col gap-[1.875rem]">
-      {buyers.map((buyer) => (
-        <Card key={buyer.id} className="flex flex-wrap">
-          <div className="flex flex-wrap gap-5">
-            <CompanyLogo src={buyer.company_logo} alt="logo" />
-            <CompanyLocation className="text-white" company_name={buyer.company_name} company_location={buyer.company_location} />
-          </div>
-          <BusinessAttributes business_attributes={buyer.business_attributes} business_nature={buyer.business_nature} />
-        </Card>
-      ))}
+    <Cards className="grow flex-col gap-[1.875rem]">
+      {buyers.length === 0 ? (
+        <Spinner />
+      ) : (
+        buyers.map((buyer) => (
+          <Card key={buyer.id} className="flex flex-wrap overflow-hidden" theme={buyer.profile_theme}>
+            <div className="flex gap-5 px-7 pt-7 pb-6 bg-gradient-to-r from-(--gradient-start) to-(--gradient-end)">
+              <CompanyLogo className="size-[6.25rem] bg-white/90 rounded-[1.125rem] p-1" src={buyer.company_logo_small} alt="logo" />
+              <CompanyLocation className="text-white" company_name={buyer.company_name} company_location={buyer.company_location} company_description={buyer.company_description} />
+            </div>
+            <BusinessAttributes className="px-7 pt-6 pb-7 bg-(--attribute-block)" business_attributes={buyer.business_attributes} business_nature={buyer.business_nature} />
+          </Card>
+        ))
+      )}
     </Cards>
   );
 };

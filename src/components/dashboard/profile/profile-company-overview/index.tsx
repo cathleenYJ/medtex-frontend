@@ -16,7 +16,7 @@ export const ProfileCompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }
             <img className="w-full h-full object-cover" src={buyer.company_overview} alt="" />
           </div>
         </div>
-        <BusinessAttributes business_attributes={buyer.business_attributes} business_nature={buyer.business_nature} />
+        <BusinessAttributes className="px-6 sm:px-[1.875rem] md:px-12 pt-8 sm:pt-[1.875rem] pb-8 sm:pb-[1.875rem] md:pb-10 bg-secondary/30" business_attributes={buyer.business_attributes} business_nature={buyer.business_nature} />
       </Card>
     </Section>
   );

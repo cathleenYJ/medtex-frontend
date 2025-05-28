@@ -5,6 +5,7 @@ export type BuyerData = {
   promotion_text: string;
   company_name: string;
   company_logo: string;
+  company_logo_small: string;
   company_description: string;
   company_location: string;
   company_established_year: number;

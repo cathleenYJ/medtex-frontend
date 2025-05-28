@@ -6,6 +6,7 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --scroll-bar-width: 2px;
 }
 
 @theme {
@@ -22,9 +23,6 @@
     --color-circle-left: var(--circle-left);
     --color-circle-right: var(--circle-right);
     --color-circle-middle: var(--circle-middle);
-    --color-card-text: var(--card-text);
-    --color-card-btn-bg: var(--card-btn-bg);
-    --color-card-btn-text: var(--card-btn-text);
     --color-filter-options: var(--filter-options);
     --color-checkbox-border: var(--checkbox-border);
     --color-checkbox-bg: var(--checkbox-bg);
@@ -54,4 +52,20 @@
             height: 0;
         }
     }
+}
+
+::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+    height: var(--scroll-bar-width);
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    width: var(--scroll-bar-width);
+    height: var(--scroll-bar-width);
+    border-radius: var(--scroll-bar-width);
+    background: rgb(255 255 255 / 0.2);
 }

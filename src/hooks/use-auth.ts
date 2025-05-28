@@ -28,24 +28,21 @@ export const useAuth = () => {
   const authorize = (newUser: Partial<UserType>) => {
     setAuthorized(true);
     setUser(newUser);
-    const redirect = searchParams?.get("redirect");
-    pathname === Routes.auth.signIn && router.push(decodeURIComponent(redirect || Routes.public.home));
+    const redirect = decodeURIComponent(searchParams?.get("redirect") || Routes.public.home);
+    pathname === Routes.auth.signIn && router.push(redirect);
   };
   const unauthorize = () => {
     setAuthorized(false);
     setUser({});
     removeAuthToken();
-    pathname.startsWith(Routes.private.admin) && router.push(Routes.public.home);
+    pathname.startsWith(Routes.private.admin) && router.refresh();
   };
   const checkAuth = async () => {
     try {
       authorize(await clientFetch.users.me());
     } catch (error) {
-      if (isUnauthorized(error as AxiosError)) {
-        unauthorize();
-      } else {
-        throw error;
-      }
+      unauthorize();
+      if (!isUnauthorized(error as AxiosError)) throw error;
     }
   };
   return {

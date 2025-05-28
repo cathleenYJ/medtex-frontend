@@ -9,16 +9,16 @@ import type { BuyerData } from "@/types";
 export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
   <>
     <div className="flex flex-wrap gap-5">
-      <CompanyLogo src={buyer.company_logo} alt="logo" />
+      <CompanyLogo className="max-w-36" src={buyer.company_logo} alt="logo" />
       <CompanyLocation company_name={buyer.company_name} company_location={buyer.company_location} />
       <CompanyWebsite href={buyer.company_website} />
     </div>
     <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
     <div className="basis-full flex flex-wrap gap-4 sm:gap-[1.875rem] font-bold">
       <CompanyInfoSingle title="Established Since">{buyer.company_established_year}</CompanyInfoSingle>
-      <Hr className="sm:w-px sm:h-full" />
+      <Hr className="sm:w-0 sm:border-l sm:h-full" />
       <CompanyInfoSingle title="Annual revenue">{buyer.business_annual_revenue}</CompanyInfoSingle>
-      <Hr className="sm:w-px sm:h-full" />
+      <Hr className="sm:w-0 sm:border-l sm:h-full" />
       <CompanyInfoSingle title="Employees">{buyer.number_of_employees}</CompanyInfoSingle>
     </div>
   </>
