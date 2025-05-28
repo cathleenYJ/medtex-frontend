@@ -4,7 +4,7 @@ import { BusinessAttributes } from "@dashboard/business-attributes";
 import type { BuyerData } from "@/types";
 import { CompanyInfo } from "./company-info";
 
-export const ProfileCompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
+export const CompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
     <Section title="Company Overview">
       <Card className="bg-b2b-lv6 flex flex-wrap overflow-hidden">

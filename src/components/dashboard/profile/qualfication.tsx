@@ -2,7 +2,7 @@ import { Section } from "@ui/section";
 import type { BuyerData } from "@/types";
 import { ProfileCard } from "./profile-card";
 
-export const ProfileQualfication: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
+export const Qualfication: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   buyer;
   return (
     <Section title="Qualfication">

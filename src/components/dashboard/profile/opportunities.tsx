@@ -4,7 +4,7 @@ import { Section } from "@ui/section";
 import type { BuyerData } from "@/types";
 import { ProfileCard } from "./profile-card";
 
-export const ProfileOpportunities: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
+export const Opportunities: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
     <Section title="Opportunities">
       <ProfileCard className="w-max grow bg-b2b-lv4" icon={<Discover color="var(--b2b-lv2)" />} title={<span className="text-white/80">What we’re looking for?</span>}>

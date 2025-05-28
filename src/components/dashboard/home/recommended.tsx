@@ -5,7 +5,7 @@ import { Section } from "@ui/section";
 import { serverFetch } from "@/data/server";
 import type { RecommandedItem } from "@/types";
 
-export const HomeRecommended: React.FC = async () => {
+export const Recommended: React.FC = async () => {
   const data = await serverFetch.basic.recommended();
   return (
     <Section title="Recommended">

@@ -36,7 +36,7 @@ const highlights2 = [
   },
 ];
 
-export const ProfileHighlights: React.FC<{ buyer: BuyerData }> = ({}) => {
+export const Highlights: React.FC<{ buyer: BuyerData }> = ({}) => {
   return (
     <Section title="Company Highlights" className="before:absolute before:-z-10 before:content-[''] before:block before:w-[120vw] before:left-1/2 before:-translate-x-1/2 before:h-96 before:rounded-b-[100%] before:border-b before:border-white before:shadow-(--bg-line) before:bg-gradient-to-t before:from-highlight-start before:to-70% before:to-highlight-end/0">
       <Cards className="basis-full gap-3 sm:gap-4 flex-wrap">
