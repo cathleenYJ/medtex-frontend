@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { Fragment, useEffect, useState, useTransition } from "react";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
