@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useTransition } from "react";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Hr } from "@ui/splitter";
@@ -20,6 +20,7 @@ export const CheckboxGroups: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [isPending, startTransition] = useTransition();
   const [filterOptions, setFilterOptions] = useState<FilterOptionType | null>(null);
   const { register, watch, setValue } = useForm<FilterForm>();
   const filterOptionLogic = ({ target: { name, value, checked } }: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,9 +45,9 @@ export const CheckboxGroups: React.FC = () => {
     console.log(createQueryString(e));
   };
   useEffect(() => {
-    (async () => setFilterOptions(await clientFetch.basic.filterOptions()))();
+    startTransition(async () => setFilterOptions(await clientFetch.basic.filterOptions()));
   }, []);
-  return filterOptions === null ? (
+  return isPending || filterOptions === null ? (
     <Spinner />
   ) : (
     <>

@@ -5,18 +5,13 @@ import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 import { clientFetch } from "@/data/client";
 import { isUnauthorized } from "@/data/client/axios-client";
-import { removeAuthToken } from "@/data/client/token.utils";
+import { removeAuthToken, setAuthToken } from "@/data/client/token.utils";
 import { AxiosError } from "axios";
 import { Routes } from "@/config/routes";
-
-interface UserType {
-  name: string;
-  avatar: string;
-  role: string;
-}
+import type { User } from "@/types";
 
 const isLoggedIn = typeof window !== "undefined" ? localStorage.getItem("isAuthorized") : "false";
-const userAtom = atomWithStorage<Partial<UserType>>("loggedUser", {});
+const userAtom = atomWithStorage<Partial<User>>("loggedUser", {});
 const authorizationAtom = atomWithStorage("isAuthorized", isLoggedIn === "true");
 
 export const useAuth = () => {
@@ -25,9 +20,10 @@ export const useAuth = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const authorize = (newUser: Partial<UserType>) => {
+  const authorize = (newUser: Partial<User & { token: string }>) => {
     setAuthorized(true);
     setUser(newUser);
+    newUser?.token && setAuthToken(newUser.token);
     const redirect = decodeURIComponent(searchParams?.get("redirect") || Routes.public.home);
     pathname === Routes.auth.signIn && router.push(redirect);
   };

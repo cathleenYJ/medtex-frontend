@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Card, Cards } from "@ui/card";
 import { Spinner } from "@ui/loading";
 import { BusinessAttributes } from "@dashboard/business-attributes";
@@ -12,13 +12,14 @@ import { useRouter } from "next/navigation";
 
 export const FilterResult: React.FC = () => {
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
   const [buyers, setBuyers] = useState<BuyerData[]>([]);
   useEffect(() => {
-    (async () => setBuyers(await clientFetch.buyers.data()))();
+    startTransition(async () => setBuyers(await clientFetch.buyers.data()));
   }, []);
   return (
     <Cards className="grow flex-col gap-3 sm:gap-[1.875rem]">
-      {buyers.length === 0 ? (
+      {isPending ? (
         <Spinner />
       ) : (
         buyers.map((buyer) => (

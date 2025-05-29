@@ -3,8 +3,8 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { clientFetch } from "@/data/client";
-import type { BuyerContact } from "@/types";
 import { useAuth } from "@/hooks/use-auth";
+import type { BuyerContact } from "@/types";
 
 const contactPlaceholder = { buyer_photo: "/buyer_photo.png", buyer_name: "buyer name", buyer_job_title: "job title", brief_introduction: "introduction", buyer_contact_location: "contact info" };
 
