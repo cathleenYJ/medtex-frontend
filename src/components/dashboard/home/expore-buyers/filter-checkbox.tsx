@@ -1,13 +1,14 @@
 import clsx from "clsx";
 import { Fragment, useEffect, useState, useTransition } from "react";
-import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
+import { FieldValues, useForm, UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Hr } from "@ui/splitter";
 import { Spinner } from "@ui/loading";
 import { clientFetch } from "@/data/client";
-import type { FilterForm, FilterOptionType } from "@/types";
 import { Checkbox } from "@ui/form";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useAppSearchParams } from "@/hooks/use-search-params";
+import type { FilterForm, FilterOptionType } from "@/types";
+import { ReadonlyURLSearchParams } from "next/navigation";
 
 const filterOptionLabels = {
   region_covered: "Market Region",
@@ -15,37 +16,40 @@ const filterOptionLabels = {
   partnership_looking_for: "Partnership Types",
 };
 const all = { key: "all", label: "All" };
+const filterOptionLogic = (allOptions: string[], currentSelected: string[], value: string, checked: boolean) => {
+  // 當 All 選擇時,將所有選項都加入，反之將所有選項都移除
+  // 當 所有其他選項都被選擇時，將 All 選項加入
+  // 當 任一其他選項不被選擇時，將 All 選項移除
+  const allSelected = allOptions.every((option) => currentSelected.includes(option));
+  return allSelected || value === all.key ? (checked ? [all.key, ...allOptions] : []) : currentSelected.filter((option) => option !== all.key);
+};
+const initialFilterForm = (allOptions: FilterOptionType, setValue: UseFormSetValue<FilterForm>, searchParams: ReadonlyURLSearchParams) => {
+  // 如果 searchParams 沒有值，將所有選項都加入
+  Object.entries(allOptions).forEach(([key, value]) => {
+    const param = searchParams.get(key);
+    setValue(key, param ? JSON.parse(param) : [all.key, ...Object.keys(value)]);
+  });
+};
 
 export const CheckboxGroups: React.FC = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const { createQueryString, removeQueryString, searchParams } = useAppSearchParams();
   const [isPending, startTransition] = useTransition();
   const [filterOptions, setFilterOptions] = useState<FilterOptionType | null>(null);
   const { register, watch, setValue } = useForm<FilterForm>();
-  const filterOptionLogic = ({ target: { name, value, checked } }: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = async ({ target: { name, value, checked } }: React.ChangeEvent<HTMLInputElement>) => {
     if (filterOptions === null) return;
-    const allOptions = Object.keys(filterOptions[name]);
-    const selected = watch(name);
-    const allSelected = allOptions.every((option) => selected.includes(option));
-    // 當 All 選擇時,將所有選項都加入，反之將所有選項都移除
-    // 當 所有其他選項都被選擇時，將 All 選項加入
-    // 當 任一其他選項不被選擇時，將 All 選項移除
-    return allSelected || value === all.key ? (checked ? [all.key, ...allOptions] : []) : selected.filter((option) => option !== all.key);
-  };
-  const createQueryString = ({ target: { name } }: React.ChangeEvent<HTMLInputElement>) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set(name, JSON.stringify(watch(name)));
-    return params.toString();
-  };
-  const onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const options = filterOptionLogic(e);
-    if (!options) return;
-    setValue(e.target.name, options);
-    console.log(createQueryString(e));
+    const selected = filterOptionLogic(Object.keys(filterOptions[name]), watch(name), value, checked);
+    setValue(name, selected);
+    // 如果所有選項都被選擇，或所有選項都被移除時，將 searchParams 清空並呈現所有資料
+    const searchParams = selected.includes(all.key) || selected.length === 0 ? removeQueryString(name) : createQueryString(name, JSON.stringify(selected));
+    window.history.pushState(null, "", `?${searchParams}`);
   };
   useEffect(() => {
-    startTransition(async () => setFilterOptions(await clientFetch.basic.filterOptions()));
+    startTransition(async () => {
+      const options = await clientFetch.basic.filterOptions();
+      setFilterOptions(options);
+      initialFilterForm(options, setValue, searchParams);
+    });
   }, []);
   return isPending || filterOptions === null ? (
     <Spinner />
@@ -82,7 +86,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: { [key
       <div className={clsx("grid transition-[grid-template-rows] duration-400", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
         <div className="overflow-hidden flex md:flex-col gap-5 flex-wrap md:flex-nowrap">
           {[all, ...Object.entries(options).map(([key, label]) => ({ key, label }))].map((option) => (
-            <Checkbox key={`${legend}-${option.key}`} legend={legendKey} label={option.label} value={option.key} register={register} onChange={onChange} defaultChecked />
+            <Checkbox key={`${legend}-${option.key}`} legend={legendKey} label={option.label} value={option.key} register={register} onChange={onChange} />
           ))}
         </div>
       </div>

@@ -13,12 +13,13 @@ import { useAuth } from "@/hooks/use-auth";
 import { Routes } from "@/config/routes";
 import type { MenuItemType } from "@/types";
 import { menuItemsDesktop, menuItemsRest } from "./menu-items";
+import { useAppSearchParams } from "@/hooks/use-search-params";
 
 const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.HeaderBtnsDesktop), { ssr: false, loading: () => <Spinner /> });
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
-  const targetPage = pathname ? `?redirect=${encodeURIComponent(pathname)}` : "";
+  const { createQueryString, searchParams } = useAppSearchParams();
   const { unauthorize, isAuthorized } = useAuth();
   const signedInItem = {
     key: "logout",
@@ -28,7 +29,7 @@ export const Header: React.FC = () => {
   const signedOutItem = {
     key: Routes.auth.signIn,
     label: "Login",
-    href: `${Routes.auth.signIn}${targetPage}`,
+    href: `${Routes.auth.signIn}?${createQueryString("redirect", `${pathname}?${searchParams.toString()}`, true)}`,
   };
   return (
     <header className="flex flex-col gap-1 py-3 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
