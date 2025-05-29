@@ -1,35 +1,14 @@
 import clsx from "clsx";
 import { Fragment, useEffect, useState, useTransition } from "react";
-import { FieldValues, useForm, UseFormRegister, UseFormSetValue } from "react-hook-form";
+import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Hr } from "@ui/splitter";
 import { Spinner } from "@ui/loading";
 import { clientFetch } from "@/data/client";
 import { Checkbox } from "@ui/form";
 import { useAppSearchParams } from "@/hooks/use-search-params";
+import { all, filterOptionLabels, filterOptionLogic, initialFilterForm } from "@/utils/filter-form";
 import type { FilterForm, FilterOptionType } from "@/types";
-import { ReadonlyURLSearchParams } from "next/navigation";
-
-const filterOptionLabels = {
-  region_covered: "Market Region",
-  purchasing_requirement: "Interested Area",
-  partnership_looking_for: "Partnership Types",
-};
-const all = { key: "all", label: "All" };
-const filterOptionLogic = (allOptions: string[], currentSelected: string[], value: string, checked: boolean) => {
-  // 當 All 選擇時,將所有選項都加入，反之將所有選項都移除
-  // 當 所有其他選項都被選擇時，將 All 選項加入
-  // 當 任一其他選項不被選擇時，將 All 選項移除
-  const allSelected = allOptions.every((option) => currentSelected.includes(option));
-  return allSelected || value === all.key ? (checked ? [all.key, ...allOptions] : []) : currentSelected.filter((option) => option !== all.key);
-};
-const initialFilterForm = (allOptions: FilterOptionType, setValue: UseFormSetValue<FilterForm>, searchParams: ReadonlyURLSearchParams) => {
-  // 如果 searchParams 沒有值，將所有選項都加入
-  Object.entries(allOptions).forEach(([key, value]) => {
-    const param = searchParams.get(key);
-    setValue(key, param ? JSON.parse(param) : [all.key, ...Object.keys(value)]);
-  });
-};
 
 export const CheckboxGroups: React.FC = () => {
   const { createQueryString, removeQueryString, searchParams } = useAppSearchParams();
@@ -40,17 +19,19 @@ export const CheckboxGroups: React.FC = () => {
     if (filterOptions === null) return;
     const selected = filterOptionLogic(Object.keys(filterOptions[name]), watch(name), value, checked);
     setValue(name, selected);
-    // 如果所有選項都被選擇，或所有選項都被移除時，將 searchParams 清空並呈現所有資料
-    const searchParams = selected.includes(all.key) || selected.length === 0 ? removeQueryString(name) : createQueryString(name, JSON.stringify(selected));
+    // 如果所有選項都被選擇，將 searchParams 清空並呈現所有資料
+    const searchParams = selected.includes(all.key) ? removeQueryString(name) : createQueryString(name, JSON.stringify(selected));
     window.history.pushState(null, "", `?${searchParams}`);
   };
   useEffect(() => {
     startTransition(async () => {
       const options = await clientFetch.basic.filterOptions();
       setFilterOptions(options);
-      initialFilterForm(options, setValue, searchParams);
     });
   }, []);
+  useEffect(() => {
+    filterOptions && initialFilterForm(filterOptions, setValue, searchParams);
+  }, [searchParams.toString(), filterOptions]);
   return isPending || filterOptions === null ? (
     <Spinner />
   ) : (
