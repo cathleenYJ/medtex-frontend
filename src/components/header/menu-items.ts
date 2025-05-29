@@ -1,26 +1,31 @@
 import { Routes } from "@/config/routes";
-import { countries } from "@/data/countries";
-import { MenuItemType } from "@/types";
+import { clientFetch } from "@/data/client";
+import type { FilterOptionType, MenuItemType } from "@/types";
 
-export const menuItemsDesktop: MenuItemType[] = [
-  {
-    key: "Country / Region",
-    label: "Country / Region",
-    items: countries.map(({ label, code }) => ({ key: label, label: label, href: `${Routes.public.result}?company_location=${code}` })),
-  },
-  {
-    key: "Partnership Types",
-    label: "Partnership Types",
-    items: [{ key: "技術合作", label: "技術合作", href: `${Routes.public.result}?partnership_looking_for=技術合作` }],
-  },
-  {
-    key: "Industry",
-    label: "Industry",
-    items: [{ key: "先進材料", label: "先進材料", href: `${Routes.public.result}?industry_classification=先進材料` }],
-  },
-];
+const getItems = (data: FilterOptionType, name: string) => Object.entries(data[name]).map(([key, value]) => ({ key, label: value, href: `${Routes.public.result}?${name}=${key}` }));
 
-export const menuItemsRest: MenuItemType[] = [
+export const menuItemsDesktop = async (): Promise<MenuItemType[]> => {
+  const data = await clientFetch.basic.filterOptions();
+  return [
+    {
+      key: "Country / Region",
+      label: "Country / Region",
+      items: getItems(data, "region_covered"),
+    },
+    {
+      key: "Partnership Types",
+      label: "Partnership Types",
+      items: getItems(data, "partnership_looking_for"),
+    },
+    {
+      key: "Industry",
+      label: "Industry",
+      items: getItems(data, "purchasing_requirement"),
+    },
+  ];
+};
+
+export const menuItemsRest = async (): Promise<MenuItemType[]> => [
   {
     key: "Pages",
     label: "Pages",

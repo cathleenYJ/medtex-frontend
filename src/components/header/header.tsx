@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState, useTransition } from "react";
 import { SiteLogo } from "@icons";
 import { ChevronDownIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import { Hr, Splitter } from "@ui/splitter";
@@ -11,9 +11,9 @@ import { NestMenu } from "@ui/nested-menu";
 import { Spinner } from "@ui/loading";
 import { useAuth } from "@/hooks/use-auth";
 import { Routes } from "@/config/routes";
+import { useAppSearchParams } from "@/hooks/use-search-params";
 import type { MenuItemType } from "@/types";
 import { menuItemsDesktop, menuItemsRest } from "./menu-items";
-import { useAppSearchParams } from "@/hooks/use-search-params";
 
 const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.HeaderBtnsDesktop), { ssr: false, loading: () => <Spinner /> });
 
@@ -21,6 +21,9 @@ export const Header: React.FC = () => {
   const pathname = usePathname();
   const { createQueryString, searchParams } = useAppSearchParams();
   const { unauthorize, isAuthorized } = useAuth();
+  const [desktopItems, setDesktopItems] = useState<MenuItemType[]>([]);
+  const [restItems, setRestItems] = useState<MenuItemType[]>([]);
+  const [isPending, startTransition] = useTransition();
   const signedInItem = {
     key: "logout",
     label: "Logout",
@@ -31,6 +34,12 @@ export const Header: React.FC = () => {
     label: "Login",
     href: `${Routes.auth.signIn}?${createQueryString("redirect", `${pathname}?${searchParams.toString()}`, true)}`,
   };
+  useEffect(() => {
+    startTransition(async () => {
+      setDesktopItems(await menuItemsDesktop());
+      setRestItems(await menuItemsRest());
+    });
+  }, []);
   return (
     <header className="flex flex-col gap-1 py-3 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
       <div className="flex justify-between relative">
@@ -45,11 +54,17 @@ export const Header: React.FC = () => {
             <Link href={Routes.public.home}>Business Matchmaking</Link>
           </div>
         </div>
-        <MobileMenu items={[...menuItemsDesktop, ...menuItemsRest, isAuthorized ? signedInItem : signedOutItem]} />
-        <HeaderBtnsDesktop item={isAuthorized ? signedInItem : signedOutItem} />
+        {isPending ? (
+          <Spinner />
+        ) : (
+          <>
+            <MobileMenu items={[...desktopItems, ...restItems, isAuthorized ? signedInItem : signedOutItem]} />
+            <HeaderBtnsDesktop item={isAuthorized ? signedInItem : signedOutItem} />
+          </>
+        )}
       </div>
       <Hr className="my-2 -mx-5 sm:-mx-10" />
-      <DesktopMenu items={[...menuItemsDesktop, ...menuItemsRest]} />
+      {isPending ? <Spinner /> : <DesktopMenu items={[...desktopItems, ...restItems]} />}
     </header>
   );
 };
