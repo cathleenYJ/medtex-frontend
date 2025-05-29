@@ -1,8 +1,7 @@
 import { Suspense } from "react";
 import { Section } from "@ui/section";
 import { LoadingBar } from "@ui/loading";
-import { FilterOptions } from "@/components/search-filter/filter-options";
-import { FilterResult } from "@/components/search-filter/filter-result";
+import { FilterOptions, FilterResult } from "@/components/search-filter";
 
 export const ExporeBuyers: React.FC = () => {
   return (

@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { FieldError, Merge } from "react-hook-form";
 import Resizer from "react-image-file-resizer";
@@ -28,8 +29,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({ label, type, formUpdate,
     <fieldset>
       <legend>{label}</legend>
       <label>
-        <div tabIndex={0} className={clsx("mt-2 block rounded-lg border-none bg-black/5 px-3 py-1.5 text-sm/6 text-black", "focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-black/25", "w-3xs cursor-pointer flex justify-center items-center", error && "outline-2 outline-red-500")}>
-          {preview ? <img className="w-full" src={preview} alt="preview" /> : <div>Upload Image</div>}
+        <div tabIndex={0} className={clsx("relative mt-2 block rounded-lg border-none bg-black/5 px-3 py-1.5 text-sm/6 text-black", "focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-black/25", "w-3xs cursor-pointer flex justify-center items-center", error && "outline-2 outline-red-500")}>
+          {preview ? <Image fill className="!relative" src={preview} alt="preview" /> : <div>Upload Image</div>}
         </div>
         <input className="w-0 h-0 opacity-0" type="file" onChange={handleUploadedFile} ref={inputRef} required={required} />
       </label>

@@ -1,10 +1,11 @@
 import clsx from "clsx";
 import Link from "next/link";
+import Image from "next/image";
 import { CustomButton } from "@ui/button";
-import type { BuyerData } from "@/types";
-import { headerSans } from "@/styles/font";
-import { Routes } from "@/config/routes";
 import { BannerContainer } from "@ui/banner-container";
+import { Routes } from "@/config/routes";
+import { headerSans } from "@/styles/font";
+import type { BuyerData } from "@/types";
 
 export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
   return (
@@ -13,8 +14,8 @@ export const ProfileBanner: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
         <div className="flex flex-wrap gap-10 sm:px-10 pt-0 sm:pt-14 pb-14 w-full max-w-4xl sm:backdrop-blur-lg sm:bg-black/30 sm:rounded-2xl relative">
           <div className="flex flex-wrap gap-5 sm:gap-7 w-full text-white">
             <div className="w-full flex flex-wrap gap-2.5 sm:gap-5">
-              <div className="flex items-center w-max sm:w-fit">
-                <img className="w-28" src={buyer.company_logo} alt="" />
+              <div className="flex items-center w-28">
+                <Image fill className="!relative" src={buyer.company_logo} alt="" />
               </div>
               <div className="flex items-center w-max sm:w-fit text-base sm:text-lg md:text-2xl font-semibold">{buyer.company_name}</div>
             </div>

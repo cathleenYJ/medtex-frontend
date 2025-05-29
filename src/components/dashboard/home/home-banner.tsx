@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import { BannerContainer } from "@ui/banner-container";
 import { headerSans } from "@/styles/font";
 import { ArrowDownCircle } from "@icons";
@@ -20,8 +21,8 @@ export const HomeBanner: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="basis-full sm:basis-(--1-2-basis-gap-30px)">
-        <img className="size-full object-cover rounded-[1.25rem]" src="/home-banner-event.png" alt="" />
+      <div className="basis-full sm:basis-(--1-2-basis-gap-30px) rounded-[1.25rem] overflow-hidden">
+        <Image fill className="!relative object-cover" src="/home-banner-event.png" alt="" />
       </div>
     </BannerContainer>
   );
