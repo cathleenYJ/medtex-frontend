@@ -1,28 +1,19 @@
 import { Routes } from "@/config/routes";
-import { clientFetch } from "@/data/client";
+import { serverFetch } from "@/data/server";
+import { filterOptionLabels } from "@/utils/filter-form";
 import type { FilterOptionType, MenuItemType } from "@/types";
 
-const getItems = (data: FilterOptionType, name: string) => Object.entries(data[name]).map(([key, value]) => ({ key, label: value, href: `${Routes.public.result}?${name}=${key}` }));
+const getItems = (data: FilterOptionType, name: string) => {
+  return Object.entries(data[name]).map(([key, value]) => {
+    const searchParams = new URLSearchParams();
+    searchParams.set(name, JSON.stringify([key]));
+    return { key, label: value, href: `${Routes.public.result}?${searchParams.toString()}` };
+  });
+};
 
-export const menuItemsDesktop = async (): Promise<MenuItemType[]> => {
-  const data = await clientFetch.basic.filterOptions();
-  return [
-    {
-      key: "Country / Region",
-      label: "Country / Region",
-      items: getItems(data, "region_covered"),
-    },
-    {
-      key: "Partnership Types",
-      label: "Partnership Types",
-      items: getItems(data, "partnership_looking_for"),
-    },
-    {
-      key: "Industry",
-      label: "Industry",
-      items: getItems(data, "purchasing_requirement"),
-    },
-  ];
+export const menuItemsMain = async (): Promise<MenuItemType[]> => {
+  const data = await serverFetch.basic.filterOptions();
+  return Object.entries(filterOptionLabels).map(([key, label]) => ({ key, label, items: getItems(data, key) }));
 };
 
 export const menuItemsRest = async (): Promise<MenuItemType[]> => [

@@ -1,48 +1,18 @@
-"use client";
-
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
-import { Fragment, useEffect, useState, useTransition } from "react";
 import { SiteLogo } from "@icons";
-import { ChevronDownIcon, Bars3Icon } from "@heroicons/react/24/solid";
 import { Hr, Splitter } from "@ui/splitter";
-import { NestMenu } from "@ui/nested-menu";
-import { Spinner } from "@ui/loading";
-import { useAuth } from "@/hooks/use-auth";
 import { Routes } from "@/config/routes";
-import { useAppSearchParams } from "@/hooks/use-search-params";
-import type { MenuItemType } from "@/types";
-import { menuItemsDesktop, menuItemsRest } from "./menu-items";
+import { MobileMenu } from "./mobile/mobile-menu";
+import { DesktopMenu } from "./desktop/desktop-menu";
+import { DesktopBtns } from "./desktop/desktop-btns";
+import { menuItemsMain, menuItemsRest } from "./menu-items";
 
-const HeaderBtnsDesktop = dynamic(() => import("./btn-group").then((mod) => mod.HeaderBtnsDesktop), { ssr: false, loading: () => <Spinner /> });
-
-export const Header: React.FC = () => {
-  const pathname = usePathname();
-  const { createQueryString, searchParams } = useAppSearchParams();
-  const { unauthorize, isAuthorized } = useAuth();
-  const [desktopItems, setDesktopItems] = useState<MenuItemType[]>([]);
-  const [restItems, setRestItems] = useState<MenuItemType[]>([]);
-  const [isPending, startTransition] = useTransition();
-  const signedInItem = {
-    key: "logout",
-    label: "Logout",
-    onClick: unauthorize,
-  };
-  const signedOutItem = {
-    key: Routes.auth.signIn,
-    label: "Login",
-    href: `${Routes.auth.signIn}?${createQueryString("redirect", `${pathname}?${searchParams.toString()}`, true)}`,
-  };
-  useEffect(() => {
-    startTransition(async () => {
-      setDesktopItems(await menuItemsDesktop());
-      setRestItems(await menuItemsRest());
-    });
-  }, []);
+export const Header: React.FC = async () => {
+  const desktopItems = await menuItemsMain();
+  const restItems = await menuItemsRest();
   return (
     <header className="flex flex-col gap-1 py-3 px-5 sm:px-10 absolute z-50 top-0 w-full backdrop-blur-lg sm:backdrop-blur-none">
-      <div className="flex justify-between relative">
+      <div className="flex justify-between items-center relative">
         <div className="flex items-end">
           <div className="h-full flex items-end py-1 w-full max-w-4 sm:max-w-44">
             <Link href={Routes.public.home}>
@@ -54,50 +24,11 @@ export const Header: React.FC = () => {
             <Link href={Routes.public.home}>Business Matchmaking</Link>
           </div>
         </div>
-        {isPending ? (
-          <Spinner />
-        ) : (
-          <>
-            <MobileMenu items={[...desktopItems, ...restItems, isAuthorized ? signedInItem : signedOutItem]} />
-            <HeaderBtnsDesktop item={isAuthorized ? signedInItem : signedOutItem} />
-          </>
-        )}
+        <MobileMenu items={[...desktopItems, ...restItems]} />
+        <DesktopBtns />
       </div>
       <Hr className="my-2 -mx-5 sm:-mx-10" />
-      {isPending ? <Spinner /> : <DesktopMenu items={[...desktopItems, ...restItems]} />}
+      <DesktopMenu items={[...desktopItems, ...restItems]} />
     </header>
-  );
-};
-
-const MobileMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => (
-  <NestMenu
-    className="sm:hidden inline-block"
-    btn={
-      <div className="w-6 h-6 cursor-pointer text-white">
-        <Bars3Icon />
-      </div>
-    }
-    items={items}
-  />
-);
-
-const DesktopMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => {
-  return (
-    <div className="hidden sm:flex sm:flex-wrap">
-      {items.map((item, i) => (
-        <Fragment key={item.key}>
-          <NestMenu
-            items={item.items || []}
-            btn={
-              <>
-                <span className="text-white/80">{item.label}</span>
-                <ChevronDownIcon className="size-4 text-white/80" />
-              </>
-            }
-          />
-          {i !== items.length - 1 && <Splitter className="mx-[1.875rem] md:mx-[3.125rem]" />}
-        </Fragment>
-      ))}
-    </div>
   );
 };
