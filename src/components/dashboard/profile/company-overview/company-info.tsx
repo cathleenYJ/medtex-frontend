@@ -29,7 +29,7 @@ const CompanyWebsite: React.FC<{ href: string }> = ({ href }) => (
     <Tag className="sm:w-min w-full h-min text-center px-0 py-0">
       <Link className="flex gap-2.5 justify-between items-center w-full h-min px-5 py-3" href={href} target="_blank">
         {href.replace(/^http[s]?\:\/\//g, "")}
-        <ArrowUpRightIcon className="w-4 h-4" />
+        <ArrowUpRightIcon className="size-4" />
       </Link>
     </Tag>
   </div>
