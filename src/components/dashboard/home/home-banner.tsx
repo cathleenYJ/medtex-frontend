@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { BannerContainer } from "@ui/banner-container";
-import { headerSans } from "@/styles/font";
 import { ArrowDownCircle } from "@icons";
+import { headerSans } from "@/styles/font";
 
 export const HomeBanner: React.FC = () => {
   return (

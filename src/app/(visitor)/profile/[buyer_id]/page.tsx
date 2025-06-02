@@ -15,7 +15,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ buyer_
         <Qualfication buyer={buyer} />
         <CompanyOverview buyer={buyer} />
         <Highlights buyer={buyer} />
-        <Contact />
+        <Contact buyer={buyer} />
       </SectionContainer>
     </div>
   );

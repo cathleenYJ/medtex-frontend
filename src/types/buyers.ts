@@ -24,6 +24,8 @@ export type BuyerData = {
   company_strengths: string;
   estimated_procurement_amount: number;
   brands_in_distribution: string;
+  time_zone: string;
+  languages: string[];
 };
 
 export type BuyerContact = {

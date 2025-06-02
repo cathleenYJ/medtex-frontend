@@ -6,9 +6,7 @@ import { CustomButton } from "@ui/button";
 import { ContactBlock } from "./contact-block";
 import { headerSans } from "@/styles/font";
 
-export const DisplayInfo: React.FC = () => {
-  const timeZone = "UTC+08:00 (Asia/Taipei)";
-  const languages = ["English", "Chinese"];
+export const DisplayInfo: React.FC<{ timeZone: string; languages: string[] }> = ({ timeZone, languages }) => {
   return (
     <div className="basis-full sm:basis-(--1-2-basis-gap-30px) md:basis-(--1-2-basis-gap-60px) flex flex-col gap-10 md:py-5 py-2.5">
       <div className="flex flex-wrap gap-6 sm:gap-[1.875rem]">

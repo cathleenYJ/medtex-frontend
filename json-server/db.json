@@ -39,7 +39,9 @@
       "market_channel_overview": "全球OEM廠商",
       "company_strengths": "研發創新速度快",
       "estimated_procurement_amount": "200000.00",
-      "brands_in_distribution": "AlphaFiber"
+      "brands_in_distribution": "AlphaFiber",
+      "time_zone": "UTC+08:00 (Asia/Taipei)",
+      "languages": ["English", "Chinese"]
     },
     {
       "id": 2,
@@ -66,7 +68,9 @@
       "market_channel_overview": "全球OEM廠商",
       "company_strengths": "研發創新速度快",
       "estimated_procurement_amount": "200000.00",
-      "brands_in_distribution": "AlphaFiber"
+      "brands_in_distribution": "AlphaFiber",
+      "time_zone": "UTC+08:00 (Asia/Taipei)",
+      "languages": ["English", "Chinese"]
     },
     {
       "id": 3,
@@ -93,7 +97,9 @@
       "market_channel_overview": "全球OEM廠商",
       "company_strengths": "研發創新速度快",
       "estimated_procurement_amount": "200000.00",
-      "brands_in_distribution": "AlphaFiber"
+      "brands_in_distribution": "AlphaFiber",
+      "time_zone": "UTC+08:00 (Asia/Taipei)",
+      "languages": ["English", "Chinese"]
     }
   ],
   "buyers_contact": [
