@@ -26,10 +26,7 @@ export const CheckboxGroups: React.FC = () => {
     window.history.pushState(null, "", `?${searchParams}`);
   };
   useEffect(() => {
-    startTransition(async () => {
-      const options = await clientFetch.basic.filterOptions();
-      setFilterOptions(options);
-    });
+    startTransition(async () => setFilterOptions(await clientFetch.basic.filterOptions()));
   }, []);
   useEffect(() => {
     filterOptions && initialFilterForm(filterOptions, setValue, searchParams);
