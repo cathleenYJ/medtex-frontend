@@ -7,11 +7,11 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Hr } from "@ui/splitter";
 import { Spinner } from "@ui/loading";
 import { Checkbox } from "@ui/form";
+import { ToggleBox } from "@ui/toggle-box";
 import { clientFetch } from "@/data/client";
 import { useAppSearchParams } from "@/hooks/use-search-params";
 import { all, filterOptionLabels, filterOptionLogic, initialFilterForm } from "@/utils/filter-form";
 import type { FilterForm, FilterOptionType } from "@/types";
-import { ToggleBox } from "@ui/toggle-box";
 
 export const CheckboxGroups: React.FC = () => {
   const { createQueryString, removeQueryString, searchParams } = useAppSearchParams();
