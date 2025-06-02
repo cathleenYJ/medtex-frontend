@@ -9,7 +9,7 @@ export default function Home() {
       <HomeBanner />
       <SectionContainer>
         <Recommended />
-        <ExporeBuyers />
+        <ExporeBuyers className="pt-[7.5rem]" title="Explore Buyers" />
       </SectionContainer>
     </div>
   );

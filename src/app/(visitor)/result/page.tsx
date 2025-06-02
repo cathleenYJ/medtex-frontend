@@ -1,3 +1,10 @@
+import { SectionContainer } from "@ui/section-container";
+import { ExporeBuyers } from "@dashboard/home/expore-buyers";
+
 export default function ResultPage() {
-  return <div className="text-white">ResultPage</div>;
+  return (
+    <SectionContainer className="pt-10 pb-40">
+      <ExporeBuyers />
+    </SectionContainer>
+  );
 }
