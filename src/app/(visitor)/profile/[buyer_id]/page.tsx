@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { ProfileBanner, Opportunities, Qualfication, CompanyOverview, Highlights, Contact } from "@dashboard/profile";
 import { SectionContainer } from "@ui/section-container";
+import { ProfileBanner, Opportunities, Qualfication, CompanyOverview, Highlights, Contact } from "@dashboard/profile";
 import { serverFetch } from "@/data/server";
 
 export default async function ProfilePage({ params }: { params: Promise<{ buyer_id: string }> }) {
