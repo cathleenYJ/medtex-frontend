@@ -2,11 +2,11 @@ import clsx from "clsx";
 import { Tag } from "@ui/tag";
 import { Hr } from "@ui/splitter";
 
-export const BusinessAttributes: React.FC<{ className?: string; business_attributes: string[]; business_nature: string[] }> = ({ className, business_attributes, business_nature }) => (
+export const BusinessAttributes: React.FC<{ className?: string; businessAttributes: string[]; businessNature: string[] }> = ({ className, businessAttributes, businessNature }) => (
   <div className={clsx("basis-full flex flex-wrap gap-5 sm:gap-[1.875rem]", className)}>
-    <BusinessAttributeBlock title="Business Attribute" attrs={business_attributes} />
+    <BusinessAttributeBlock title="Business Attribute" attrs={businessAttributes} />
     <Hr className={clsx("w-full sm:w-0 sm:border-l sm:h-full")} />
-    <BusinessAttributeBlock title="Business Nature" attrs={business_nature} />
+    <BusinessAttributeBlock title="Business Nature" attrs={businessNature} />
   </div>
 );
 
