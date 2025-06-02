@@ -10,7 +10,7 @@ export const CompanyInfo: React.FC<{ buyer: BuyerData }> = ({ buyer }) => (
   <>
     <div className="flex flex-wrap gap-5">
       <CompanyLogo className="max-w-36" src={buyer.company_logo} alt="logo" />
-      <CompanyLocation company_name={buyer.company_name} company_location={buyer.company_location} />
+      <CompanyLocation companyName={buyer.company_name} companyLocation={buyer.company_location} />
       <CompanyWebsite href={buyer.company_website} />
     </div>
     <div className="text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: buyer.company_description.replaceAll("\n", "<br>") }} />
