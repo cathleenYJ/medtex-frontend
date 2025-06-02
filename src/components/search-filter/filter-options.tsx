@@ -11,7 +11,7 @@ import { CheckboxGroups } from "./filter-checkbox";
 export const FilterOptions: React.FC = () => {
   const [open, setOpen] = useState<boolean>(true);
   return (
-    <Card className="basis-full md:basis-(--1-3-basis-gap-30px) shrink-0 max-h-96 md:max-h-screen pe-0.5 py-3 md:py-7 bg-filter-options sticky top-0 z-10">
+    <Card className="basis-full md:basis-(--1-3-basis-gap-30px) shrink-0 max-h-96 md:max-h-screen pe-0.5 py-3 md:py-7 bg-filter-options sticky top-0 z-10 shadow-lg md:shadow-none shadow-black/10">
       <div className="flex flex-col bg-inherit h-full overflow-y-auto ps-5 sm:ps-6 pe-4.5 sm:pe-5.5">
         <div className="text-white text-xl font-medium sticky top-0 z-10 bg-inherit cursor-pointer" onClick={() => setOpen((prev) => !prev)}>
           <div className="flex justify-between items-center">
