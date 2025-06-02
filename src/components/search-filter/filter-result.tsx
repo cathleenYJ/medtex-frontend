@@ -37,7 +37,12 @@ export const FilterResult: React.FC = () => {
         <Spinner />
       ) : (
         <>
-          {buyers.slice(0, page * 10).map((buyer) => searchResult(buyer, searchParams) && <BuyerResult key={buyer.id} buyer={buyer} />)}
+          {buyers
+            .filter((buyer) => searchResult(buyer, searchParams))
+            .slice(0, page * 10)
+            .map((buyer) => (
+              <BuyerResult key={buyer.id} buyer={buyer} />
+            ))}
           <LoadMore loadMore={loadMore} currentPage={page} maxPage={Math.ceil(buyers.length / 10)} />
         </>
       )}
