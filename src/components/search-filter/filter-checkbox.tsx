@@ -11,6 +11,7 @@ import { clientFetch } from "@/data/client";
 import { useAppSearchParams } from "@/hooks/use-search-params";
 import { all, filterOptionLabels, filterOptionLogic, initialFilterForm } from "@/utils/filter-form";
 import type { FilterForm, FilterOptionType } from "@/types";
+import { ToggleBox } from "@ui/toggle-box";
 
 export const CheckboxGroups: React.FC = () => {
   const { createQueryString, removeQueryString, searchParams } = useAppSearchParams();
@@ -55,21 +56,21 @@ const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: { [key
   const [open, setOpen] = useState<boolean>(true);
   return (
     <div className="bg-inherit">
-      <div className="sticky top-[calc(var(--text-xl)_*1.75_+_var(--spacing)_*_4.5)] bg-gradient-to-b from-filter-options via-filter-options via-60% to-transparent pb-5">
+      <div className={clsx("sticky top-0 bg-gradient-to-b from-filter-options via-filter-options via-60% to-transparent transition-[padding-bottom]", open && "pb-2 md:pb-5")}>
         <div className="text-white/80 font-medium flex justify-between items-center cursor-pointer" onClick={() => setOpen((prev) => !prev)}>
           {legend}
           <div className="size-5 bg-white/6 rounded-sm">
-            <ChevronDownIcon />
+            <ChevronDownIcon className={clsx("transition-transform duration-400", open && "rotate-180")} />
           </div>
         </div>
       </div>
-      <div className={clsx("grid transition-[grid-template-rows] duration-400", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-        <div className="overflow-hidden flex md:flex-col gap-5 flex-wrap md:flex-nowrap">
+      <ToggleBox open={open}>
+        <div className="flex md:flex-col gap-3 sm:gap-4 md:gap-5 flex-wrap md:flex-nowrap">
           {[all, ...Object.entries(options).map(([key, label]) => ({ key, label }))].map((option) => (
             <Checkbox key={`${legend}-${option.key}`} legend={legendKey} label={option.label} value={option.key} register={register} onChange={onChange} />
           ))}
         </div>
-      </div>
+      </ToggleBox>
     </div>
   );
 };
