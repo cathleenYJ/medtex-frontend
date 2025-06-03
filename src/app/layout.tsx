@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children, modal }: Readonly<{ children: React.ReactNode; modal: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={clsx(geistSans.variable, geistMono.variable, "relative antialiased bg-black min-h-screen overflow-x-hidden bg-no-repeat has-[[data-home]]:bg-(image:--bg-home)", "has-[[data-theme]]:bg-(image:--bg-profile)")}>
         <Provider>
           <Suspense>

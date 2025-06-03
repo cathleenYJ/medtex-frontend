@@ -4,7 +4,11 @@ import { SectionTitle } from "@ui/title";
 
 export const Section: React.FC<{ className?: string; childrenClassName?: string; title?: string; children?: React.ReactNode }> = ({ className, childrenClassName, title, children }) => (
   <SectionBlock className={className}>
-    {title && <SectionTitle className="font-light px-2.5">{title}</SectionTitle>}
+    {title && (
+      <SectionTitle id={title} className="font-light px-2.5">
+        {title}
+      </SectionTitle>
+    )}
     <Cards className={childrenClassName || "gap-3 sm:gap-4 flex-wrap"}>{children}</Cards>
   </SectionBlock>
 );
