@@ -11,6 +11,7 @@ import { ToggleBox } from "@ui/toggle-box";
 import { clientFetch } from "@/data/client";
 import { useAppSearchParams } from "@/hooks/use-search-params";
 import { all, filterOptionLabels, filterOptionLogic, initialFilterForm } from "@/utils/filter-form";
+import { ExploreBuyersString, toId } from "@/utils/elements-id";
 import type { FilterForm, FilterOptionType } from "@/types";
 
 export const CheckboxGroups: React.FC = () => {
@@ -25,6 +26,7 @@ export const CheckboxGroups: React.FC = () => {
     // 如果所有選項都被選擇，將 searchParams 清空並呈現所有資料
     const searchParams = selected.includes(all.key) ? removeQueryString(name) : createQueryString(name, JSON.stringify(selected));
     window.history.pushState(null, "", `?${searchParams}`);
+    document.querySelector(`#${toId(ExploreBuyersString)}`)?.scrollIntoView();
   };
   useEffect(() => {
     startTransition(async () => setFilterOptions(await clientFetch.basic.filterOptions()));
@@ -64,12 +66,10 @@ const CheckboxGroup: React.FC<CheckboxGroupProps<FilterForm> & { options: { [key
           </div>
         </div>
       </div>
-      <ToggleBox open={open}>
-        <div className="flex md:flex-col gap-3 sm:gap-4 md:gap-5 flex-wrap md:flex-nowrap">
-          {[all, ...Object.entries(options).map(([key, label]) => ({ key, label }))].map((option) => (
-            <Checkbox key={`${legend}-${option.key}`} legend={legendKey} label={option.label} value={option.key} register={register} onChange={onChange} />
-          ))}
-        </div>
+      <ToggleBox className="flex md:flex-col gap-3 sm:gap-4 md:gap-5 flex-wrap md:flex-nowrap" open={open}>
+        {[all, ...Object.entries(options).map(([key, label]) => ({ key, label }))].map((option) => (
+          <Checkbox key={`${legend}-${option.key}`} className="basis-full xs:basis-(--1-2-basis-gap-4) sm:basis-(--1-3-basis-gap-4) md:basis-full" legend={legendKey} label={option.label} value={option.key} register={register} onChange={onChange} />
+        ))}
       </ToggleBox>
     </div>
   );

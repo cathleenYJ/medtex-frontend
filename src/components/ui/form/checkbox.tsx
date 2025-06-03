@@ -41,12 +41,13 @@ type CheckboxProps<T extends FieldValues> = {
   error?: FieldErrors<T>;
   required?: boolean;
   defaultChecked?: boolean;
+  className?: string;
 };
-export const Checkbox = <T extends FieldValues>({ legend, label, value, register, onChange, error, required, defaultChecked }: CheckboxProps<T>) => {
+export const Checkbox = <T extends FieldValues>({ className, legend, label, value, register, onChange, error, required, defaultChecked }: CheckboxProps<T>) => {
   return (
-    <label className={clsx("flex items-center gap-1.5 select-none cursor-pointer", error && "outline-2 outline-red-500")}>
+    <label className={clsx("flex items-center gap-1.5 select-none cursor-pointer", error && "outline-2 outline-red-500", className)}>
       <input className="peer hidden" type="checkbox" value={value} defaultChecked={defaultChecked} {...register(legend, { onChange, required })} />
-      <div className="rounded-[0.1875rem] overflow-hidden size-4 border border-checkbox-border bg-checkbox-bg *:opacity-0 peer-checked:*:opacity-100">
+      <div className="rounded-[0.1875rem] overflow-hidden size-4 border border-checkbox-border bg-checkbox-bg *:opacity-0 peer-checked:*:opacity-100 shrink-0">
         <CheckIcon className="bg-white" />
       </div>
       <div className="text-white/70">{label}</div>

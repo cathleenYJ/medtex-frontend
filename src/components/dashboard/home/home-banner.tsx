@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BannerContainer } from "@ui/banner-container";
 import { ArrowDownCircle } from "@icons";
+import { ExploreBuyersString, toId } from "@/utils/elements-id";
 import { headerSans } from "@/styles/font";
 
 export const HomeBanner: React.FC = () => {
@@ -16,7 +17,7 @@ export const HomeBanner: React.FC = () => {
         <div className="flex flex-col gap-10 content-between text-white grow">
           <div className="text-base sm:text-lg font-medium grow">We connect Taiwan’s biomedical innovators with trusted global buyers. Access pre-qualified leads and expand your global reach.</div>
           <div>
-            <Link href="#Explore_Buyers" scroll={true}>
+            <Link href={`#${toId(ExploreBuyersString)}`} scroll={true}>
               <ArrowDownCircle className="size-16" />
             </Link>
           </div>

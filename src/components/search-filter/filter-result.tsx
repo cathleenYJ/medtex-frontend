@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
-import { ReadonlyURLSearchParams, useRouter, useSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams, useRouter } from "next/navigation";
+import { useInView } from "react-intersection-observer";
 import { Card, Cards } from "@ui/card";
 import { Spinner } from "@ui/loading";
 import { BusinessAttributes } from "@dashboard/business-attributes";
@@ -9,8 +10,8 @@ import { CompanyLocation } from "@dashboard/company-location";
 import { CompanyLogo } from "@dashboard/company-logo";
 import { clientFetch } from "@/data/client";
 import { filterOptionLabels } from "@/utils/filter-form";
+import { useAppSearchParams } from "@/hooks/use-search-params";
 import type { BuyerData } from "@/types";
-import { LoadMore } from "./load-more";
 
 const searchResult = (buyer: BuyerData, searchParams: ReadonlyURLSearchParams): boolean => {
   const res = Object.keys(filterOptionLabels).some((key) => {
@@ -23,13 +24,24 @@ const searchResult = (buyer: BuyerData, searchParams: ReadonlyURLSearchParams): 
 };
 
 export const FilterResult: React.FC = () => {
-  const searchParams = useSearchParams();
+  const { ref, inView } = useInView({ threshold: 0, rootMargin: "0px 0px -100px 0px" });
+  const { createQueryString, removeQueryString, searchParams } = useAppSearchParams();
   const [isPending, startTransition] = useTransition();
   const [buyers, setBuyers] = useState<BuyerData[]>([]);
-  const [page, setPage] = useState<number>(1);
-  const loadMore = () => setPage((prev) => prev + 1);
+  const currentSize = Number(searchParams.get("size"));
+  const isMax = currentSize >= buyers.length;
+  const step = 10;
+  const loadMore = () => {
+    if (isMax) return;
+    removeQueryString("size");
+    window.history.pushState(null, "", `?${createQueryString("size", String(currentSize + step))}`);
+  };
+  useEffect(() => {
+    inView && loadMore();
+  }, [inView]);
   useEffect(() => {
     startTransition(async () => setBuyers(await clientFetch.buyers.data()));
+    window.history.pushState(null, "", `?${createQueryString("size", String(step))}`);
   }, []);
   return (
     <Cards className="grow flex-col gap-3 sm:gap-[1.875rem]">
@@ -39,11 +51,11 @@ export const FilterResult: React.FC = () => {
         <>
           {buyers
             .filter((buyer) => searchResult(buyer, searchParams))
-            .slice(0, page * 10)
+            .slice(0, Number(searchParams.get("size")) + 1)
             .map((buyer) => (
               <BuyerResult key={buyer.id} buyer={buyer} />
             ))}
-          <LoadMore loadMore={loadMore} currentPage={page} maxPage={Math.ceil(buyers.length / 10)} />
+          {!isMax && <div ref={ref} className="w-full h-0 relative before:-mt-96 before:content-[''] before:block before:w-full before:h-96 before:bg-gradient-to-t before:from-black before:to-transparent" />}
         </>
       )}
     </Cards>
