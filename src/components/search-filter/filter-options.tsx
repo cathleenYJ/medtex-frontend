@@ -28,7 +28,12 @@ export const FilterOptions: React.FC = () => {
               />
             </div>
           </div>
-          <Hr className="my-3 md:my-6" />
+          <Hr
+            className={clsx(
+              "transition-all duration-400",
+              open ? "my-3 md:my-6" : "opacity-0 my-0"
+            )}
+          />
         </div>
         <ToggleBox className="gap-3 md:gap-6 flex flex-col" open={open}>
           <CheckboxGroups />
