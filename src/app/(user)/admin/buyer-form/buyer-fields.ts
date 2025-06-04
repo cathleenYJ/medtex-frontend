@@ -1,4 +1,4 @@
-import { countries } from "@/data/countries";
+import { countries } from "@/app/(user)/admin/buyer-form/countries";
 
 export type BuyerForm = {
   promotion_text: string;
