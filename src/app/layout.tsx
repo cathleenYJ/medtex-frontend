@@ -31,7 +31,7 @@ export default function RootLayout({
         className={clsx(
           geistSans.variable,
           geistMono.variable,
-          "relative antialiased bg-black min-h-screen overflow-x-hidden bg-no-repeat has-[[data-home]]:bg-(image:--bg-home)",
+          "relative antialiased bg-black min-h-screen w-full overflow-x-hidden bg-no-repeat has-[[data-home]]:bg-(image:--bg-home)",
           "has-[[data-theme]]:bg-(image:--bg-profile)"
         )}
       >
