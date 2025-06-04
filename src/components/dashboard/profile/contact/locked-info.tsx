@@ -37,7 +37,7 @@ export const LockedInfo: React.FC = () => {
       className={clsx(
         "basis-full sm:basis-(--1-2-basis-gap-30px) md:basis-(--1-2-basis-gap-60px) flex sm:flex-wrap lg:flex-nowrap gap-7 py-5 sm:py-[5.5625rem] px-3 sm:px-6 lg:ps-9 relative",
         (lock || !isAuthorized) &&
-          "before:content-[''] before:absolute before:inset-0 before:backdrop-blur-md before:bg-b2b-lv1/10 before:rounded-xl"
+          "before:content-[''] before:absolute before:z-10 before:inset-0 before:backdrop-blur-md before:bg-b2b-lv1/10 before:rounded-xl"
       )}
     >
       <div className="w-20 sm:w-28 lg:w-36 mx-auto flex items-center shrink-0">
