@@ -18,7 +18,11 @@ export const useAuthBtn = (): MenuItemType => {
   const signedOutItem = {
     key: Routes.auth.signIn,
     label: "Login",
-    href: `${Routes.auth.signIn}?${createQueryString("redirect", `${pathname}?${searchParams.toString()}`, true)}`,
+    href: `${Routes.auth.signIn}?${createQueryString(
+      "redirect",
+      `${pathname}?${searchParams.toString()}`,
+      true
+    )}`,
   };
   return isAuthorized ? signedInItem : signedOutItem;
 };

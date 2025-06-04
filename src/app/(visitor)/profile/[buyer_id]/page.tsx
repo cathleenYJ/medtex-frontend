@@ -1,9 +1,20 @@
 import { notFound } from "next/navigation";
 import { SectionContainer } from "@ui/section-container";
-import { ProfileBanner, Opportunities, Qualfication, CompanyOverview, Highlights, Contact } from "@dashboard/profile";
+import {
+  ProfileBanner,
+  Opportunities,
+  Qualfication,
+  CompanyOverview,
+  Highlights,
+  Contact,
+} from "@dashboard/profile";
 import { serverFetch } from "@/data/server";
 
-export default async function ProfilePage({ params }: { params: Promise<{ buyer_id: string }> }) {
+export default async function ProfilePage({
+  params,
+}: {
+  params: Promise<{ buyer_id: string }>;
+}) {
   const { buyer_id } = await params;
   const [buyer, ...rest] = await serverFetch.buyers.data(Number(buyer_id));
   if (!buyer || rest.length > 0) notFound();

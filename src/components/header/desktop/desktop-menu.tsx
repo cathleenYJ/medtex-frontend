@@ -18,7 +18,9 @@ export const DesktopMenu: React.FC<{ items: MenuItemType[] }> = ({ items }) => {
               </>
             }
           />
-          {i !== items.length - 1 && <Splitter className="mx-[1.875rem] md:mx-[3.125rem]" />}
+          {i !== items.length - 1 && (
+            <Splitter className="mx-[1.875rem] md:mx-[3.125rem]" />
+          )}
         </Fragment>
       ))}
     </div>

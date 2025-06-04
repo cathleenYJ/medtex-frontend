@@ -9,7 +9,11 @@ export class HttpMethod {
     const response = await this.Axios.get<T>(url, { params });
     return response.data;
   };
-  public post = async <T>(url: string, data: unknown, options?: AxiosRequestConfig) => {
+  public post = async <T>(
+    url: string,
+    data: unknown,
+    options?: AxiosRequestConfig
+  ) => {
     const response = await this.Axios.post<T>(url, data, options);
     return response.data;
   };

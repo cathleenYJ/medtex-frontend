@@ -4,7 +4,9 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
-import interactionPlugin, { type DateClickArg } from "@fullcalendar/interaction";
+import interactionPlugin, {
+  type DateClickArg,
+} from "@fullcalendar/interaction";
 import { EventContent } from "./event-content";
 import { EventClickArg } from "@fullcalendar/core/index.js";
 
@@ -39,8 +41,18 @@ export const B2bCalendar: React.FC = () => {
           right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
         }}
         events={[
-          { title: "event 1", start: "2025-05-16 14:41", end: "2025-05-16 15:41", editable: true },
-          { title: "event 2", start: "2025-05-16 14:41", end: "2025-05-16 15:41", editable: true },
+          {
+            title: "event 1",
+            start: "2025-05-16 14:41",
+            end: "2025-05-16 15:41",
+            editable: true,
+          },
+          {
+            title: "event 2",
+            start: "2025-05-16 14:41",
+            end: "2025-05-16 15:41",
+            editable: true,
+          },
         ]}
         eventContent={EventContent}
         dateClick={handleDateClick}

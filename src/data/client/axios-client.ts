@@ -1,7 +1,10 @@
 import axios, { AxiosError, AxiosRequestHeaders } from "axios";
 import { getAuthToken, removeAuthToken } from "@/data/client/token.utils";
 
-export const isUnauthorized = (error: AxiosError) => error.response && ([404, 403, 401].includes(error.response.status) || (error.response.data as { error: string }).error === "Not Authorized");
+export const isUnauthorized = (error: AxiosError) =>
+  error.response &&
+  ([404, 403, 401].includes(error.response.status) ||
+    (error.response.data as { error: string }).error === "Not Authorized");
 
 const AxiosClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,

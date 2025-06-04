@@ -14,10 +14,19 @@ export const CompanyOverview: React.FC<{ buyer: BuyerData }> = ({ buyer }) => {
             <CompanyInfo buyer={buyer} />
           </div>
           <div className="basis-full lg:basis-1/2">
-            <Image fill className="!relative object-cover" src={buyer.company_overview} alt="company_overview" />
+            <Image
+              fill
+              className="!relative object-cover"
+              src={buyer.company_overview}
+              alt="company_overview"
+            />
           </div>
         </div>
-        <BusinessAttributes className="px-6 sm:px-[1.875rem] md:px-12 pt-8 sm:pt-[1.875rem] pb-8 sm:pb-[1.875rem] md:pb-10 bg-b2b-lv5" businessAttributes={buyer.business_attributes} businessNature={buyer.business_nature} />
+        <BusinessAttributes
+          className="px-6 sm:px-[1.875rem] md:px-12 pt-8 sm:pt-[1.875rem] pb-8 sm:pb-[1.875rem] md:pb-10 bg-b2b-lv5"
+          businessAttributes={buyer.business_attributes}
+          businessNature={buyer.business_nature}
+        />
       </Card>
     </Section>
   );

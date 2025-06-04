@@ -10,9 +10,15 @@ import { AxiosError } from "axios";
 import { Routes } from "@/config/routes";
 import type { User } from "@/types";
 
-const isLoggedIn = typeof window !== "undefined" ? localStorage.getItem("isAuthorized") : "false";
+const isLoggedIn =
+  typeof window !== "undefined"
+    ? localStorage.getItem("isAuthorized")
+    : "false";
 const userAtom = atomWithStorage<Partial<User>>("loggedUser", {});
-const authorizationAtom = atomWithStorage("isAuthorized", isLoggedIn === "true");
+const authorizationAtom = atomWithStorage(
+  "isAuthorized",
+  isLoggedIn === "true"
+);
 
 export const useAuth = () => {
   const [isAuthorized, setAuthorized] = useAtom(authorizationAtom);
@@ -24,7 +30,9 @@ export const useAuth = () => {
     setAuthorized(true);
     setUser(newUser);
     newUser?.token && setAuthToken(newUser.token);
-    const redirect = decodeURIComponent(searchParams?.get("redirect") || Routes.public.home);
+    const redirect = decodeURIComponent(
+      searchParams?.get("redirect") || Routes.public.home
+    );
     pathname === Routes.auth.signIn && router.push(redirect);
   };
   const unauthorize = () => {
