@@ -2,7 +2,7 @@ import axios, { AxiosRequestHeaders } from "axios";
 import { cookies } from "next/headers";
 
 const AxiosServer = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
+  baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT_DATA,
   timeout: 150000000,
   headers: { "Content-Type": "application/json" },
 });

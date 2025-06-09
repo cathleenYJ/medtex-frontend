@@ -29,3 +29,5 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
     </Component>
   );
 };
+
+export { Button };

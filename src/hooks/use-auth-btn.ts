@@ -20,7 +20,7 @@ export const useAuthBtn = (): MenuItemType => {
     label: "Login",
     href: `${Routes.auth.signIn}?${createQueryString(
       "redirect",
-      `${pathname}?${searchParams.toString()}`,
+      `${pathname}?${searchParams?.toString() ?? ''}`,
       true
     )}`,
   };

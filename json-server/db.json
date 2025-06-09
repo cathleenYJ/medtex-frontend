@@ -12,6 +12,37 @@
     { "id": 2, "userId": 2, "productId": 1, "quantity": 2 }
   ],
   "logout": {},
+  "authData": {
+    "token": "mock-auth-token-12345",
+    "permissions": ["user"],
+    "role": "user"
+  },
+  "userProfile": {
+    "id": 1,
+    "name": "Test User",
+    "email": "user@example.com",
+    "role": "user",
+    "permissions": ["user"]
+  },
+  "userData": {
+    "data": [1, 2, 3, 4, 5]
+  },
+  "credentials": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin",
+      "permissions": ["admin", "user"]
+    },
+    {
+      "id": 2,
+      "email": "user@example.com",
+      "password": "user123",
+      "role": "user",
+      "permissions": ["user"]
+    }
+  ],
   "sellers": [],
   "buyers": [
     {
@@ -438,6 +469,1339 @@
       "theme": "c",
       "name": "2025\nIBMI Caner Medicines\nOnline Live Conference",
       "date": "Aug 19, 19:00-21:00"
+    }
+  ],
+  "conference": {
+    "title": "2024 MEDTEX Summit Asia",
+    "subtitle": "Leading innovation, investing in the future",
+    "date": "2024.12.03(Tue)",
+    "location": "3F, Ballroom, Le Méridien Taipei",
+    "organizers": ["Everbright Biofund", "RBMP"],
+    "supporters": ["National Science and Technology Council (NSTC)", "National Development Council (NDC)"],
+    "themes": ["Advanced AI applications", "Regenerative medicine", "Immunotherapies", "Breakthrough drug development", "Innovative medical devices"],
+    "logo": "https://expo.taiwan-healthcare.org//data/tmp/20230928/20230928epf7fo.svg",
+    "expo_logo": "https://expo.taiwan-healthcare.org//data/tmp/20241104/202411047ytqkg.png",
+    "background_image": "https://expo.taiwan-healthcare.org//data/tmp/20230928/202309282l9cde.gif"
+  },
+  "speakers": [
+    {
+      "id": 1,
+      "name": "Ettikan Karuppiah",
+      "title": "Director & Technologist, NVIDIA",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241125/20241125pgynrb.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Keren Priyadarshini",
+      "title": "Healthcare Lead, Microsoft Asia",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241106/20241106rc6gfu.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Charles Lin",
+      "title": "Principal, illumina Ventures",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028xc4re6.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Robert Mittendorff",
+      "title": "General Partner & Head of Healthcare, B Capital",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241122/202411228uf8an.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Ian Chiang",
+      "title": "Partner, Flare Capital Partners",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241106/20241106lbsh6z.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Nate Chang",
+      "title": "Operating Partner, Playground Global",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241118/202411180cv8jj.webp"
+    },
+    {
+      "id": 7,
+      "name": "Cheryl Cheng",
+      "title": "Founder, Vive Collective",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241108/202411082dgc5h.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Zubin Daruwalla",
+      "title": "Asia Pacific Health Industries Leader, PwC Singapore",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241107/20241107k8bmq6.jpg"
+    }
+  ],
+  "startups": [
+    {
+      "id": 1,
+      "name": "Tempo Therapeutics",
+      "description": "微孔凝膠組織再生全新材料",
+      "presenter": "Westbrook Weaver",
+      "presenter_title": "Founder/CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/202410285ts46s.jpg",
+      "category": "Regenerative Medicine"
+    },
+    {
+      "id": 2,
+      "name": "EyeYon",
+      "description": "人工眼角膜移植新科技！",
+      "presenter": "Nahum Ferera",
+      "presenter_title": "CEO/ Co-Founder",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028xqekka.jpeg",
+      "category": "Regenerative Medicine"
+    },
+    {
+      "id": 3,
+      "name": "EpiBone",
+      "description": "創新脂肪幹細胞製程生成骨移植物",
+      "presenter": "Nina Tandon",
+      "presenter_title": "CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028y81103.jpeg",
+      "category": "Regenerative Medicine"
+    },
+    {
+      "id": 4,
+      "name": "Arbor Biotechnologies",
+      "description": "張鋒團隊 !全球最新高效CRISPR平台",
+      "presenter": "David Cheng",
+      "presenter_title": "CTO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/202410280h2pfw.jpg",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 5,
+      "name": "ImmuneBridge",
+      "description": "免疫幹細胞擴增技術x精準基因工程",
+      "presenter": "Nina Horowitz",
+      "presenter_title": "CSO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028r782rx.png",
+      "category": "Immunotherapy・Gene Therapy"
+    },
+    {
+      "id": 6,
+      "name": "Cirsium Biosciences",
+      "description": "獨創植物細胞生產病毒載體技術",
+      "presenter": "Jake Connors",
+      "presenter_title": "CTO/ Co-Founder",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028e18olj.jpg",
+      "category": "Immunotherapy・Gene Therapy"
+    },
+    {
+      "id": 7,
+      "name": "Rejuvenate Bio",
+      "description": "哈佛團隊研發老化疾病基因療法",
+      "presenter": "Daniel Oliver",
+      "presenter_title": "CEO/ Co-Founder",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028n6eq6u.jpg",
+      "category": "Immunotherapy・Gene Therapy"
+    },
+    {
+      "id": 8,
+      "name": "Verlmmune",
+      "description": "抗腫瘤免疫重定向創新療法",
+      "presenter": "Joshua Wang",
+      "presenter_title": "Founder/ CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028pcw926.jpg",
+      "category": "Immunotherapy・Gene Therapy"
+    },
+    {
+      "id": 9,
+      "name": "Coastar Therapeutics",
+      "description": "創新細胞膜包覆大分子藥物技術",
+      "presenter": "Chongyang Luo",
+      "presenter_title": "COO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028zr44k6.jpg",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 10,
+      "name": "Myrobalan Therapeutics",
+      "description": "促進髓鞘再⽣新型⼝服神經修復藥物",
+      "presenter": "Jing Wang",
+      "presenter_title": "CEO/ Co-Founder",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/2024102820mamy.jpg",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 11,
+      "name": "Rapafusyn Pharmaceuticals",
+      "description": "非降解分子膠FKBP藥物開發平台",
+      "presenter": "Sean Hu",
+      "presenter_title": "CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028hqd7yv.jpg",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 12,
+      "name": "Qritive",
+      "description": "10倍速AI數位病理診斷",
+      "presenter": "Bruno Occhipinti",
+      "presenter_title": "CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/2024102849bl9m.png",
+      "category": "Medical Device・Smart Healthcare"
+    },
+    {
+      "id": 13,
+      "name": "HistoSonics",
+      "description": "非侵入性聲波技術震碎肝臟腫瘤細胞",
+      "presenter": "Josh King",
+      "presenter_title": "Vice President",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241105/20241105jwz2nv.webp",
+      "category": "Medical Device・Smart Healthcare"
+    },
+    {
+      "id": 14,
+      "name": "Niramai",
+      "description": "以熱成像AI提高25%乳癌篩檢精準度",
+      "presenter": "Vicky Nanda",
+      "presenter_title": "COO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241105/202411050pm3e7.jpg",
+      "category": "Medical Device・Smart Healthcare"
+    },
+    {
+      "id": 15,
+      "name": "PRISM BioLab",
+      "description": "以擬肽小分子調控蛋白質交互作用開發新藥",
+      "presenter": "Dai Takehara",
+      "presenter_title": "President & CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241106/20241106hfai10.jpg",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 16,
+      "name": "SYNCELL",
+      "description": "空間蛋白體學必備利器-可抓式顯微系統",
+      "presenter": "Jung-Chi Liao",
+      "presenter_title": "Founder / CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241128/20241128joospa.png",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 17,
+      "name": "Pharmosa Biopharm",
+      "description": "長效緩釋之肺部藥物遞送平台",
+      "presenter": "Pei Kan",
+      "presenter_title": "Co-Founder / CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241128/20241128hh91l3.jpg",
+      "category": "New Drug Development"
+    },
+    {
+      "id": 18,
+      "name": "Cytonus",
+      "description": "以去核幹細胞為載體之精準藥物遞送平台",
+      "presenter": "Remo Moomiaie-Qajar",
+      "presenter_title": "CEO",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241202/20241202s7kcz8.jpg",
+      "category": "New Drug Development"
+    }
+  ],
+  "schedule": [
+    {
+      "id": 1,
+      "day": "December 3",
+      "events": [
+        {
+          "time": "10:00-10:10",
+          "title": "Opening Remark",
+          "type": "ceremony"
+        },
+        {
+          "time": "10:10-10:50",
+          "title": "AI-Driven Innovations and Opportunities in Drug Discovery",
+          "type": "keynote",
+          "speaker": "Ettikan Karuppiah, Director & Technologist, NVIDIA"
+        },
+        {
+          "time": "10:50-11:30",
+          "title": "Advancing Generative AI in Biomedicine: Next Steps and Opportunities",
+          "type": "keynote",
+          "speaker": "Keren Priyadarshini, Healthcare Lead, Microsoft Asia"
+        },
+        {
+          "time": "11:30-13:00",
+          "title": "Lunch Break",
+          "type": "break"
+        },
+        {
+          "time": "13:00-14:00",
+          "title": "Investing in the Future of Healthcare: Trends and Opportunities in 2025",
+          "type": "fireside_chat",
+          "moderator": "Charles Lin, Principal, illumina Ventures",
+          "panelists": [
+            "Robert Mittendorff, General Partner & Head of Healthcare, B Capital",
+            "Ian Chiang, Partner, Flare Capital Partners",
+            "Nate Chang, Operating Partner, Playground Global",
+            "Cheryl Cheng, Founder, Vive Collective"
+          ]
+        },
+        {
+          "time": "14:00-14:40",
+          "title": "Pitch Session - Regenerative Medicine",
+          "type": "pitch_session",
+          "presenters": [
+            "Tempo Therapeutics｜Westbrook Weaver, Founder & CEO",
+            "EyeYon｜Nahum Ferera, Co-Founder & CEO",
+            "EpiBone｜Nina Tandon, CEO"
+          ]
+        },
+        {
+          "time": "14:40-15:10",
+          "title": "Coffee Break",
+          "type": "break"
+        },
+        {
+          "time": "15:10-16:00",
+          "title": "Pitch Session - Immunotherapy・Gene Therapy",
+          "type": "pitch_session",
+          "presenters": [
+            "ImmuneBridge｜Nina Horowitz, CSO",
+            "Cirsium Biosciences｜Jake Connors, Co-Founder & CTO",
+            "Rejuvenate Bio｜Daniel Oliver, Co-Founder & CEO",
+            "Verlmmune｜Joshua Wang, Founder & CEO"
+          ]
+        },
+        {
+          "time": "16:00-16:40",
+          "title": "Pitch Session - New Drug Development (I)",
+          "type": "pitch_session",
+          "presenters": [
+            "SYNCELL｜Jung-Chi Liao, Founder & CEO",
+            "Pharmosa Biopharm｜Pei Kan, Co-Founder & CEO",
+            "Coastar Therapeutics｜Chongyang Luo, COO"
+          ]
+        },
+        {
+          "time": "16:40-17:30",
+          "title": "Post-Event Networking",
+          "type": "networking"
+        }
+      ]
+    }
+  ],
+  "pastEvents": [
+    {
+      "id": 1,
+      "year": 2024,
+      "image": "https://expo.taiwan-healthcare.org/zh/medtex/2024",
+      "link": "https://expo.taiwan-healthcare.org/zh/medtex/2024"
+    },
+    {
+      "id": 2,
+      "year": 2023,
+      "image": "https://expo.taiwan-healthcare.org/zh/news/0s1o793l55fahub5",
+      "link": "https://expo.taiwan-healthcare.org/zh/news/0s1o793l55fahub5"
+    }
+  ],
+  "registrationPage": {
+    "packages": [
+      {
+        "id": "conference_only",
+        "name": "Startup Forum",
+        "price": "$79", 
+        "description": [
+          "Access to all sessions",
+          "Networking opportunities",
+          "Lunch included"
+        ]
+      },
+      {
+        "id": "conference_and_party",
+        "name": "Startup Forum + Networking Party",
+        "price": "$199",
+        "description": [
+          "Access to all sessions",
+          "Networking opportunities",
+          "Lunch included",
+          "Live music",
+          "Drinks and snacks",
+          "Networking"
+        ]
+      }
+    ],
+    "notes": {
+      "deadline": "Only a limited number of spots are available. Register early to secure your place.",
+      "terms": [
+        "Cancellations and refunds are not accepted for this event.",
+        "In the event of force majeure (e.g., natural disasters), the organizer reserves the right to postpone or cancel the event.",
+        "By registering, you agree to allow the organizer to collect and use your personal information for event-related communication and follow-up notifications."
+      ]
+    }
+  },
+  "companyTypes": [
+    { "value": "startup", "label": "Startup" },
+    { "value": "sme", "label": "Small/Medium Enterprise" },
+    { "value": "listed", "label": "Listed Company" },
+    { "value": "investor", "label": "Investment Institution / VC" },
+    { "value": "academic", "label": "Academic/Research Institution" },
+    { "value": "government", "label": "Government / Association" },
+    { "value": "other", "label": "Other" }
+  ],
+  "startup_teams": [
+    {
+      "id": 1,
+      "name": "Tempo Therapeutics",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/202410285ts46s.jpg",
+      "description": "微孔凝膠組織再生全新材料",
+      "country": "United States",
+      "lead_investors": "Khosla Ventures, MPM Capital",
+      "status": "published",
+      "created_at": "2023-10-15T08:30:00Z",
+      "updated_at": "2024-05-20T14:15:00Z"
+    },
+    {
+      "id": 2,
+      "name": "EyeYon",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028xqekka.jpeg",
+      "description": "人工眼角膜移植新科技！",
+      "country": "Israel",
+      "lead_investors": "TriVentures, BRM Group",
+      "status": "published",
+      "created_at": "2023-11-05T10:45:00Z",
+      "updated_at": "2024-06-10T09:20:00Z"
+    },
+    {
+      "id": 3,
+      "name": "EpiBone",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028y81103.jpeg",
+      "description": "創新脂肪幹細胞製程生成骨移植物",
+      "country": "United States",
+      "lead_investors": "Pier 70 Ventures, SoftBank Vision Fund",
+      "status": "published",
+      "created_at": "2023-09-28T15:20:00Z",
+      "updated_at": "2024-05-15T11:30:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Arbor Biotechnologies",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/202410280h2pfw.jpg",
+      "description": "張鋒團隊！全球最新高效CRISPR平台",
+      "country": "United States",
+      "lead_investors": "Arch Venture Partners, Forestry LLC",
+      "status": "published",
+      "created_at": "2023-12-10T09:15:00Z",
+      "updated_at": "2024-06-05T16:40:00Z"
+    },
+    {
+      "id": 5,
+      "name": "ImmuneBridge",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028r782rx.png",
+      "description": "免疫幹細胞擴增技術x精準基因工程",
+      "country": "United States",
+      "lead_investors": "Versant Ventures, OrbiMed",
+      "status": "published",
+      "created_at": "2023-10-18T11:30:00Z",
+      "updated_at": "2024-05-25T13:45:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Cirsium Biosciences",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028e18olj.jpg",
+      "description": "獨創植物細胞生產病毒載體技術",
+      "country": "Canada",
+      "lead_investors": "Amplitude Ventures, Teralys Capital",
+      "status": "published",
+      "created_at": "2023-11-20T09:25:00Z",
+      "updated_at": "2024-06-12T10:35:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Rejuvenate Bio",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028n6eq6u.jpg",
+      "description": "哈佛團隊研發老化疾病基因療法",
+      "country": "United States",
+      "lead_investors": "F-Prime Capital, RA Capital Management",
+      "status": "published",
+      "created_at": "2023-09-05T14:10:00Z",
+      "updated_at": "2024-05-28T11:50:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Verlmmune",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028pcw926.jpg",
+      "description": "抗腫瘤免疫重定向創新療法",
+      "country": "United States",
+      "lead_investors": "ARCH Venture Partners, Longitude Capital",
+      "status": "published",
+      "created_at": "2023-12-03T08:45:00Z",
+      "updated_at": "2024-06-15T15:20:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Coastar Therapeutics",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028zr44k6.jpg",
+      "description": "創新細胞膜包覆大分子藥物技術",
+      "country": "United States",
+      "lead_investors": "Polaris Partners, Google Ventures",
+      "status": "published",
+      "created_at": "2023-10-25T10:15:00Z",
+      "updated_at": "2024-05-30T12:40:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Myrobalan Therapeutics",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/2024102820mamy.jpg",
+      "description": "促進髓鞘再⽣新型⼝服神經修復藥物",
+      "country": "United States",
+      "lead_investors": "Atlas Venture, 5AM Ventures",
+      "status": "published",
+      "created_at": "2023-11-15T13:20:00Z",
+      "updated_at": "2024-06-08T09:30:00Z"
+    },
+    {
+      "id": 11,
+      "name": "Rapafusyn Pharmaceuticals",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028hqd7yv.jpg",
+      "description": "非降解分子膠FKBP藥物開發平台",
+      "country": "United States",
+      "lead_investors": "Frazier Healthcare Partners, Omega Funds",
+      "status": "published",
+      "created_at": "2023-09-18T15:40:00Z",
+      "updated_at": "2024-05-22T14:25:00Z"
+    },
+    {
+      "id": 12,
+      "name": "Qritive",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/2024102849bl9m.png",
+      "description": "10倍速AI數位病理診斷",
+      "country": "Singapore",
+      "lead_investors": "Sequoia India, MassMutual Ventures",
+      "status": "published",
+      "created_at": "2023-10-10T12:50:00Z",
+      "updated_at": "2024-06-02T11:15:00Z"
+    },
+    {
+      "id": 13,
+      "name": "HistoSonics",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241105/20241105jwz2nv.webp",
+      "description": "非侵入性聲波技術震碎肝臟腫瘤細胞",
+      "country": "United States",
+      "lead_investors": "Johnson & Johnson Innovation, Venture Investors",
+      "status": "published",
+      "created_at": "2023-09-12T11:35:00Z",
+      "updated_at": "2024-05-18T13:25:00Z"
+    },
+    {
+      "id": 14,
+      "name": "Niramai",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241105/202411050pm3e7.jpg",
+      "description": "以熱成像AI提高25%乳癌篩檢精準度",
+      "country": "India",
+      "lead_investors": "Pi Ventures, Axilor Ventures",
+      "status": "published",
+      "created_at": "2023-11-08T10:20:00Z",
+      "updated_at": "2024-06-05T09:55:00Z"
+    },
+    {
+      "id": 15,
+      "name": "PRISM BioLab",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241106/20241106hfai10.jpg",
+      "description": "以擬肽小分子調控蛋白質交互作用開發新藥",
+      "country": "Japan",
+      "lead_investors": "Mitsubishi UFJ Capital, UTEC",
+      "status": "published",
+      "created_at": "2023-10-30T09:40:00Z",
+      "updated_at": "2024-05-27T15:10:00Z"
+    },
+    {
+      "id": 16,
+      "name": "SYNCELL",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241128/20241128joospa.png",
+      "description": "空間蛋白體學必備利器-可抓式顯微系統",
+      "country": "Taiwan",
+      "lead_investors": "Taiwania Capital, Verge HealthTech Fund",
+      "status": "published",
+      "created_at": "2023-11-25T14:30:00Z",
+      "updated_at": "2024-06-10T10:45:00Z"
+    },
+    {
+      "id": 17,
+      "name": "Pharmosa Biopharm",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241128/20241128hh91l3.jpg",
+      "description": "長效緩釋之肺部藥物遞送平台",
+      "country": "Taiwan",
+      "lead_investors": "CDIB Capital, Morningside Ventures",
+      "status": "published",
+      "created_at": "2023-09-22T13:15:00Z",
+      "updated_at": "2024-05-20T10:30:00Z"
+    },
+    {
+      "id": 18,
+      "name": "Cytonus",
+      "logo": "https://expo.taiwan-healthcare.org//data/tmp/20241202/20241202s7kcz8.jpg",
+      "description": "以去核幹細胞為載體之精準藥物遞送平台",
+      "country": "United States",
+      "lead_investors": "Alexandria Venture Investments, Illumina Ventures",
+      "status": "published",
+      "created_at": "2023-10-15T12:05:00Z",
+      "updated_at": "2024-06-01T11:20:00Z"
+    }
+  ],
+  "startup_representatives": [
+    {
+      "id": 1,
+      "team_id": 1,
+      "name": "Westbrook Weaver",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/202410285ts46s.jpg",
+      "title": "Founder/CEO"
+    },
+    {
+      "id": 2,
+      "team_id": 2,
+      "name": "Nahum Ferera",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028xqekka.jpeg",
+      "title": "CEO/Co-Founder"
+    },
+    {
+      "id": 3,
+      "team_id": 3,
+      "name": "Nina Tandon",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028y81103.jpeg",
+      "title": "CEO"
+    },
+    {
+      "id": 4,
+      "team_id": 4,
+      "name": "David Cheng",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/202410280h2pfw.jpg",
+      "title": "CTO"
+    },
+    {
+      "id": 5,
+      "team_id": 5,
+      "name": "Nina Horowitz",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028r782rx.png",
+      "title": "CSO"
+    },
+    {
+      "id": 6,
+      "team_id": 6,
+      "name": "Jake Connors",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028e18olj.jpg",
+      "title": "CTO/Co-Founder"
+    },
+    {
+      "id": 7,
+      "team_id": 7,
+      "name": "Daniel Oliver",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028n6eq6u.jpg",
+      "title": "CEO/Co-Founder"
+    },
+    {
+      "id": 8,
+      "team_id": 8,
+      "name": "Joshua Wang",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028pcw926.jpg",
+      "title": "Founder/CEO"
+    },
+    {
+      "id": 9,
+      "team_id": 9,
+      "name": "Chongyang Luo",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028zr44k6.jpg",
+      "title": "COO"
+    },
+    {
+      "id": 10,
+      "team_id": 10,
+      "name": "Jing Wang",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/2024102820mamy.jpg",
+      "title": "CEO/Co-Founder"
+    },
+    {
+      "id": 11,
+      "team_id": 11,
+      "name": "Sean Hu",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/20241028hqd7yv.jpg",
+      "title": "CEO"
+    },
+    {
+      "id": 12,
+      "team_id": 12,
+      "name": "Bruno Occhipinti",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241028/2024102849bl9m.png",
+      "title": "CEO"
+    },
+    {
+      "id": 13,
+      "team_id": 13,
+      "name": "Josh King",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241105/20241105jwz2nv.webp",
+      "title": "Vice President"
+    },
+    {
+      "id": 14,
+      "team_id": 14,
+      "name": "Vicky Nanda",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241105/202411050pm3e7.jpg",
+      "title": "COO"
+    },
+    {
+      "id": 15,
+      "team_id": 15,
+      "name": "Dai Takehara",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241106/20241106hfai10.jpg",
+      "title": "President & CEO"
+    },
+    {
+      "id": 16,
+      "team_id": 16,
+      "name": "Jung-Chi Liao",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241128/20241128joospa.png",
+      "title": "Founder/CEO"
+    },
+    {
+      "id": 17,
+      "team_id": 17,
+      "name": "Pei Kan",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241128/20241128hh91l3.jpg",
+      "title": "Co-Founder/CEO"
+    },
+    {
+      "id": 18,
+      "team_id": 18,
+      "name": "Remo Moomiaie-Qajar",
+      "photo": "https://expo.taiwan-healthcare.org//data/tmp/20241202/20241202s7kcz8.jpg",
+      "title": "CEO"
+    }
+  ],
+  "startup_investments": [
+    {
+      "id": 1,
+      "team_id": 1,
+      "year_founded": 2017,
+      "total_funding": "$45M",
+      "annual_revenue": "$5M",
+      "is_pre_revenue": false,
+      "funding_round": "Series B",
+      "amount_raised": "$30M",
+      "valuation": "$120M",
+      "on_market": "Private"
+    },
+    {
+      "id": 2,
+      "team_id": 2,
+      "year_founded": 2015,
+      "total_funding": "$36M",
+      "annual_revenue": "$2.5M",
+      "is_pre_revenue": false,
+      "funding_round": "Series B",
+      "amount_raised": "$20M",
+      "valuation": "$90M",
+      "on_market": "Private"
+    },
+    {
+      "id": 3,
+      "team_id": 3,
+      "year_founded": 2012,
+      "total_funding": "$56M",
+      "annual_revenue": "$8M",
+      "is_pre_revenue": false,
+      "funding_round": "Series C",
+      "amount_raised": "$35M",
+      "valuation": "$180M",
+      "on_market": "Private"
+    },
+    {
+      "id": 4,
+      "team_id": 4,
+      "year_founded": 2018,
+      "total_funding": "$125M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series B",
+      "amount_raised": "$75M",
+      "valuation": "$300M",
+      "on_market": "Private"
+    },
+    {
+      "id": 5,
+      "team_id": 5,
+      "year_founded": 2016,
+      "total_funding": "$78M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series B",
+      "amount_raised": "$45M",
+      "valuation": "$220M",
+      "on_market": "Private"
+    },
+    {
+      "id": 6,
+      "team_id": 6,
+      "year_founded": 2019,
+      "total_funding": "$32M",
+      "annual_revenue": "$1.2M",
+      "is_pre_revenue": false,
+      "funding_round": "Series A",
+      "amount_raised": "$20M",
+      "valuation": "$95M",
+      "on_market": "Private"
+    },
+    {
+      "id": 7,
+      "team_id": 7,
+      "year_founded": 2018,
+      "total_funding": "$58M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series B",
+      "amount_raised": "$35M",
+      "valuation": "$180M",
+      "on_market": "Private"
+    },
+    {
+      "id": 8,
+      "team_id": 8,
+      "year_founded": 2020,
+      "total_funding": "$42M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series A",
+      "amount_raised": "$30M",
+      "valuation": "$150M",
+      "on_market": "Private"
+    },
+    {
+      "id": 9,
+      "team_id": 9,
+      "year_founded": 2017,
+      "total_funding": "$47M",
+      "annual_revenue": "$3.5M",
+      "is_pre_revenue": false,
+      "funding_round": "Series B",
+      "amount_raised": "$30M",
+      "valuation": "$130M",
+      "on_market": "Private"
+    },
+    {
+      "id": 10,
+      "team_id": 10,
+      "year_founded": 2018,
+      "total_funding": "$39M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series A",
+      "amount_raised": "$25M",
+      "valuation": "$105M",
+      "on_market": "Private"
+    },
+    {
+      "id": 11,
+      "team_id": 11,
+      "year_founded": 2019,
+      "total_funding": "$85M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series B",
+      "amount_raised": "$60M",
+      "valuation": "$240M",
+      "on_market": "Private"
+    },
+    {
+      "id": 12,
+      "team_id": 12,
+      "year_founded": 2017,
+      "total_funding": "$28M",
+      "annual_revenue": "$4.2M",
+      "is_pre_revenue": false,
+      "funding_round": "Series B",
+      "amount_raised": "$18M",
+      "valuation": "$85M",
+      "on_market": "Private"
+    },
+    {
+      "id": 13,
+      "team_id": 13,
+      "year_founded": 2015,
+      "total_funding": "$130M",
+      "annual_revenue": "$8.5M",
+      "is_pre_revenue": false,
+      "funding_round": "Series D",
+      "amount_raised": "$65M",
+      "valuation": "$350M",
+      "on_market": "Private"
+    },
+    {
+      "id": 14,
+      "team_id": 14,
+      "year_founded": 2016,
+      "total_funding": "$22M",
+      "annual_revenue": "$3.8M",
+      "is_pre_revenue": false,
+      "funding_round": "Series B",
+      "amount_raised": "$15M",
+      "valuation": "$75M",
+      "on_market": "Private"
+    },
+    {
+      "id": 15,
+      "team_id": 15,
+      "year_founded": 2013,
+      "total_funding": "$65M",
+      "annual_revenue": "$5.2M",
+      "is_pre_revenue": false,
+      "funding_round": "Series C",
+      "amount_raised": "$40M",
+      "valuation": "$200M",
+      "on_market": "Private"
+    },
+    {
+      "id": 16,
+      "team_id": 16,
+      "year_founded": 2020,
+      "total_funding": "$32M",
+      "annual_revenue": "$1.8M",
+      "is_pre_revenue": false,
+      "funding_round": "Series A",
+      "amount_raised": "$20M",
+      "valuation": "$100M",
+      "on_market": "Private"
+    },
+    {
+      "id": 17,
+      "team_id": 17,
+      "year_founded": 2015,
+      "total_funding": "$45M",
+      "annual_revenue": "$6.5M",
+      "is_pre_revenue": false,
+      "funding_round": "Series B",
+      "amount_raised": "$28M",
+      "valuation": "$120M",
+      "on_market": "Private"
+    },
+    {
+      "id": 18,
+      "team_id": 18,
+      "year_founded": 2017,
+      "total_funding": "$70M",
+      "annual_revenue": "$0",
+      "is_pre_revenue": true,
+      "funding_round": "Series B",
+      "amount_raised": "$45M",
+      "valuation": "$190M",
+      "on_market": "Private"
+    }
+  ],
+  "startup_details": [
+    {
+      "id": 1,
+      "team_id": 1,
+      "investment_highlights": "市場規模估達100億美元，獨家專利技術能夠顯著加速組織再生過程",
+      "core_technology": "微孔凝膠技術平台能夠模擬細胞外基質結構，優化細胞生長環境",
+      "target_market": "外科手術修復市場，特別是骨科與傷口癒合",
+      "milestones": "預計2025年開始FDA臨床II期試驗，2026年進入歐洲市場"
+    },
+    {
+      "id": 2,
+      "team_id": 2,
+      "investment_highlights": "全球約有5000萬角膜疾病患者，本產品可大幅降低眼角膜移植困難度",
+      "core_technology": "合成角膜材料能夠與人體組織良好結合，降低排斥反應",
+      "target_market": "眼科手術市場，特別是角膜移植領域",
+      "milestones": "已通過歐盟CE認證，正在進行美國FDA審批過程"
+    },
+    {
+      "id": 3,
+      "team_id": 3,
+      "investment_highlights": "骨移植市場每年成長10%以上，技術能夠避免傳統骨移植併發症",
+      "core_technology": "使用病患自體脂肪幹細胞培養客製化骨骼組織，完全避免排斥問題",
+      "target_market": "骨科手術市場，特別是顱顏骨缺損修復領域",
+      "milestones": "已完成FDA I/II期臨床試驗，預計2025年上市"
+    },
+    {
+      "id": 4,
+      "team_id": 4,
+      "investment_highlights": "基因編輯市場規模超過100億美元，技術比現有CRISPR系統精準度高50%",
+      "core_technology": "AI驅動的CRISPR工具發現平台，能夠識別並優化全新的基因編輯酶",
+      "target_market": "基因治療、生物技術研發工具市場",
+      "milestones": "已與三家全球前20大製藥公司簽訂合作研發協議"
+    },
+    {
+      "id": 5,
+      "team_id": 5,
+      "investment_highlights": "免疫療法市場年成長30%，技術可大幅提高細胞治療產率",
+      "core_technology": "獨特的幹細胞增殖及基因工程雙平台技術，提高免疫細胞功能與存活率",
+      "target_market": "腫瘤學與自體免疫疾病治療市場",
+      "milestones": "已完成臨床前研究，計劃2025年開始I期臨床試驗"
+    },
+    {
+      "id": 6,
+      "team_id": 6,
+      "investment_highlights": "病毒載體生產成本可降低75%，大幅提高基因療法可及性",
+      "core_technology": "植物細胞製程平台，可高效率生產AAV及慢病毒載體，無動物源性成分污染風險",
+      "target_market": "基因療法、疫苗生產市場",
+      "milestones": "完成GMP生產線建置，已與兩家基因治療公司簽訂供應合約"
+    },
+    {
+      "id": 7,
+      "team_id": 7,
+      "investment_highlights": "老化相關疾病市場超過3000億美元，技術可同時治療多種老化疾病",
+      "core_technology": "使用AAV載體遞送組合基因，調控關鍵老化信號通路，延緩或逆轉組織老化",
+      "target_market": "老化相關疾病、寵物醫療市場",
+      "milestones": "寵物療法已通過FDA批准，人類臨床I期試驗預計2025年開始"
+    },
+    {
+      "id": 8,
+      "team_id": 8,
+      "investment_highlights": "相比現有免疫檢查點抑制劑，反應率提高40%，適用腫瘤類型更廣",
+      "core_technology": "專利免疫重定向抗體技術，能同時鎖定腫瘤細胞與活化T細胞，增強免疫應答",
+      "target_market": "實體腫瘤與血液惡性腫瘤治療市場",
+      "milestones": "臨床前研究顯示優於同類產品，預計2025年第一季進入I期臨床"
+    },
+    {
+      "id": 9,
+      "team_id": 9,
+      "investment_highlights": "創新技術能將大分子藥物口服生物利用度提高10倍以上",
+      "core_technology": "專利細胞膜包覆技術，保護藥物分子在胃腸道環境中穩定性並促進吸收",
+      "target_market": "大分子藥物制劑市場，糖尿病、自體免疫疾病治療",
+      "milestones": "已完成I期臨床試驗，證實技術安全性與初步有效性"
+    },
+    {
+      "id": 10,
+      "team_id": 10,
+      "investment_highlights": "全球多發性硬化症市場規模超過250億美元，現有治療無法修復髓鞘",
+      "core_technology": "小分子藥物能激活少突膠質細胞分化，促進受損神經元髓鞘再生",
+      "target_market": "多發性硬化症、周圍神經病變及其他神經退行性疾病",
+      "milestones": "臨床I期試驗結果顯示安全性良好，已開始IIa期概念驗證研究"
+    },
+    {
+      "id": 11,
+      "team_id": 11,
+      "investment_highlights": "分子膠技術為RNA藥物和蛋白質降解劑開創全新治療路徑",
+      "core_technology": "創新分子膠平台能特異性結合FKBP蛋白，調控標靶蛋白功能而非降解",
+      "target_market": "腫瘤學、免疫學及神經科學藥物市場",
+      "milestones": "首個候選藥物已進入GLP毒理研究階段，預計2025年申請臨床試驗"
+    },
+    {
+      "id": 12,
+      "team_id": 12,
+      "investment_highlights": "病理診斷市場規模超過400億美元，AI能減少70%診斷時間",
+      "core_technology": "深度學習病理影像分析平台，可自動檢測與分類多種癌症類型",
+      "target_market": "病理診斷、精準醫療、癌症早期篩檢市場",
+      "milestones": "已獲得FDA與CE認證，在亞洲10多家醫院部署系統"
+    },
+    {
+      "id": 13,
+      "team_id": 13,
+      "investment_highlights": "肝腫瘤手術市場每年超過50億美元，技術可完全避免侵入性手術風險",
+      "core_technology": "組織聲波解離技術(Histotripsy)通過聚焦超聲波精確破壞目標組織",
+      "target_market": "肝腫瘤、腎臟腫瘤及其他實體腫瘤治療市場",
+      "milestones": "已獲FDA突破性醫療器械認證，臨床試驗顯示95%治療效果"
+    },
+    {
+      "id": 14,
+      "team_id": 14,
+      "investment_highlights": "乳癌篩檢市場超過50億美元，技術可增加25%早期檢出率",
+      "core_technology": "結合紅外熱成像與AI演算法，無輻射、無接觸檢測乳房異常",
+      "target_market": "乳癌篩檢、女性健康市場，特別是開發中國家",
+      "milestones": "已在印度和東南亞篩檢超過5萬名女性，獲得多國監管認證"
+    },
+    {
+      "id": 15,
+      "team_id": 15,
+      "investment_highlights": "蛋白質-蛋白質相互作用藥物市場快速增長，年增速超過15%",
+      "core_technology": "專利擬肽化合物庫與AI篩選平台，能靶向傳統「難成藥」蛋白質相互作用",
+      "target_market": "腫瘤學、炎症性疾病及纖維化疾病治療市場",
+      "milestones": "首個臨床階段藥物已完成II期試驗，另有3個候選藥物處於臨床前研究階段"
+    },
+    {
+      "id": 16,
+      "team_id": 16,
+      "investment_highlights": "空間生物學市場每年成長40%，技術可提高單細胞蛋白分析準確度100倍",
+      "core_technology": "光氣動力學微操作系統，可抓取單個細胞進行超高分辨率蛋白體分析",
+      "target_market": "藥物開發、診斷與基礎研究市場",
+      "milestones": "已與5家大型製藥公司建立合作關係，首款商業產品已上市"
+    },
+    {
+      "id": 17,
+      "team_id": 17,
+      "investment_highlights": "肺部給藥系統市場規模超過450億美元，技術可延長藥效達10倍",
+      "core_technology": "專利緩釋微粒技術與特殊吸入器設計，提高藥物在肺部滯留時間與均勻分佈",
+      "target_market": "哮喘、COPD及囊腫性纖維化藥物市場",
+      "milestones": "首款產品在台灣和東南亞獲批上市，美國FDA審核進行中"
+    },
+    {
+      "id": 18,
+      "team_id": 18,
+      "investment_highlights": "精準藥物遞送市場規模超過650億美元，技術可降低90%全身副作用",
+      "core_technology": "以去細胞核的幹細胞外泌體為載體，能特異性靶向腫瘤與發炎組織",
+      "target_market": "腫瘤學、自體免疫及神經退行性疾病治療市場",
+      "milestones": "完成大型動物安全性研究，計劃2025年初申請首個IND"
+    }
+  ],
+  "startup_products": [
+    {
+      "id": 1,
+      "team_id": 1,
+      "name": "TempoPatch",
+      "category": "device",
+      "stage": "臨床前研究完成，準備進入人體試驗",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 2,
+      "team_id": 1,
+      "name": "TempoMatrix",
+      "category": "device",
+      "stage": "動物試驗階段",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 3,
+      "team_id": 2,
+      "name": "EndoArt",
+      "category": "device",
+      "stage": "已通過CE認證，進入歐洲市場",
+      "certificate_country": "歐盟"
+    },
+    {
+      "id": 4,
+      "team_id": 3,
+      "name": "EB-1 Bone Graft",
+      "category": "device",
+      "stage": "臨床二期試驗",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 5,
+      "team_id": 4,
+      "name": "CRISPR Type V Platform",
+      "category": "service",
+      "stage": "研發階段，已開放給合作夥伴使用",
+      "certificate_country": "N/A"
+    },
+    {
+      "id": 6,
+      "team_id": 4,
+      "name": "Gene-Edit Pro Kit",
+      "category": "device",
+      "stage": "已商業化，供研究使用",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 7,
+      "team_id": 5,
+      "name": "ImmuneBoost Platform",
+      "category": "service",
+      "stage": "研發階段，與製藥合作夥伴使用中",
+      "certificate_country": "N/A"
+    },
+    {
+      "id": 8,
+      "team_id": 5,
+      "name": "IB-201",
+      "category": "drug",
+      "stage": "IND申請準備中",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 9,
+      "team_id": 6,
+      "name": "PlantVector Platform",
+      "category": "service",
+      "stage": "已商業化，提供AAV生產服務",
+      "certificate_country": "加拿大"
+    },
+    {
+      "id": 10,
+      "team_id": 6,
+      "name": "PlantAAV Kit",
+      "category": "device",
+      "stage": "市場銷售中，研究用途",
+      "certificate_country": "加拿大、美國"
+    },
+    {
+      "id": 11,
+      "team_id": 7,
+      "name": "RJV-101",
+      "category": "drug",
+      "stage": "臨床前研究完成",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 12,
+      "team_id": 7,
+      "name": "PetRejuv",
+      "category": "drug",
+      "stage": "已獲FDA動物用藭批准",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 13,
+      "team_id": 8,
+      "name": "VIM-201",
+      "category": "drug",
+      "stage": "IND申請準備中",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 14,
+      "team_id": 8,
+      "name": "VIM-301",
+      "category": "drug",
+      "stage": "臨床前研究階段",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 15,
+      "team_id": 9,
+      "name": "CoastShield",
+      "category": "drug",
+      "stage": "臨床I期完成",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 16,
+      "team_id": 9,
+      "name": "CoastCap Platform",
+      "category": "service",
+      "stage": "已與合作夥伴共同開發中",
+      "certificate_country": "N/A"
+    },
+    {
+      "id": 17,
+      "team_id": 10,
+      "name": "MyroRestore",
+      "category": "drug",
+      "stage": "臨床IIa期進行中",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 18,
+      "team_id": 10,
+      "name": "MyroNeuro",
+      "category": "drug",
+      "stage": "臨床前研究階段",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 19,
+      "team_id": 11,
+      "name": "RapaLink-1",
+      "category": "drug",
+      "stage": "GLP毒理研究階段",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 20,
+      "team_id": 11,
+      "name": "MolGlue Platform",
+      "category": "service",
+      "stage": "與製藥公司合作開發中",
+      "certificate_country": "N/A"
+    },
+    {
+      "id": 21,
+      "team_id": 12,
+      "name": "QritiveDx",
+      "category": "software",
+      "stage": "已獲FDA與CE認證",
+      "certificate_country": "美國、歐盟"
+    },
+    {
+      "id": 22,
+      "team_id": 12,
+      "name": "QritiveResearch",
+      "category": "software",
+      "stage": "商業銷售中",
+      "certificate_country": "全球"
+    },
+    {
+      "id": 23,
+      "team_id": 13,
+      "name": "Edison Platform",
+      "category": "device",
+      "stage": "臨床試驗階段",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 24,
+      "team_id": 13,
+      "name": "SonoGuide",
+      "category": "software",
+      "stage": "配合Edison使用中",
+      "certificate_country": "美國"
+    },
+    {
+      "id": 25,
+      "team_id": 14,
+      "name": "Thermalytix",
+      "category": "device",
+      "stage": "已獲多國監管認證",
+      "certificate_country": "印度、新加坡、馬來西亞"
+    },
+    {
+      "id": 26,
+      "team_id": 14,
+      "name": "SMILE-100",
+      "category": "software",
+      "stage": "已商業化",
+      "certificate_country": "全球"
+    },
+    {
+      "id": 27,
+      "team_id": 15,
+      "name": "PepMimetic-1",
+      "category": "drug",
+      "stage": "臨床II期完成",
+      "certificate_country": "日本、美國"
+    },
+    {
+      "id": 28,
+      "team_id": 15,
+      "name": "PeptideMimetic Library",
+      "category": "service",
+      "stage": "授權給合作夥伴使用中",
+      "certificate_country": "全球"
+    },
+    {
+      "id": 29,
+      "team_id": 16,
+      "name": "GrabCell System",
+      "category": "device",
+      "stage": "商業銷售中",
+      "certificate_country": "台灣、美國"
+    },
+    {
+      "id": 30,
+      "team_id": 16,
+      "name": "SpatialProteome Software",
+      "category": "software",
+      "stage": "商業銷售中",
+      "certificate_country": "全球"
+    },
+    {
+      "id": 31,
+      "team_id": 17,
+      "name": "PulmoHaler",
+      "category": "device",
+      "stage": "市場銷售中",
+      "certificate_country": "台灣、馬來西亞、泰國"
+    },
+    {
+      "id": 32,
+      "team_id": 17,
+      "name": "LungShield",
+      "category": "drug",
+      "stage": "FDA審核中",
+      "certificate_country": "台灣"
+    },
+    {
+      "id": 33,
+      "team_id": 18,
+      "name": "CellCap Platform",
+      "category": "service",
+      "stage": "研發階段",
+      "certificate_country": "N/A"
+    },
+    {
+      "id": 34,
+      "team_id": 18,
+      "name": "CytoDeliver-1",
+      "category": "drug",
+      "stage": "大型動物研究完成",
+      "certificate_country": "美國"
     }
   ]
 }

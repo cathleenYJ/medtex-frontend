@@ -39,7 +39,7 @@ export const useAuth = () => {
     setAuthorized(false);
     setUser({});
     removeAuthToken();
-    pathname.startsWith(Routes.private.admin) && router.refresh();
+    pathname?.startsWith(Routes.private.admin) && router.refresh();
   };
   const checkAuth = async () => {
     try {

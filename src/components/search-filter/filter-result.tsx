@@ -34,7 +34,7 @@ export const FilterResult: React.FC = () => {
   const { createQueryString, searchParams } = useAppSearchParams();
   const [isPending, startTransition] = useTransition();
   const [buyers, setBuyers] = useState<BuyerData[]>([]);
-  const currentSize = Number(searchParams.get("size"));
+  const currentSize = Number(searchParams?.get("size") ?? "0");
   const isMax = currentSize >= buyers.length;
   const step = 3;
   const loadMore = () =>
@@ -62,8 +62,8 @@ export const FilterResult: React.FC = () => {
       ) : (
         <>
           {buyers
-            .filter((buyer) => searchResult(buyer, searchParams))
-            .slice(0, Number(searchParams.get("size")) + 1)
+            .filter((buyer) => searchParams && searchResult(buyer, searchParams))
+            .slice(0, Number(searchParams?.get("size") ?? "0") + 1)
             .map((buyer) => (
               <BuyerResult key={buyer.id} buyer={buyer} />
             ))}

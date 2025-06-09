@@ -7,7 +7,7 @@ export const isUnauthorized = (error: AxiosError) =>
     (error.response.data as { error: string }).error === "Not Authorized");
 
 const AxiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
+  baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT_DATA,
   timeout: 150000000,
   headers: { "Content-Type": "application/json" },
 });
@@ -15,10 +15,13 @@ const AxiosClient = axios.create({
 AxiosClient.interceptors.request.use(
   (config) => {
     const token = getAuthToken();
-    config.headers = {
-      ...config.headers,
-      Authorization: token ? token : "",
-    } as AxiosRequestHeaders;
+    // Only add token if it exists and the request URL is not for login or publicly accessible endpoints
+    if (token && !config.url?.includes('/credentials') && !config.url?.includes('/authData')) {
+      config.headers = {
+        ...config.headers,
+        Authorization: token,
+      } as AxiosRequestHeaders;
+    }
     return config;
   },
   (error) => {

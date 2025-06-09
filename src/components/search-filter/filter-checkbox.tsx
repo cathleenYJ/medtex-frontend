@@ -51,8 +51,8 @@ export const CheckboxGroups: React.FC = () => {
     );
   }, []);
   useEffect(() => {
-    filterOptions && initialFilterForm(filterOptions, setValue, searchParams);
-  }, [searchParams.toString(), filterOptions]);
+    filterOptions && searchParams && initialFilterForm(filterOptions, setValue, searchParams);
+  }, [searchParams?.toString(), filterOptions]);
   return isPending || filterOptions === null ? (
     <Spinner />
   ) : (
