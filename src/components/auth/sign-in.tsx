@@ -112,11 +112,6 @@ export const SignIn: React.FC<SignInProps> = ({ onDismiss }) => {
             autoComplete="current-password"
           />
         </Field>
-        <div className="mt-4 text-xs text-gray-300">
-          <p>Use the following credentials:</p>
-          <p>Email: admin@example.com</p>
-          <p>Password: admin123</p>
-        </div>
         <CustomButton
           loading={isPending}
           onClick={handleLogin}
