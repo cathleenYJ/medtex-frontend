@@ -14,7 +14,7 @@
 
 
 import { NextResponse, type NextRequest } from "next/server";
-import { Routes } from "@/config/routes";
+// import { Routes } from "@/config/routes";
 
 export const middleware = async (request: NextRequest) => {
   // Define public paths that don't require authentication
