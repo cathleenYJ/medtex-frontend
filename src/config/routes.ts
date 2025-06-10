@@ -2,6 +2,7 @@ export const Routes = {
   auth: {
     signIn: "/sign-in",
     signOut: "/sign-out",
+    login: "/login", // Add the login route
   },
   public: {
     home: "/",
