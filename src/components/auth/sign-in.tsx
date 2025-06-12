@@ -90,7 +90,7 @@ export const SignIn: React.FC<SignInProps> = ({ onDismiss }) => {
             value={account.email}
             onKeyDown={handleKeydown}
             disabled={isPending}
-            placeholder="admin@example.com"
+            // placeholder="admin@example.com"
             autoComplete="email"
           />
         </Field>
@@ -108,7 +108,7 @@ export const SignIn: React.FC<SignInProps> = ({ onDismiss }) => {
             value={account.password}
             onKeyDown={handleKeydown}
             disabled={isPending}
-            placeholder="admin123"
+            // placeholder="admin123"
             autoComplete="current-password"
           />
         </Field>
