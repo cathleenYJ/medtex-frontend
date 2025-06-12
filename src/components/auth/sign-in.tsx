@@ -19,8 +19,8 @@ export const SignIn: React.FC<SignInProps> = ({ onDismiss }) => {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [account, setAccount] = useState<{ email: string; password: string }>({
-    email: "admin@example.com",
-    password: "admin123",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
